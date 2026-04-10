@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>강남 쩜오 - FIESTA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#c9a96e;--gold-light:#e8d5b0;--gold-dark:#a07d4a;--black:#0b0b0b;--black2:#111;--black3:#181818;--text:#f5f0e8;--text-dim:#8a8272;--text-muted:#5a5549;--glass-border:rgba(255,255,255,0.08);--t:all .4s cubic-bezier(.25,.46,.45,.94)}
+html{scroll-behavior:smooth}body{font-family:'Noto Sans KR',sans-serif;background:var(--black);color:var(--text);overflow-x:hidden}a{text-decoration:none;color:inherit;transition:var(--t)}img{max-width:100%;display:block}.container{max-width:1280px;margin:0 auto;padding:0 32px}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px}
+.reveal{opacity:0;transform:translateY(60px);transition:opacity .8s,transform .8s}.reveal.v{opacity:1;transform:translateY(0)}
+.stagger:nth-child(1){transition-delay:.05s}.stagger:nth-child(2){transition-delay:.15s}.stagger:nth-child(3){transition-delay:.25s}.stagger:nth-child(4){transition-delay:.35s}.stagger:nth-child(5){transition-delay:.45s}.stagger:nth-child(6){transition-delay:.55s}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--t)}.header.scrolled{padding:12px 0;background:rgba(11,11,11,.92);backdrop-filter:blur(30px);border-bottom:1px solid var(--glass-border)}.header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--gold);letter-spacing:3px}.nav{display:flex;align-items:center;gap:36px}.nav a{font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}.nav a:hover,.nav a.active{color:var(--gold)}
+.nav__cta{position:relative;padding:14px 32px;border:1.5px solid var(--gold);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold)!important;overflow:hidden;transition:var(--t)}.nav__cta::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(100%);transition:transform .4s;z-index:-1}.nav__cta:hover::before{transform:translateY(0)}.nav__cta:hover{color:var(--black)!important}
+.mobile-toggle{display:none;background:none;border:none;color:var(--gold);font-size:24px;cursor:pointer;letter-spacing:4px}
+.eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1;margin-bottom:20px}
+
+/* Page Hero */
+.phero{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:80px}
+.phero__bg{position:absolute;inset:0}.phero__bg img{width:100%;height:100%;object-fit:cover;animation:slowZoom 25s ease infinite alternate}
+.phero__ov{position:absolute;inset:0;background:linear-gradient(0deg,var(--black) 0%,rgba(11,11,11,.5) 50%,rgba(11,11,11,.3) 100%)}
+.phero__content{position:relative;z-index:2;max-width:700px}
+.phero__badge{display:inline-block;padding:8px 24px;border:1px solid var(--gold-dark);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.phero__title{font-family:'Playfair Display',serif;font-size:clamp(44px,8vw,80px);font-weight:900;line-height:.95;margin-bottom:20px}
+.phero__title em{font-style:italic;color:var(--gold)}
+.phero__desc{font-size:16px;color:var(--text-dim);line-height:1.8;font-weight:300;margin-bottom:36px}
+.phero__stats{display:flex;gap:40px}
+.phero__stat-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--gold)}
+.phero__stat-l{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+@keyframes slowZoom{0%{transform:scale(1)}100%{transform:scale(1.12)}}
+
+/* Info Split */
+.info-split{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--glass-border)}
+.info-split__media{position:relative;min-height:500px;overflow:hidden}.info-split__media img{width:100%;height:100%;object-fit:cover;transition:transform 1s}.info-split:hover .info-split__media img{transform:scale(1.04)}
+.info-split__body{padding:80px 64px;display:flex;flex-direction:column;justify-content:center}
+.info-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:24px}
+.info-list li{display:flex;align-items:center;gap:16px;padding:16px 20px;border:1px solid var(--glass-border);font-size:14px;color:var(--text-dim);transition:var(--t)}
+.info-list li:hover{border-color:var(--gold);background:rgba(201,169,110,.03)}
+.info-list li .ic{width:40px;height:40px;border:1px solid var(--gold-dark);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+
+/* Venue Grid */
+.venues{padding:100px 0;position:relative}
+.venues__bg{position:absolute;inset:0;opacity:.04}.venues__bg img{width:100%;height:100%;object-fit:cover}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;position:relative}
+.vc{border:1px solid var(--glass-border);overflow:hidden;transition:var(--t);background:var(--black2)}.vc:hover{border-color:var(--gold);transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.vc__img{aspect-ratio:3/4;overflow:hidden;position:relative}.vc__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s;filter:grayscale(30%)}.vc:hover .vc__img img{transform:scale(1.06);filter:grayscale(0%)}
+.vc__ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,11,11,.85) 0%,transparent 50%)}
+.vc__tag{position:absolute;top:16px;left:16px;padding:6px 16px;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.vc__body{padding:24px}.vc__name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:8px}.vc__addr{font-size:13px;color:var(--text-muted);margin-bottom:10px}.vc__phone{font-size:13px;color:var(--gold)}.vc__tags{display:flex;gap:8px;margin-top:12px}.vc__tags span{padding:4px 12px;border:1px solid var(--glass-border);font-size:11px;color:var(--text-muted)}
+
+/* Pricing */
+.pricing{padding:100px 0;background:var(--black2);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--glass-border);margin-top:48px}
+.pcard{background:var(--black);padding:48px 36px;text-align:center;transition:var(--t);position:relative;overflow:hidden}.pcard:hover{background:var(--black2)}
+.pcard--feat{background:var(--black2)}.pcard--feat::before{content:'BEST';position:absolute;top:20px;right:-24px;transform:rotate(45deg);background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:2px;padding:4px 36px}
+.pcard__name{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px}
+.pcard__price{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--gold);margin-bottom:4px}
+.pcard__unit{font-size:12px;color:var(--text-muted);margin-bottom:32px}
+.pcard__list{list-style:none;text-align:left;display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.pcard__list li{font-size:14px;color:var(--text-dim);display:flex;align-items:center;gap:10px}.pcard__list li::before{content:'—';color:var(--gold);font-size:12px}
+.pcard__btn{display:block;padding:16px;border:1.5px solid var(--gold);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);text-align:center;position:relative;overflow:hidden;transition:var(--t)}
+.pcard__btn::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(100%);transition:transform .4s;z-index:-1}.pcard__btn:hover::before{transform:translateY(0)}.pcard__btn:hover{color:var(--black)}
+
+/* CTA */
+.cta{padding:100px 0;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--glass-border)}
+.cta__bg{position:absolute;inset:0;opacity:.06}.cta__bg img{width:100%;height:100%;object-fit:cover}
+.cta__title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:900;margin-bottom:16px;position:relative}
+.cta__desc{font-size:15px;color:var(--text-dim);margin-bottom:36px;position:relative}
+.cta__btn{display:inline-block;padding:18px 56px;background:var(--gold);color:var(--black);font-size:14px;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:var(--t);position:relative}
+.cta__btn:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 20px 50px rgba(201,169,110,.2)}
+
+.footer{border-top:1px solid var(--glass-border);padding:48px 0}.footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}.footer__logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--gold);letter-spacing:3px}.footer__copy{font-size:11px;color:var(--text-muted);letter-spacing:2px}
+
+@media(max-width:1024px){.vgrid{grid-template-columns:repeat(2,1fr)}.pgrid{grid-template-columns:1fr}.info-split{grid-template-columns:1fr}.info-split__media{min-height:300px}}
+@media(max-width:768px){.nav{display:none}.mobile-toggle{display:block}.vgrid{grid-template-columns:1fr}.info-split__body{padding:48px 24px}.phero__stats{gap:24px}}
+</style>
+</head>
+<body>
+<header class="header" id="header"><div class="container"><a href="../index.html" class="logo">FIESTA</a><nav class="nav"><a href="../dot5/index.html" class="active">쩜오</a><a href="../hyperpublic/index.html">하이퍼블릭</a><a href="../nightlife/index.html">유흥</a><a href="tel:01012345678" class="nav__cta">Reserve</a></nav><button class="mobile-toggle">MENU</button></div></header>
+
+<section class="phero">
+  <div class="phero__bg"><img src="https://images.unsplash.com/photo-1571942676516-bcab84649e44?w=1600&q=80" alt=""><div class="phero__ov"></div></div>
+  <div class="container"><div class="phero__content">
+    <div class="phero__badge">Dot Five · 쩜오</div>
+    <h1 class="phero__title">강남 <em>쩜오</em></h1>
+    <p class="phero__desc">강남 최고급 아가씨들로만 구성된 정통 하이업소. 100% 예약제로 진행되며 비즈니스 접대에 최적화된 프리미엄 시스템입니다.</p>
+    <div class="phero__stats">
+      <div><div class="phero__stat-n">14</div><div class="phero__stat-l">Venues</div></div>
+      <div><div class="phero__stat-n">100%</div><div class="phero__stat-l">Reservation</div></div>
+      <div><div class="phero__stat-n">No.1</div><div class="phero__stat-l">Premium</div></div>
+    </div>
+  </div></div>
+</section>
+
+<div class="info-split">
+  <div class="info-split__media reveal"><img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?w=800&q=80" alt=""></div>
+  <div class="info-split__body reveal">
+    <span class="eyebrow">About Dot Five</span>
+    <h2 class="s-title">쩜오란?</h2>
+    <p style="font-size:15px;color:var(--text-dim);line-height:1.9">하이쩜오라고도 불리는 강남 쩜오는 사이즈와 서비스가 하이가게 중에서도 최고 수준입니다. 중요한 비즈니스 접대 자리에 최적화된 프리미엄 시스템.</p>
+    <ul class="info-list">
+      <li><span class="ic">👑</span>최고급 퀄리티 & 서비스</li>
+      <li><span class="ic">📋</span>100% 사전 예약제 운영</li>
+      <li><span class="ic">🤝</span>비즈니스 접대 특화</li>
+      <li><span class="ic">🔒</span>프라이빗 룸 보장</li>
+    </ul>
+  </div>
+</div>
+
+<section class="venues">
+  <div class="venues__bg"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1400&q=80" alt=""></div>
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">Recommended</span><h2 class="s-title">추천 쩜오 업소</h2></div>
+    <div class="vgrid">
+      <div class="vc reveal stagger"><div class="vc__img"><img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=500&q=80" alt=""><div class="vc__ov"></div><div class="vc__tag">Pick</div></div><div class="vc__body"><div class="vc__name">킹스맨</div><div class="vc__addr">📍 서울시 강남구 역삼동</div><div class="vc__phone">☎ 전화문의</div><div class="vc__tags"><span>예약제</span><span>프리미엄</span></div></div></div>
+      <div class="vc reveal stagger"><div class="vc__img"><img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?w=500&q=80" alt=""><div class="vc__ov"></div><div class="vc__tag">Hot</div></div><div class="vc__body"><div class="vc__name">더글로리</div><div class="vc__addr">📍 서울시 강남구 역삼동</div><div class="vc__phone">☎ 전화문의</div><div class="vc__tags"><span>예약제</span><span>접대추천</span></div></div></div>
+      <div class="vc reveal stagger"><div class="vc__img"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&q=80" alt=""><div class="vc__ov"></div><div class="vc__tag">New</div></div><div class="vc__body"><div class="vc__name">멀리건</div><div class="vc__addr">📍 서울시 강남구 역삼동</div><div class="vc__phone">☎ 전화문의</div><div class="vc__tags"><span>예약제</span><span>신규</span></div></div></div>
+      <div class="vc reveal stagger"><div class="vc__img"><img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=500&q=80" alt=""><div class="vc__ov"></div></div><div class="vc__body"><div class="vc__name">썸데이</div><div class="vc__addr">📍 서울시 강남구 역삼동</div><div class="vc__phone">☎ 전화문의</div><div class="vc__tags"><span>예약제</span></div></div></div>
+      <div class="vc reveal stagger"><div class="vc__img"><img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=500&q=80" alt=""><div class="vc__ov"></div></div><div class="vc__body"><div class="vc__name">블렌딩</div><div class="vc__addr">📍 서울시 강남구 역삼동</div><div class="vc__phone">☎ 전화문의</div><div class="vc__tags"><span>예약제</span></div></div></div>
+      <div class="vc reveal stagger"><div class="vc__img"><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&q=80" alt=""><div class="vc__ov"></div></div><div class="vc__body"><div class="vc__name">유니크</div><div class="vc__addr">📍 서울시 강남구 역삼동</div><div class="vc__phone">☎ 전화문의</div><div class="vc__tags"><span>예약제</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container">
+    <div class="reveal" style="text-align:center"><span class="eyebrow">— Pricing —</span><h2 class="s-title">쩜오 이용 안내</h2><p style="color:var(--text-dim);font-size:15px;margin-bottom:0">상황에 맞는 최적의 코스를 선택하세요</p></div>
+    <div class="pgrid">
+      <div class="pcard reveal stagger"><div class="pcard__name">Standard</div><div class="pcard__price">문의</div><div class="pcard__unit">1인 기준</div><ul class="pcard__list"><li>기본 룸 이용</li><li>음료 포함</li><li>2시간 기본</li></ul><a href="tel:01012345678" class="pcard__btn">Reserve</a></div>
+      <div class="pcard pcard--feat reveal stagger"><div class="pcard__name">Premium</div><div class="pcard__price">문의</div><div class="pcard__unit">1인 기준</div><ul class="pcard__list"><li>VIP 룸 이용</li><li>프리미엄 주류</li><li>시간 무제한</li><li>전담 매니저</li></ul><a href="tel:01012345678" class="pcard__btn">Reserve</a></div>
+      <div class="pcard reveal stagger"><div class="pcard__name">Business</div><div class="pcard__price">문의</div><div class="pcard__unit">단체 기준</div><ul class="pcard__list"><li>접대 전용 룸</li><li>맞춤 세팅</li><li>사전 상담</li></ul><a href="tel:01012345678" class="pcard__btn">Reserve</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__bg"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1400&q=80" alt=""></div>
+  <div class="container reveal">
+    <h2 class="cta__title">지금 바로 예약하세요</h2>
+    <p class="cta__desc">피에스타가 최고의 쩜오 경험을 준비합니다</p>
+    <a href="tel:01012345678" class="cta__btn">Reserve Now</a>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><a href="../index.html" class="footer__logo">FIESTA</a><div class="footer__copy">© 2025 FIESTA. All Rights Reserved.</div></div></footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('header').classList.toggle('scrolled',scrollY>80));
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')}),{threshold:.1,rootMargin:'0px 0px -40px 0px'}).observe(document.querySelectorAll('.reveal').forEach(el=>document.querySelector('body').__obs||(document.querySelector('body').__obs=true))||document.body);
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
