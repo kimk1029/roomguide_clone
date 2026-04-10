@@ -137,10 +137,10 @@ html{scroll-behavior:smooth}body{font-family:'Noto Sans KR',sans-serif;backgroun
 </style>
 </head>
 <body>
-<header class="header" id="header"><div class="container"><a href="../index.html" class="logo">CHOICE LOUNGE</a><nav class="nav"><a href="../dot5/index.html">쩜오</a><a href="../hyperpublic/index.html">하이퍼블릭</a><a href="../nightlife/index.html" class="active">유흥</a><a href="tel:01012345678" class="nav__cta">Reserve</a></nav><button class="mobile-toggle" onclick="document.getElementById('mobileNav').classList.add('open')">MENU</button></div></header>
+<header class="header" id="header"><div class="container"><a href="../index.html" class="logo">CHOICE LOUNGE</a><nav class="nav"><a href="../hyperpublic/index.html">하이퍼블릭</a><a href="../nightlife/index.html" class="active">유흥</a><a href="tel:01012345678" class="nav__cta">Reserve</a></nav><button class="mobile-toggle" onclick="document.getElementById('mobileNav').classList.add('open')">MENU</button></div></header>
 <nav class="mobile-nav" id="mobileNav">
   <button class="mobile-nav__close" onclick="this.parentElement.classList.remove('open')">✕</button>
-  <a href="../dot5/index.html" onclick="this.parentElement.classList.remove('open')">쩜오</a>
+  
   <a href="../hyperpublic/index.html" onclick="this.parentElement.classList.remove('open')">하이퍼블릭</a>
   <a href="../nightlife/index.html" onclick="this.parentElement.classList.remove('open')">유흥</a>
   <a href="tel:01012345678" style="color:var(--gold);border:1px solid var(--gold);padding:14px 40px;margin-top:12px">Reserve</a>
@@ -151,7 +151,7 @@ html{scroll-behavior:smooth}body{font-family:'Noto Sans KR',sans-serif;backgroun
   <div class="container"><div class="phero__content">
     <div class="phero__badge">Nightlife Guide</div>
     <h1 class="phero__title">강남 <em>유흥</em> 가이드</h1>
-    <p class="phero__desc">강남의 모든 유흥을 한눈에. 셔츠룸, 가라오케, 레깅스룸, 호스트바, 클럽까지 각 카테고리별 특징과 추천 업소를 안내합니다.</p>
+    <p class="phero__desc">강남의 모든 유흥을 한눈에. 하이퍼블릭, 가라오케, 레깅스룸, 호스트바, 클럽까지 각 카테고리별 특징과 추천 업소를 안내합니다.</p>
   </div></div>
 </section>
 
@@ -159,18 +159,10 @@ html{scroll-behavior:smooth}body{font-family:'Noto Sans KR',sans-serif;backgroun
   <div class="container">
     <div class="reveal" style="text-align:center"><span class="eyebrow">— Categories —</span><h2 class="s-title">카테고리별 가이드</h2></div>
     <div class="cat-grid">
-      <a href="../dot5/index.html" class="cat-card reveal stagger">
-        <div class="cat-card__bg"><img src="https://images.unsplash.com/photo-1571942676516-bcab84649e44?w=700&q=80" alt=""></div><div class="cat-card__ov"></div>
-        <div class="cat-card__body"><div class="cat-card__icon">🎤</div><div class="cat-card__name">쩜오</div><div class="cat-card__desc">강남 최고급 정통 하이업소. 100% 예약제, 비즈니스 접대에 최적화.</div><span class="cat-card__link">View More →</span></div>
-      </a>
       <a href="../hyperpublic/index.html" class="cat-card reveal stagger">
         <div class="cat-card__bg"><img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=700&q=80" alt=""></div><div class="cat-card__ov"></div>
-        <div class="cat-card__body"><div class="cat-card__icon">💎</div><div class="cat-card__name">하이퍼블릭</div><div class="cat-card__desc">퍼블릭과 하이쩜오의 장점을 결합. 합리적 가격에 최고의 퀄리티.</div><span class="cat-card__link">View More →</span></div>
+        <div class="cat-card__body"><div class="cat-card__icon">💎</div><div class="cat-card__name">하이퍼블릭</div><div class="cat-card__desc">퍼블릭과 최고급 업소의 장점을 결합. 합리적 가격에 최고의 퀄리티.</div><span class="cat-card__link">View More →</span></div>
       </a>
-      <div class="cat-card reveal stagger">
-        <div class="cat-card__bg"><img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=700&q=80" alt=""></div><div class="cat-card__ov"></div>
-        <div class="cat-card__body"><div class="cat-card__icon">👔</div><div class="cat-card__name">셔츠룸</div><div class="cat-card__desc">깔끔한 셔츠 복장의 매니저가 함께하는 프리미엄 가라오케.</div><span class="cat-card__link">Coming Soon</span></div>
-      </div>
       <div class="cat-card reveal stagger">
         <div class="cat-card__bg"><img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=700&q=80" alt=""></div><div class="cat-card__ov"></div>
         <div class="cat-card__body"><div class="cat-card__icon">🎵</div><div class="cat-card__name">가라오케</div><div class="cat-card__desc">부담없이 즐기는 정통 노래방 스타일. 다양한 가격대.</div><span class="cat-card__link">Coming Soon</span></div>
@@ -202,10 +194,10 @@ html{scroll-behavior:smooth}body{font-family:'Noto Sans KR',sans-serif;backgroun
   <div class="container">
     <div class="reveal" style="text-align:center"><span class="eyebrow">— FAQ —</span><h2 class="s-title">자주 묻는 질문</h2></div>
     <div class="faq__list">
-      <div class="faq-item reveal stagger"><div class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">하이퍼블릭과 쩜오의 차이는?</div><div class="faq-item__a"><p>쩜오는 100% 예약제의 최고급 업소, 하이퍼블릭은 쩜오급 퀄리티를 퍼블릭 분위기에서 합리적인 가격으로 즐길 수 있는 신개념 업소입니다.</p></div></div>
-      <div class="faq-item reveal stagger"><div class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">예약 없이 방문 가능한가요?</div><div class="faq-item__a"><p>쩜오는 사전 예약 필수. 하이퍼블릭이나 퍼블릭은 상황에 따라 당일 방문도 가능하지만 사전 예약을 권장합니다.</p></div></div>
+      <div class="faq-item reveal stagger"><div class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">하이퍼블릭이란?</div><div class="faq-item__a"><p>하이퍼블릭은 최고급 퀄리티를 퍼블릭 분위기에서 합리적인 가격으로 즐길 수 있는 신개념 업소입니다.</p></div></div>
+      <div class="faq-item reveal stagger"><div class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">예약 없이 방문 가능한가요?</div><div class="faq-item__a"><p>하이퍼블릭이나 퍼블릭은 상황에 따라 당일 방문도 가능하지만 사전 예약을 권장합니다.</p></div></div>
       <div class="faq-item reveal stagger"><div class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">비용은 어느정도 예상하면 되나요?</div><div class="faq-item__a"><p>카테고리와 인원, 이용 시간에 따라 달라집니다. 전화 상담 시 예산에 맞는 최적의 코스를 안내해드립니다.</p></div></div>
-      <div class="faq-item reveal stagger"><div class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">접대 목적으로 추천하는 곳은?</div><div class="faq-item__a"><p>중요한 접대에는 쩜오를, 비교적 캐주얼한 회식에는 하이퍼블릭을 추천합니다.</p></div></div>
+      <div class="faq-item reveal stagger"><div class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">접대 목적으로 추천하는 곳은?</div><div class="faq-item__a"><p>중요한 접대에는 하이퍼블릭을 추천합니다. 최고급 퀄리티와 편안한 분위기를 동시에 즐기실 수 있습니다.</p></div></div>
       <div class="faq-item reveal stagger"><div class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">영업 시간은?</div><div class="faq-item__a"><p>대부분의 업소가 오후 6시부터 새벽까지 운영합니다. 업소별로 차이가 있으니 예약 시 확인해주세요.</p></div></div>
     </div>
   </div>
