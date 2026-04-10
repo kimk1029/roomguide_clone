@@ -1,0 +1,9 @@
+.body__content h2 {
+  color: var(--primary-d-2);
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-s);
+}
+.body__content h3 {
+  color: var(--primary);
+  margin-bottom: var(--space-s);
+}

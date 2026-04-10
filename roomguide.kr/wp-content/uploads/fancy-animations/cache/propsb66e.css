@@ -1,0 +1,5 @@
+/*
+! Fancy Animations v2.4.3 | 2025-01-15 23:15:10
+*/
+
+:root{--fba-delay: 0.5s;--fba-duration: 1s;--fba-duration-text: 1;--fba-primary: var(--primary);--fba-secondary: var(--secondary);--fba-white: rgba(255, 255, 255, 1);--fba-black: rgba(12, 20, 39, 1);--fba-content: "Loading...";--fba-time: 0.7s;--fba-font-size: 5rem;--fba-bg: rgba(23, 33, 54, 1);--fba-color: rgba(255, 255, 255, 1);}
