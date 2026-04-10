@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>강남 쩜오 - FIESTA</title>
+<title>강남 쩜오 - CHOICE LOUNGE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -78,12 +78,78 @@ html{scroll-behavior:smooth}body{font-family:'Noto Sans KR',sans-serif;backgroun
 
 .footer{border-top:1px solid var(--glass-border);padding:48px 0}.footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}.footer__logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--gold);letter-spacing:3px}.footer__copy{font-size:11px;color:var(--text-muted);letter-spacing:2px}
 
-@media(max-width:1024px){.vgrid{grid-template-columns:repeat(2,1fr)}.pgrid{grid-template-columns:1fr}.info-split{grid-template-columns:1fr}.info-split__media{min-height:300px}}
-@media(max-width:768px){.nav{display:none}.mobile-toggle{display:block}.vgrid{grid-template-columns:1fr}.info-split__body{padding:48px 24px}.phero__stats{gap:24px}}
+@media(max-width:1024px){
+  .container{padding:0 24px}
+  .vgrid{grid-template-columns:repeat(2,1fr)}
+  .pgrid{grid-template-columns:1fr}
+  .info-split{grid-template-columns:1fr}
+  .info-split__media{min-height:250px}
+  .advs__grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .container{padding:0 16px}
+  .nav{display:none}
+  .mobile-toggle{display:block}
+  .mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(11,11,11,.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+  .mobile-nav.open{display:flex}
+  .mobile-nav a{font-size:18px;letter-spacing:4px;text-transform:uppercase;color:var(--text-dim)}
+  .mobile-nav a:hover{color:var(--gold)}
+  .mobile-nav__close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--gold);font-size:28px;cursor:pointer}
+  .header{padding:14px 0}
+  .logo{font-size:22px}
+  .phero{min-height:60vh;padding-bottom:60px}
+  .phero__title{font-size:clamp(32px,10vw,56px)}
+  .phero__desc{font-size:14px}
+  .phero__stats{gap:20px}
+  .phero__stat-n{font-size:28px}
+  .eyebrow{font-size:10px;letter-spacing:4px}
+  .s-title{font-size:clamp(22px,6vw,36px)}
+  .vgrid{grid-template-columns:1fr}
+  .vc__body{padding:16px}
+  .vc__name{font-size:17px}
+  .info-split__body{padding:32px 16px}
+  .info-list li{padding:12px;font-size:13px}
+  .info-list li .ic{width:32px;height:32px;font-size:14px}
+  .advs__grid{grid-template-columns:1fr}
+  .adv{padding:36px 24px}
+  .ctable{font-size:12px}
+  .ctable th,.ctable td{padding:12px}
+  .pricing{padding:60px 0}
+  .pcard{padding:32px 20px}
+  .pcard__price{font-size:32px}
+  .venues{padding:60px 0}
+  .cta{padding:60px 0}
+  .cta__title{font-size:clamp(24px,6vw,40px)}
+  .cta__btn{padding:16px 40px;font-size:13px}
+  .footer{padding:32px 0}
+  .footer__logo{font-size:18px}
+  .footer__copy{font-size:10px}
+  /* nightlife specific */
+  .cat-grid{grid-template-columns:1fr}
+  .cat-card{min-height:280px}
+  .cat-card--full{grid-column:auto}
+  .cat-card--full .cat-card__body{flex-direction:column;gap:24px}
+  .cat-card__name{font-size:22px}
+  .tips__grid{grid-template-columns:1fr}
+  .tip{padding:32px 20px}
+  .faq-item__q{font-size:14px;padding:18px 0}
+}
+@media(max-width:480px){
+  .phero__title{font-size:clamp(28px,10vw,44px)}
+  .phero__stats{flex-wrap:wrap}
+  .vc{border:1px solid var(--glass-border)}
+}
 </style>
 </head>
 <body>
-<header class="header" id="header"><div class="container"><a href="../index.html" class="logo">FIESTA</a><nav class="nav"><a href="../dot5/index.html" class="active">쩜오</a><a href="../hyperpublic/index.html">하이퍼블릭</a><a href="../nightlife/index.html">유흥</a><a href="tel:01012345678" class="nav__cta">Reserve</a></nav><button class="mobile-toggle">MENU</button></div></header>
+<header class="header" id="header"><div class="container"><a href="../index.html" class="logo">CHOICE LOUNGE</a><nav class="nav"><a href="../dot5/index.html" class="active">쩜오</a><a href="../hyperpublic/index.html">하이퍼블릭</a><a href="../nightlife/index.html">유흥</a><a href="tel:01012345678" class="nav__cta">Reserve</a></nav><button class="mobile-toggle" onclick="document.getElementById('mobileNav').classList.add('open')">MENU</button></div></header>
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav__close" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="../dot5/index.html" onclick="this.parentElement.classList.remove('open')">쩜오</a>
+  <a href="../hyperpublic/index.html" onclick="this.parentElement.classList.remove('open')">하이퍼블릭</a>
+  <a href="../nightlife/index.html" onclick="this.parentElement.classList.remove('open')">유흥</a>
+  <a href="tel:01012345678" style="color:var(--gold);border:1px solid var(--gold);padding:14px 40px;margin-top:12px">Reserve</a>
+</nav>
 
 <section class="phero">
   <div class="phero__bg"><img src="https://images.unsplash.com/photo-1571942676516-bcab84649e44?w=1600&q=80" alt=""><div class="phero__ov"></div></div>
@@ -144,12 +210,12 @@ html{scroll-behavior:smooth}body{font-family:'Noto Sans KR',sans-serif;backgroun
   <div class="cta__bg"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1400&q=80" alt=""></div>
   <div class="container reveal">
     <h2 class="cta__title">지금 바로 예약하세요</h2>
-    <p class="cta__desc">피에스타가 최고의 쩜오 경험을 준비합니다</p>
+    <p class="cta__desc">초이스라운지가 최고의 쩜오 경험을 준비합니다</p>
     <a href="tel:01012345678" class="cta__btn">Reserve Now</a>
   </div>
 </section>
 
-<footer class="footer"><div class="container"><a href="../index.html" class="footer__logo">FIESTA</a><div class="footer__copy">© 2025 FIESTA. All Rights Reserved.</div></div></footer>
+<footer class="footer"><div class="container"><a href="../index.html" class="footer__logo">CHOICE LOUNGE</a><div class="footer__copy">© 2025 CHOICE LOUNGE. All Rights Reserved.</div></div></footer>
 
 <script>
 window.addEventListener('scroll',()=>document.getElementById('header').classList.toggle('scrolled',scrollY>80));
