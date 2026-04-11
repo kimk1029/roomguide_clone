@@ -1,3 +1,3 @@
 FROM nginx:alpine
-COPY roomguide.kr /usr/share/nginx/html
+COPY choicelounge /usr/share/nginx/html
 EXPOSE 80
