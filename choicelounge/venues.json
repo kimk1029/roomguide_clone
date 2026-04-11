@@ -2,7 +2,9 @@
   "unmi": {
     "slug": "unmi",
     "name": "유앤미",
+    "nameEn": "Unmi",
     "desc": "높은 층고와 독보적인 인테리어를 경험할 수 있는 매장입니다.",
+    "descEn": "Experience exceptional interior design with impressive ceiling heights at this premium venue.",
     "status": "영업중",
     "rooms": 40,
     "part1": {
@@ -52,6 +54,13 @@
     "phone": "010-8119-1677",
     "phoneLink": "tel:01081191677",
     "notice": "기본금은 초이스(매니저) 1인 기준 비용입니다. 인원 추가 시 기본금이 추가됩니다. TC는 60분 기준이며 연장 시 별도 적용됩니다. RT는 웨이터 서비스 팁입니다. 공휴일 및 금·토요일 가격은 별도 문의 바랍니다.",
+    "social": {
+      "phone": "010-8119-1677",
+      "telegram": "https://t.me/unmi_gangnam",
+      "kakao": "https://pf.kakao.com/_unmi_gn",
+      "instagram": "https://instagram.com/unmi_gangnam",
+      "twitter": "https://x.com/unmi_gangnam"
+    },
     "meta": {
       "title": "유앤미 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 유앤미 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
@@ -60,7 +69,9 @@
   "dessert": {
     "slug": "dessert",
     "name": "디저트",
+    "nameEn": "Dessert",
     "desc": "강남 대형 매장 중 트랜스젠더 공연과 전용 박스를 보유한 곳입니다.",
+    "descEn": "One of Gangnam's largest venues featuring exclusive transgender performances and VIP boxes.",
     "status": "영업중",
     "rooms": 48,
     "part1": {
@@ -110,6 +121,13 @@
     "phone": "010-8119-1677",
     "phoneLink": "tel:01081191677",
     "notice": "기본금은 초이스(매니저) 1인 기준 비용입니다. 인원 추가 시 기본금이 추가됩니다. TC는 60분 기준이며 연장 시 별도 적용됩니다. RT는 웨이터 서비스 팁입니다. 공휴일 및 금·토요일 가격은 별도 문의 바랍니다.",
+    "social": {
+      "phone": "010-8119-1677",
+      "telegram": "https://t.me/dessert_gangnam",
+      "kakao": "https://pf.kakao.com/_dessert_gn",
+      "instagram": "https://instagram.com/dessert_gangnam",
+      "twitter": "https://x.com/dessert_gangnam"
+    },
     "meta": {
       "title": "디저트 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 디저트 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
@@ -118,7 +136,9 @@
   "dalto": {
     "slug": "dalto",
     "name": "달토",
+    "nameEn": "Dalto",
     "desc": "전반적으로 평균 외모 수준이 높게 형성된 매장입니다.",
+    "descEn": "Known for consistently high standards among staff, offering a premium choice experience.",
     "status": "영업중",
     "rooms": 35,
     "part1": {
@@ -168,6 +188,13 @@
     "phone": "010-8119-1677",
     "phoneLink": "tel:01081191677",
     "notice": "기본금은 초이스(매니저) 1인 기준 비용입니다. 인원 추가 시 기본금이 추가됩니다. TC는 60분 기준이며 연장 시 별도 적용됩니다. RT는 웨이터 서비스 팁입니다. 공휴일 및 금·토요일 가격은 별도 문의 바랍니다.",
+    "social": {
+      "phone": "010-8119-1677",
+      "telegram": "https://t.me/dalto_gangnam",
+      "kakao": "https://pf.kakao.com/_dalto_gn",
+      "instagram": "https://instagram.com/dalto_gangnam",
+      "twitter": "https://x.com/dalto_gangnam"
+    },
     "meta": {
       "title": "달토 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 달토 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
@@ -176,7 +203,9 @@
   "elite": {
     "slug": "elite",
     "name": "엘리트",
+    "nameEn": "Elite",
     "desc": "2026년 4월 인테리어를 새롭게 완료했으며, 전문 DJ들이 상주하는 매장입니다.",
+    "descEn": "Newly renovated in April 2026 with resident professional DJs and Gangnam's largest capacity.",
     "status": "영업중",
     "rooms": 54,
     "part1": {
@@ -226,6 +255,13 @@
     "phone": "010-8119-1677",
     "phoneLink": "tel:01081191677",
     "notice": "기본금은 초이스(매니저) 1인 기준 비용입니다. 인원 추가 시 기본금이 추가됩니다. TC는 60분 기준이며 연장 시 별도 적용됩니다. RT는 웨이터 서비스 팁입니다. 공휴일 및 금·토요일 가격은 별도 문의 바랍니다.",
+    "social": {
+      "phone": "010-8119-1677",
+      "telegram": "https://t.me/elite_gangnam",
+      "kakao": "https://pf.kakao.com/_elite_gn",
+      "instagram": "https://instagram.com/elite_gangnam",
+      "twitter": "https://x.com/elite_gangnam"
+    },
     "meta": {
       "title": "엘리트 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 엘리트 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
@@ -234,7 +270,9 @@
   "dopamine": {
     "slug": "dopamine",
     "name": "도파민",
+    "nameEn": "Dopamine",
     "desc": "강남 대형 매장 중 24시간 운영을 선도하는 곳으로 알려져 있습니다.",
+    "descEn": "Gangnam's leading 24-hour operation — open anytime, any day.",
     "status": "영업중",
     "rooms": 50,
     "part1": {
@@ -284,6 +322,13 @@
     "phone": "010-8119-1677",
     "phoneLink": "tel:01081191677",
     "notice": "기본금은 초이스(매니저) 1인 기준 비용입니다. 인원 추가 시 기본금이 추가됩니다. TC는 60분 기준이며 연장 시 별도 적용됩니다. RT는 웨이터 서비스 팁입니다. 공휴일 및 금·토요일 가격은 별도 문의 바랍니다.",
+    "social": {
+      "phone": "010-8119-1677",
+      "telegram": "https://t.me/dopamine_gangnam",
+      "kakao": "https://pf.kakao.com/_dopamine_gn",
+      "instagram": "https://instagram.com/dopamine_gangnam",
+      "twitter": "https://x.com/dopamine_gangnam"
+    },
     "meta": {
       "title": "도파민 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 도파민 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
@@ -292,7 +337,9 @@
   "zeus": {
     "slug": "zeus",
     "name": "제우스",
+    "nameEn": "Zeus",
     "desc": "2026년 2월 2일 그랜드 오픈, 층별로 다른 콘셉트의 룸이 구성된 매장입니다.",
+    "descEn": "Grand opening February 2026 — multi-floor concept rooms for a premium new experience.",
     "status": "영업중",
     "rooms": 45,
     "part1": {
@@ -342,6 +389,13 @@
     "phone": "010-8119-1677",
     "phoneLink": "tel:01081191677",
     "notice": "기본금은 초이스(매니저) 1인 기준 비용입니다. 인원 추가 시 기본금이 추가됩니다. TC는 60분 기준이며 연장 시 별도 적용됩니다. RT는 웨이터 서비스 팁입니다. 공휴일 및 금·토요일 가격은 별도 문의 바랍니다.",
+    "social": {
+      "phone": "010-8119-1677",
+      "telegram": "https://t.me/zeus_gangnam",
+      "kakao": "https://pf.kakao.com/_zeus_gn",
+      "instagram": "https://instagram.com/zeus_gangnam",
+      "twitter": "https://x.com/zeus_gangnam"
+    },
     "meta": {
       "title": "제우스 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 제우스 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
@@ -350,7 +404,9 @@
   "sumokwon": {
     "slug": "sumokwon",
     "name": "수목원",
+    "nameEn": "Sumokwon",
     "desc": "안정적인 운영 흐름과 꾸준한 영업 상태가 유지되는 매장입니다.",
+    "descEn": "Consistent operations and steady service make this a reliable favorite.",
     "status": "영업중",
     "rooms": 38,
     "part1": {
@@ -400,6 +456,13 @@
     "phone": "010-8119-1677",
     "phoneLink": "tel:01081191677",
     "notice": "기본금은 초이스(매니저) 1인 기준 비용입니다. 인원 추가 시 기본금이 추가됩니다. TC는 60분 기준이며 연장 시 별도 적용됩니다. RT는 웨이터 서비스 팁입니다. 공휴일 및 금·토요일 가격은 별도 문의 바랍니다.",
+    "social": {
+      "phone": "010-8119-1677",
+      "telegram": "https://t.me/sumokwon_gangnam",
+      "kakao": "https://pf.kakao.com/_sumokwon_gn",
+      "instagram": "https://instagram.com/sumokwon_gangnam",
+      "twitter": "https://x.com/sumokwon_gangnam"
+    },
     "meta": {
       "title": "수목원 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 수목원 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
@@ -408,7 +471,9 @@
   "worklife": {
     "slug": "worklife",
     "name": "워라벨",
+    "nameEn": "Worklife",
     "desc": "프라이빗과 프리미엄의 구조를 선호하는 경우 비교하기 좋은 매장입니다.",
+    "descEn": "Ideal for private and premium experiences — perfectly suited for business entertainment.",
     "status": "영업중",
     "rooms": 36,
     "part1": {
@@ -458,6 +523,13 @@
     "phone": "010-8119-1677",
     "phoneLink": "tel:01081191677",
     "notice": "기본금은 초이스(매니저) 1인 기준 비용입니다. 인원 추가 시 기본금이 추가됩니다. TC는 60분 기준이며 연장 시 별도 적용됩니다. RT는 웨이터 서비스 팁입니다. 공휴일 및 금·토요일 가격은 별도 문의 바랍니다.",
+    "social": {
+      "phone": "010-8119-1677",
+      "telegram": "https://t.me/worklife_gangnam",
+      "kakao": "https://pf.kakao.com/_worklife_gn",
+      "instagram": "https://instagram.com/worklife_gangnam",
+      "twitter": "https://x.com/worklife_gangnam"
+    },
     "meta": {
       "title": "워라벨 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 워라벨 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."

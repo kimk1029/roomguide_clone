@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>강남 하이퍼블릭 완벽 가이드 | 초이스라운지</title>
 <meta name="description" content="강남 하이퍼블릭 가격, 시스템, 분위기, 가게별 특징까지 실제 기준으로 정리한 정보 페이지입니다.">
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -88,10 +89,18 @@ img{max-width:100%;display:block}
 .mobile-nav a:hover{color:var(--gold)}
 .mobile-nav__close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--gold);font-size:28px;cursor:pointer}
 
+/* Lang toggle */
+body:not(.lang-en) .en-t{display:none!important}
+body.lang-en .ko-t{display:none!important}
+.lang-btn{background:none;border:1px solid var(--gold-dark);color:var(--text-muted);font-size:10px;letter-spacing:2px;padding:5px 10px;cursor:pointer;transition:var(--t);font-family:'Noto Sans KR',sans-serif}
+.lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+/* Parallax */
+.hero__bg{position:absolute;inset:0;overflow:hidden}
+
 /* Hero */
 .hero{position:relative;height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero__bg{position:absolute;inset:0}
-.hero__bg img{width:100%;height:100%;object-fit:cover;animation:heroZoom 20s ease infinite alternate}
+.hero__bg img{width:100%;height:130%;object-fit:cover;will-change:transform;transform:translateY(0)}
 .hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.4) 0%,rgba(11,11,11,.7) 60%,var(--black) 100%)}
 .hero__grain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
 .hero__content{position:relative;z-index:2;padding:0 32px;max-width:900px}
@@ -348,9 +357,10 @@ img{max-width:100%;display:block}
   <div class="container">
     <a href="index.html" class="logo">CHOICE LOUNGE</a>
     <nav class="nav">
-      <a href="highperpublic/index.html">하이퍼블릭</a>
-      <a href="nightlife/index.html">유흥</a>
+      <a href="highperpublic/index.html"><span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span></a>
+      <a href="nightlife/index.html"><span class="ko-t">유흥</span><span class="en-t">Nightlife</span></a>
       <a href="tel:01081191677" class="nav__cta">Reserve</a>
+      <button class="lang-btn" id="langBtn">EN</button>
     </nav>
     <button class="mobile-toggle" id="mobileOpen">MENU</button>
   </div>
@@ -359,15 +369,16 @@ img{max-width:100%;display:block}
 <!-- Mobile Nav -->
 <nav class="mobile-nav" id="mobileNav">
   <button class="mobile-nav__close" id="mobileClose">✕</button>
-  <a href="highperpublic/index.html">하이퍼블릭</a>
-  <a href="nightlife/index.html">유흥</a>
-  <a href="tel:01081191677" style="color:var(--gold);border:1px solid var(--gold);padding:14px 40px;margin-top:12px">Reserve</a>
+  <a href="highperpublic/index.html"><span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span></a>
+  <a href="nightlife/index.html"><span class="ko-t">유흥</span><span class="en-t">Nightlife</span></a>
+  <button class="lang-btn" id="mobileLangBtn" style="margin-top:8px">EN</button>
+  <a href="tel:01081191677" style="color:var(--gold);border:1px solid var(--gold);padding:14px 40px;margin-top:8px">Reserve</a>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
   <div class="hero__bg">
-    <img src="https://images.unsplash.com/photo-1519214605650-76a613ee3245?w=1600&q=80" alt="강남 하이퍼블릭">
+    <img src="https://images.unsplash.com/photo-1519214605650-76a613ee3245?w=1600&q=80" alt="강남 하이퍼블릭" id="heroBgImg" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
     <div class="hero__overlay"></div>
     <div class="hero__grain"></div>
   </div>
@@ -639,7 +650,7 @@ img{max-width:100%;display:block}
           </div>
         </div>
       </div>
-      <a href="/gangnam-highperpublic/history" class="timeline-link">전체 등록·폐업 기록 보기 →</a>
+      <a href="gangnam-highperpublic/history" class="timeline-link">전체 등록·폐업 기록 보기 →</a>
     </div>
   </div>
 </section>
@@ -665,7 +676,7 @@ img{max-width:100%;display:block}
         <div class="venue-card__body">
           <div class="venue-card__name">유앤미</div>
           <p class="venue-card__desc">높은 층고와 독보적인 인테리어를 경험할 수 있는 매장입니다.</p>
-          <a href="/gangnam-highperpublic/unmi" class="venue-card__btn">자세히 보기</a>
+          <a href="gangnam-highperpublic/unmi" class="venue-card__btn"><span class="ko-t">자세히 보기</span><span class="en-t">View Details</span></a>
         </div>
       </div>
       <div class="venue-card reveal stagger">
@@ -676,7 +687,7 @@ img{max-width:100%;display:block}
         <div class="venue-card__body">
           <div class="venue-card__name">디저트</div>
           <p class="venue-card__desc">강남 대형 매장 중 트랜스젠더 공연과 전용 박스를 보유한 곳입니다.</p>
-          <a href="/gangnam-highperpublic/dessert" class="venue-card__btn">자세히 보기</a>
+          <a href="gangnam-highperpublic/dessert" class="venue-card__btn"><span class="ko-t">자세히 보기</span><span class="en-t">View Details</span></a>
         </div>
       </div>
       <div class="venue-card reveal stagger">
@@ -687,7 +698,7 @@ img{max-width:100%;display:block}
         <div class="venue-card__body">
           <div class="venue-card__name">달토</div>
           <p class="venue-card__desc">전반적으로 평균 외모 수준이 높게 형성된 매장입니다.</p>
-          <a href="/gangnam-highperpublic/dalto" class="venue-card__btn">자세히 보기</a>
+          <a href="gangnam-highperpublic/dalto" class="venue-card__btn"><span class="ko-t">자세히 보기</span><span class="en-t">View Details</span></a>
         </div>
       </div>
       <div class="venue-card reveal stagger">
@@ -698,7 +709,7 @@ img{max-width:100%;display:block}
         <div class="venue-card__body">
           <div class="venue-card__name">엘리트</div>
           <p class="venue-card__desc">2026년 4월 인테리어를 새롭게 완료했으며, 전문 DJ들이 상주하는 매장입니다.</p>
-          <a href="/gangnam-highperpublic/elite" class="venue-card__btn">자세히 보기</a>
+          <a href="gangnam-highperpublic/elite" class="venue-card__btn"><span class="ko-t">자세히 보기</span><span class="en-t">View Details</span></a>
         </div>
       </div>
       <div class="venue-card reveal stagger">
@@ -709,7 +720,7 @@ img{max-width:100%;display:block}
         <div class="venue-card__body">
           <div class="venue-card__name">도파민</div>
           <p class="venue-card__desc">강남 대형 매장 중 24시간 운영을 선도하는 곳으로 알려져 있습니다.</p>
-          <a href="/gangnam-highperpublic/dopamine" class="venue-card__btn">자세히 보기</a>
+          <a href="gangnam-highperpublic/dopamine" class="venue-card__btn"><span class="ko-t">자세히 보기</span><span class="en-t">View Details</span></a>
         </div>
       </div>
       <div class="venue-card reveal stagger">
@@ -720,7 +731,7 @@ img{max-width:100%;display:block}
         <div class="venue-card__body">
           <div class="venue-card__name">제우스</div>
           <p class="venue-card__desc">2026년 2월 2일 그랜드 오픈, 층별로 다른 콘셉트의 룸이 구성된 매장입니다.</p>
-          <a href="/gangnam-highperpublic/zeus" class="venue-card__btn">자세히 보기</a>
+          <a href="gangnam-highperpublic/zeus" class="venue-card__btn"><span class="ko-t">자세히 보기</span><span class="en-t">View Details</span></a>
         </div>
       </div>
       <div class="venue-card reveal stagger">
@@ -731,7 +742,7 @@ img{max-width:100%;display:block}
         <div class="venue-card__body">
           <div class="venue-card__name">수목원</div>
           <p class="venue-card__desc">안정적인 운영 흐름과 꾸준한 영업 상태가 유지되는 매장입니다.</p>
-          <a href="/gangnam-highperpublic/sumokwon" class="venue-card__btn">자세히 보기</a>
+          <a href="gangnam-highperpublic/sumokwon" class="venue-card__btn"><span class="ko-t">자세히 보기</span><span class="en-t">View Details</span></a>
         </div>
       </div>
       <div class="venue-card reveal stagger">
@@ -742,12 +753,12 @@ img{max-width:100%;display:block}
         <div class="venue-card__body">
           <div class="venue-card__name">워라벨</div>
           <p class="venue-card__desc">프라이빗과 프리미엄의 구조를 선호하는 경우 비교하기 좋은 매장입니다.</p>
-          <a href="/gangnam-highperpublic/worklife" class="venue-card__btn">자세히 보기</a>
+          <a href="gangnam-highperpublic/worklife" class="venue-card__btn"><span class="ko-t">자세히 보기</span><span class="en-t">View Details</span></a>
         </div>
       </div>
     </div>
     <div class="venue-history reveal">
-      <a href="/gangnam-highperpublic/history">전체 등록·폐업 기록 보기 →</a>
+      <a href="gangnam-highperpublic/history">전체 등록·폐업 기록 보기 →</a>
     </div>
     <div class="venue-cta-bar reveal">
       <h3>강남 하이퍼블릭 상세 정보 더 보기</h3>
@@ -792,8 +803,8 @@ img{max-width:100%;display:block}
       <h2 class="section-title">강남 하이퍼블릭 상세 정보 더 보기</h2>
       <p class="section-desc">원하는 스타일에 맞는 매장을 카드형 리스트에서 선택하거나, 등록·폐업 기록과 시장 변화 데이터 페이지까지 함께 확인해보세요.</p>
       <div class="cta-buttons">
-        <a href="/gangnam-highperpublic/history" class="btn-gold">데이터 페이지 보기</a>
-        <a href="/gangnam-highperpublic/unmi" class="btn-outline">하부페이지 예시 보기</a>
+        <a href="gangnam-highperpublic/history" class="btn-gold">데이터 페이지 보기</a>
+        <a href="gangnam-highperpublic/unmi" class="btn-outline">하부페이지 예시 보기</a>
       </div>
     </div>
   </div>
@@ -828,8 +839,9 @@ img{max-width:100%;display:block}
         <p class="footer__notice">초이스라운지는 방문자분들께 정확한 정보를 제공하기 위해 노력하고 있습니다. 제공된 정보의 정확도에 대해 법적책임이 없음을 고지드립니다.</p>
       </div>
       <div class="footer__links">
-        <a href="highperpublic/index.html">하이퍼블릭</a>
-        <a href="nightlife/index.html">유흥</a>
+        <a href="highperpublic/index.html"><span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span></a>
+        <a href="nightlife/index.html"><span class="ko-t">유흥</span><span class="en-t">Nightlife</span></a>
+        <a href="sitemap.xml">Sitemap</a>
       </div>
     </div>
     <div class="footer__bottom">© 2026 CHOICE LOUNGE. All Rights Reserved.</div>
@@ -892,6 +904,35 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item').forEach(function(el){ el.classList.remove('open'); });
   if(!isOpen) item.classList.add('open');
 }
+
+/* ── 패럴렉스 ── */
+var heroBgImg = document.getElementById('heroBgImg');
+var heroSection = document.querySelector('.hero');
+function updateParallax(){
+  var sy = window.pageYOffset;
+  if(heroBgImg && heroSection && sy < heroSection.offsetHeight * 1.5){
+    heroBgImg.style.transform = 'translateY('+Math.round(sy*0.35)+'px)';
+  }
+}
+window.addEventListener('scroll', updateParallax, {passive:true});
+
+/* ── 언어 토글 ── */
+var isEn = localStorage.getItem('cl_lang')==='en';
+function applyLang(){
+  document.body.classList.toggle('lang-en', isEn);
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.textContent=isEn?'한':'EN'});
+  document.documentElement.lang = isEn ? 'en' : 'ko-KR';
+}
+applyLang();
+function toggleLang(){
+  isEn = !isEn;
+  localStorage.setItem('cl_lang', isEn?'en':'ko');
+  applyLang();
+}
+var lb = document.getElementById('langBtn');
+var mlb = document.getElementById('mobileLangBtn');
+if(lb) lb.addEventListener('click', toggleLang);
+if(mlb) mlb.addEventListener('click', function(){ document.getElementById('mobileNav').classList.remove('open'); toggleLang(); });
 </script>
 </body>
 </html>

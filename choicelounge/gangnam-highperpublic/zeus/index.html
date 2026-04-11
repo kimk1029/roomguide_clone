@@ -8,7 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --gold:#c9a96e;--gold-light:#e8d5b0;--gold-dark:#a07d4a;
   --black:#0b0b0b;--black2:#111;--black3:#181818;--black4:#222;
@@ -22,18 +23,23 @@ img{max-width:100%;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 32px}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px}
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s}.reveal.v{opacity:1;transform:none}
+/* Lang */
+body:not(.lang-en) .en-t{display:none!important}
+body.lang-en .ko-t{display:none!important}
+.lang-btn{background:none;border:1px solid var(--gold-dark);color:var(--text-muted);font-size:10px;letter-spacing:2px;padding:5px 10px;cursor:pointer;transition:var(--t);font-family:'Noto Sans KR',sans-serif}
+.lang-btn:hover{border-color:var(--gold);color:var(--gold)}
 /* Header */
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--t)}
-.header.scrolled{padding:12px 0;background:rgba(11,11,11,.95);backdrop-filter:blur(30px);border-bottom:1px solid var(--glass-border)}
+.header.scrolled{padding:12px 0;background:rgba(11,11,11,.96);backdrop-filter:blur(30px);border-bottom:1px solid var(--glass-border)}
 .header .container{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--gold);letter-spacing:3px}
-.nav{display:flex;align-items:center;gap:32px}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:var(--gold);letter-spacing:3px}
+.nav{display:flex;align-items:center;gap:28px}
 .nav a{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}
 .nav a:hover,.nav a.active{color:var(--gold)}
-.nav__cta{padding:12px 28px;border:1.5px solid var(--gold);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold)!important;position:relative;overflow:hidden}
+.nav__cta{padding:11px 26px;border:1.5px solid var(--gold);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold)!important;position:relative;overflow:hidden}
 .nav__cta::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(100%);transition:transform .4s;z-index:-1}
 .nav__cta:hover::before{transform:translateY(0)}.nav__cta:hover{color:var(--black)!important}
-.mobile-toggle{display:none;background:none;border:none;color:var(--gold);font-size:22px;cursor:pointer;letter-spacing:3px}
+.mobile-toggle{display:none;background:none;border:none;color:var(--gold);font-size:20px;cursor:pointer;letter-spacing:3px}
 .mobile-nav{display:none;position:fixed;inset:0;background:rgba(11,11,11,.97);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
 .mobile-nav.open{display:flex}
 .mobile-nav a{font-size:17px;letter-spacing:4px;text-transform:uppercase;color:var(--text-dim)}.mobile-nav a:hover{color:var(--gold)}
@@ -41,17 +47,17 @@ img{max-width:100%;display:block}
 /* Eyebrow */
 .eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block}
 /* Hero */
-.dhero{position:relative;min-height:85vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:80px}
-.dhero__bg{position:absolute;inset:0}.dhero__bg img{width:100%;height:100%;object-fit:cover;animation:sz 22s ease infinite alternate}
-.dhero__ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,11,11,1) 0%,rgba(11,11,11,.55) 55%,rgba(11,11,11,.15) 100%)}
-@keyframes sz{0%{transform:scale(1)}100%{transform:scale(1.1)}}
+.dhero{position:relative;min-height:90vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:80px}
+.dhero__bg{position:absolute;inset:0;overflow:hidden}
+.dhero__bg img{width:100%;height:130%;object-fit:cover;will-change:transform;transform:translateY(0)}
+.dhero__ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,11,11,1) 0%,rgba(11,11,11,.5) 55%,rgba(11,11,11,.1) 100%)}
 .dhero__content{position:relative;z-index:2;max-width:800px}
 .dhero__breadcrumb{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px}
 .dhero__breadcrumb a{color:var(--gold-dark)}.dhero__breadcrumb a:hover{color:var(--gold)}
 .dhero__badge{display:inline-flex;align-items:center;gap:8px;padding:7px 20px;border:1px solid var(--gold-dark);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
 .dhero__badge-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 1.5s ease infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.dhero__title{font-family:'Playfair Display',serif;font-size:clamp(52px,10vw,96px);font-weight:900;line-height:.9;margin-bottom:20px}
+.dhero__title{font-family:'Playfair Display',serif;font-size:clamp(48px,9vw,96px);font-weight:900;line-height:.9;margin-bottom:20px}
 .dhero__title em{font-style:italic;color:var(--gold)}
 .dhero__desc{font-size:15px;color:var(--text-dim);line-height:1.8;max-width:520px;font-weight:300;margin-bottom:28px}
 .dhero__meta{display:flex;gap:12px;flex-wrap:wrap}
@@ -63,24 +69,40 @@ img{max-width:100%;display:block}
 .contact-bar__label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
 .contact-bar__value{font-size:15px;font-weight:700;color:var(--text)}
 .contact-bar__value.gold{color:var(--gold)}
-.contact-bar__btns{display:flex;gap:10px}
+.contact-bar__btns{display:flex;gap:10px;flex-wrap:wrap}
 .btn-call{padding:13px 28px;background:var(--gold);color:var(--black);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:var(--t);white-space:nowrap;display:inline-block}
 .btn-call:hover{background:var(--gold-light);transform:translateY(-2px);color:var(--black)}
 .btn-call-out{padding:13px 28px;border:1.5px solid var(--gold);color:var(--gold);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:var(--t);white-space:nowrap;display:inline-block}
 .btn-call-out:hover{background:var(--gold);color:var(--black)}
+/* Social bar */
+.social-bar{background:var(--black3);border-bottom:1px solid var(--glass-border);padding:16px 0}
+.social-bar__inner{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.soc-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border:1px solid var(--glass-border);font-size:12px;letter-spacing:.5px;color:var(--text-dim);transition:var(--t);white-space:nowrap;background:transparent}
+.soc-btn svg{width:15px;height:15px;flex-shrink:0}
+.soc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.soc-btn--phone{border-color:var(--gold-dark);color:var(--gold)}
+.soc-btn--phone:hover{background:var(--gold);color:var(--black)}
+.soc-btn--telegram{border-color:#229ED9;color:#229ED9}
+.soc-btn--telegram:hover{background:#229ED9;color:#fff}
+.soc-btn--kakao{border-color:#F9E000;color:#F9E000}
+.soc-btn--kakao:hover{background:#F9E000;color:#3A1D1D}
+.soc-btn--insta{border-color:#E1306C;color:#E1306C}
+.soc-btn--insta:hover{background:#E1306C;color:#fff}
+.soc-btn--twitter{border-color:#aaa;color:#aaa}
+.soc-btn--twitter:hover{background:#222;color:#fff;border-color:#fff}
 /* Pricing */
 .pricing-sec{padding:100px 0}
 .pricing-sec__title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;margin-bottom:12px}
 .pricing-sec__desc{font-size:15px;color:var(--text-dim);line-height:1.8;font-weight:300;margin-bottom:40px}
-.ptabs{display:flex;margin-bottom:28px;border:1px solid var(--glass-border);width:fit-content}
-.ptab{padding:12px 36px;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);cursor:pointer;transition:var(--t)}
+.ptabs{display:flex;margin-bottom:28px;border:1px solid var(--glass-border);width:fit-content;flex-wrap:wrap}
+.ptab{padding:12px 32px;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);cursor:pointer;transition:var(--t)}
 .ptab.active{background:var(--gold);color:var(--black)}
 .ptab-content{display:none}.ptab-content.show{display:block}
-.ptable-wrap{overflow-x:auto}
-.ptable{width:100%;border-collapse:collapse;min-width:560px}
-.ptable th{background:var(--black3);color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:15px 18px;border:1px solid var(--glass-border);text-align:center;font-weight:700}
+.ptable-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ptable{width:100%;border-collapse:collapse;min-width:480px}
+.ptable th{background:var(--black3);color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:14px 16px;border:1px solid var(--glass-border);text-align:center;font-weight:700}
 .ptable th.lh{text-align:left}
-.ptable td{padding:13px 18px;border:1px solid var(--glass-border);font-size:14px;color:var(--text-dim);text-align:center}
+.ptable td{padding:12px 16px;border:1px solid var(--glass-border);font-size:14px;color:var(--text-dim);text-align:center}
 .ptable td.rh{text-align:left;font-weight:700;color:var(--text);background:var(--black2);white-space:nowrap}
 .ptable tr:hover td{background:rgba(201,169,110,.02)}
 .ptable .total td{background:var(--black3)}
@@ -101,79 +123,114 @@ img{max-width:100%;display:block}
 .cta-sec__inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .cta-sec__title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);font-weight:900;margin-bottom:14px}
 .cta-sec__desc{font-size:15px;color:var(--text-dim);line-height:1.9;font-weight:300;margin-bottom:28px}
-.cta-sec__phone{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,34px);font-weight:900;color:var(--gold);margin-bottom:20px;letter-spacing:2px}
+.cta-sec__phone{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,32px);font-weight:900;color:var(--gold);margin-bottom:20px;letter-spacing:2px}
 .cta-sec__btns{display:flex;gap:12px;flex-wrap:wrap}
 /* Others */
 .others-sec{padding:80px 0;border-top:1px solid var(--glass-border)}
 .others-sec__title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,34px);font-weight:900;margin-bottom:32px}
-.others-grid{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}.others-grid::-webkit-scrollbar{display:none}
-.ocard{flex:0 0 165px;border:1px solid var(--glass-border);transition:var(--t);display:block}
+.others-grid{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.others-grid::-webkit-scrollbar{display:none}
+.ocard{flex:0 0 160px;border:1px solid var(--glass-border);transition:var(--t);display:block}
 .ocard:hover{border-color:var(--gold);transform:translateY(-4px)}
 .ocard__img{aspect-ratio:3/4;overflow:hidden}
 .ocard__img img{width:100%;height:100%;object-fit:cover;filter:grayscale(40%);transition:all .5s}
 .ocard:hover .ocard__img img{filter:grayscale(0%);transform:scale(1.05)}
-.ocard__body{padding:13px}
+.ocard__body{padding:12px}
 .ocard__name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;margin-bottom:4px}
 .ocard__desc{font-size:11px;color:var(--text-muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 /* Footer */
 .footer{border-top:1px solid var(--glass-border);padding:60px 0}
 .footer__inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px}
-.footer__logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--gold);letter-spacing:3px;margin-bottom:14px}
+.footer__logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:var(--gold);letter-spacing:3px;margin-bottom:14px}
 .footer__notice{font-size:12px;color:var(--text-muted);max-width:400px;line-height:1.8}
 .footer__links{display:flex;gap:24px;flex-wrap:wrap}
 .footer__links a{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}.footer__links a:hover{color:var(--gold)}
 .footer__bottom{margin-top:40px;padding-top:20px;border-top:1px solid var(--glass-border);text-align:center;font-size:11px;color:var(--text-muted);letter-spacing:2px}
 /* BTT */
-.btt{position:fixed;bottom:32px;right:32px;width:48px;height:48px;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;opacity:0;visibility:hidden;transition:var(--t);display:flex;align-items:center;justify-content:center;z-index:999;font-size:18px}
+.btt{position:fixed;bottom:32px;right:32px;width:46px;height:46px;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;opacity:0;visibility:hidden;transition:var(--t);display:flex;align-items:center;justify-content:center;z-index:999;font-size:18px}
 .btt.visible{opacity:1;visibility:visible}.btt:hover{background:var(--gold);color:var(--black)}
 /* Responsive */
-@media(max-width:1024px){.cta-sec__inner{grid-template-columns:1fr}}
+@media(max-width:1024px){
+  .cta-sec__inner{grid-template-columns:1fr;gap:40px}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:768px){
   .nav{display:none}.mobile-toggle{display:block}
   .header{padding:14px 0}.logo{font-size:20px}.container{padding:0 16px}
-  .dhero{min-height:70vh;padding-bottom:56px}
-  .dhero__title{font-size:clamp(40px,12vw,64px)}
+  .dhero{min-height:75vh;padding-bottom:50px}
+  .dhero__title{font-size:clamp(38px,11vw,64px)}
+  .dhero__meta{gap:8px}
+  .dhero__meta-tag{font-size:11px;padding:6px 12px}
   .contact-bar__inner{flex-direction:column;align-items:flex-start}
-  .contact-bar__btns{width:100%}.btn-call,.btn-call-out{flex:1;text-align:center}
+  .contact-bar__btns{width:100%}.btn-call,.btn-call-out{flex:1;text-align:center;padding:12px 16px}
+  .social-bar__inner{gap:8px}
+  .soc-btn{padding:8px 12px;font-size:11px}
   .pricing-sec{padding:60px 0}.features-sec,.cta-sec,.others-sec{padding:60px 0}
-  .ptab{padding:10px 18px;font-size:11px}
+  .ptab{padding:10px 16px;font-size:11px;letter-spacing:2px}
   .features-grid{grid-template-columns:1fr}
+  .feat-item{padding:20px}
+  .cta-sec__btns{flex-direction:column}
+  .btn-call,.btn-call-out{text-align:center}
+  .ocard{flex:0 0 140px}
+  .footer{padding:40px 0}
+  .footer__inner{flex-direction:column;gap:24px}
+  .btt{width:40px;height:40px;bottom:20px;right:16px;font-size:16px}
 }
-@media(max-width:480px){.dhero__title{font-size:clamp(36px,12vw,52px)}}</style>
+@media(max-width:480px){
+  .dhero__title{font-size:clamp(34px,11vw,52px)}
+  .dhero__desc{font-size:14px}
+  .soc-btn span.soc-label{display:none}
+  .soc-btn{padding:9px 12px}
+  .contact-bar__info{gap:16px}
+  .ptable{min-width:420px}
+}
+</style>
 </head>
 <body>
 
-<!-- Header (nav: texts.json 연동) -->
 <header class="header" id="header">
   <div class="container">
     <a href="../../index.html" class="logo">CHOICE LOUNGE</a>
     <nav class="nav">
-      <a href="../../highperpublic/index.html" class="active">하이퍼블릭</a>
-      <a href="../../nightlife/index.html">유흥</a>
+      <a href="../../highperpublic/index.html" class="active">
+        <span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span>
+      </a>
+      <a href="../../nightlife/index.html">
+        <span class="ko-t">유흥</span><span class="en-t">Nightlife</span>
+      </a>
       <a href="#" class="nav__cta" id="nav-cta">Reserve</a>
+      <button class="lang-btn" id="langBtn">EN</button>
     </nav>
     <button class="mobile-toggle" id="mobileOpen">MENU</button>
   </div>
 </header>
 <nav class="mobile-nav" id="mobileNav">
   <button class="mobile-nav__close" id="mobileClose">✕</button>
-  <a href="../../highperpublic/index.html">하이퍼블릭</a>
-  <a href="../../nightlife/index.html">유흥</a>
-  <a href="#" id="mobile-cta" style="color:var(--gold);border:1px solid var(--gold);padding:14px 40px;margin-top:12px">Reserve</a>
+  <a href="../../highperpublic/index.html">
+    <span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span>
+  </a>
+  <a href="../../nightlife/index.html">
+    <span class="ko-t">유흥</span><span class="en-t">Nightlife</span>
+  </a>
+  <button class="lang-btn" id="mobileLangBtn" style="margin-top:8px">EN</button>
+  <a href="#" id="mobile-cta" style="color:var(--gold);border:1px solid var(--gold);padding:14px 40px;margin-top:8px">Reserve</a>
 </nav>
 
-<!-- Hero -->
-<section class="dhero">
-  <div class="dhero__bg">
-    <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=1600&q=80" alt="" id="hero-img">
+<!-- Hero with parallax -->
+<section class="dhero" id="dhero">
+  <div class="dhero__bg" id="dheroBg">
+    <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=1600&q=80" alt="" id="hero-img"
+         onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
     <div class="dhero__ov"></div>
   </div>
   <div class="container">
     <div class="dhero__content">
       <div class="dhero__breadcrumb">
-        <a href="../../index.html">HOME</a> · <a href="../../highperpublic/index.html">하이퍼블릭</a> · <span id="bc-name"></span>
+        <a href="../../index.html">HOME</a> ·
+        <a href="../../highperpublic/index.html">
+          <span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span>
+        </a> · <span id="bc-name"></span>
       </div>
-      <div class="dhero__badge"><span class="dhero__badge-dot"></span><span id="hero-badge">영업중 · Hyper Public</span></div>
+      <div class="dhero__badge"><span class="dhero__badge-dot"></span><span id="hero-badge"></span></div>
       <h1 class="dhero__title"><em id="hero-name"></em></h1>
       <p class="dhero__desc" id="hero-desc"></p>
       <div class="dhero__meta" id="hero-meta"></div>
@@ -188,6 +245,13 @@ img{max-width:100%;display:block}
       <div class="contact-bar__info" id="contact-info"></div>
       <div class="contact-bar__btns" id="contact-btns"></div>
     </div>
+  </div>
+</div>
+
+<!-- 소셜 연락처 -->
+<div class="social-bar">
+  <div class="container">
+    <div class="social-bar__inner" id="social-links"></div>
   </div>
 </div>
 
@@ -220,7 +284,9 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="cta-sec__inner">
       <div class="reveal">
-        <span class="eyebrow">예약문의</span>
+        <span class="eyebrow">
+          <span class="ko-t">예약문의</span><span class="en-t">Reservation</span>
+        </span>
         <h2 class="cta-sec__title" id="cta-title"></h2>
         <p class="cta-sec__desc" id="cta-desc"></p>
       </div>
@@ -236,7 +302,9 @@ img{max-width:100%;display:block}
 <section class="others-sec">
   <div class="container">
     <span class="eyebrow reveal">Other Venues</span>
-    <h2 class="others-sec__title reveal">다른 하이퍼블릭</h2>
+    <h2 class="others-sec__title reveal">
+      <span class="ko-t">다른 하이퍼블릭</span><span class="en-t">Other Venues</span>
+    </h2>
     <div class="others-grid" id="others-grid"></div>
   </div>
 </section>
@@ -250,8 +318,13 @@ img{max-width:100%;display:block}
         <p class="footer__notice" id="footer-notice"></p>
       </div>
       <div class="footer__links">
-        <a href="../../highperpublic/index.html">하이퍼블릭</a>
-        <a href="../../nightlife/index.html">유흥</a>
+        <a href="../../highperpublic/index.html">
+          <span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span>
+        </a>
+        <a href="../../nightlife/index.html">
+          <span class="ko-t">유흥</span><span class="en-t">Nightlife</span>
+        </a>
+        <a href="../../sitemap.xml">Sitemap</a>
       </div>
     </div>
     <div class="footer__bottom" id="footer-copy"></div>
@@ -260,13 +333,32 @@ img{max-width:100%;display:block}
 
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<!-- 이 페이지의 slug -->
 <script>var VENUE_SLUG = 'zeus';</script>
 
 <script>
 /* ── 유틸 ── */
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function fmt(n){return Number(n).toLocaleString('ko-KR')}
+var isEn = localStorage.getItem('cl_lang')==='en';
+function t(ko,en){return isEn?en:ko}
+function applyLang(){
+  document.body.classList.toggle('lang-en',isEn);
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.textContent=isEn?'한':'EN'});
+  document.documentElement.lang = isEn ? 'en' : 'ko-KR';
+}
+applyLang();
+
+/* ── Parallax ── */
+var heroBgImg = document.querySelector('.dhero__bg img');
+function onScroll(){
+  var sy = window.pageYOffset;
+  var hh = document.getElementById('dhero').offsetHeight;
+  hdr.classList.toggle('scrolled', sy>60);
+  btt.classList.toggle('visible', sy>400);
+  if(heroBgImg && sy < hh){
+    heroBgImg.style.transform = 'translateY('+Math.round(sy*0.35)+'px)';
+  }
+}
 
 /* ── IntersectionObserver ── */
 var obs = new IntersectionObserver(function(es){
@@ -279,10 +371,7 @@ observe();
 
 /* ── 헤더/BTT ── */
 var hdr=document.getElementById('header'),btt=document.getElementById('btt');
-window.addEventListener('scroll',function(){
-  hdr.classList.toggle('scrolled',scrollY>60);
-  btt.classList.toggle('visible',scrollY>400);
-});
+window.addEventListener('scroll', onScroll, {passive:true});
 
 /* ── 모바일 메뉴 ── */
 document.getElementById('mobileOpen').onclick=function(){document.getElementById('mobileNav').classList.add('open')};
@@ -291,28 +380,38 @@ document.querySelectorAll('#mobileNav a').forEach(function(a){
   a.addEventListener('click',function(){document.getElementById('mobileNav').classList.remove('open')});
 });
 
+/* ── 언어 토글 ── */
+function toggleLang(){
+  isEn = !isEn;
+  localStorage.setItem('cl_lang', isEn?'en':'ko');
+  applyLang();
+  if(window._venueData) renderContent(window._venueData[0], window._venueData[1]);
+}
+document.getElementById('langBtn').addEventListener('click', toggleLang);
+document.getElementById('mobileLangBtn').addEventListener('click', function(){
+  document.getElementById('mobileNav').classList.remove('open');
+  toggleLang();
+});
+
 /* ── 가격표 렌더 ── */
 function renderPriceTable(part){
-  var persons = [1,2,3,4];
-  var totals  = part.base.map(function(b){return b + part.drink + part.tc + part.rt});
-  var th = '<tr><th class="lh">구분</th>' + persons.map(function(p){return '<th>'+p+'인</th>'}).join('') + '</tr>';
-  function row(label, vals){
-    return '<tr><td class="rh">'+label+'</td>' + vals.map(function(v){return '<td>'+fmt(v)+'원</td>'}).join('') + '</tr>';
-  }
-  var drinkArr = persons.map(function(){return part.drink});
-  var tcArr    = persons.map(function(){return part.tc});
-  var rtArr    = persons.map(function(){return part.rt});
-  var tbody = row('기본금 (초이스)', part.base)
-            + row('주대',           drinkArr)
-            + row('TC (타임차지)',  tcArr)
-            + row('RT (웨이터팁)', rtArr)
-            + '<tr class="total"><td class="rh">합계</td>'
-            + totals.map(function(t){return '<td>'+fmt(t)+'원</td>'}).join('')
-            + '</tr>';
+  var persons=[1,2,3,4];
+  var totals=part.base.map(function(b){return b+part.drink+part.tc+part.rt});
+  var th='<tr><th class="lh">'+t('구분','Category')+'</th>'+persons.map(function(p){return '<th>'+p+t('인',' person')+'</th>'}).join('')+'</tr>';
+  function row(label,vals){return '<tr><td class="rh">'+label+'</td>'+vals.map(function(v){return '<td>'+fmt(v)+t('원','₩')+'</td>'}).join('')+'</tr>'}
+  var da=persons.map(function(){return part.drink});
+  var ta=persons.map(function(){return part.tc});
+  var ra=persons.map(function(){return part.rt});
+  var tbody=row(t('기본금 (초이스)','Base (Choice)'),part.base)
+    +row(t('주대','Drinks'),da)
+    +row(t('TC (타임차지)','TC (Time Charge)'),ta)
+    +row(t('RT (웨이터팁)','RT (Waiter Tip)'),ra)
+    +'<tr class="total"><td class="rh">'+t('합계','Total')+'</td>'
+    +totals.map(function(tt){return '<td>'+fmt(tt)+t('원','₩')+'</td>'}).join('')+'</tr>';
   return '<div class="ptable-wrap"><table class="ptable"><thead>'+th+'</thead><tbody>'+tbody+'</tbody></table></div>';
 }
 
-/* ── 이미지 맵 (slug → Unsplash URL) ── */
+/* ── 이미지 맵 ── */
 var OTHER_IMGS = {
   unmi:     'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=400&q=80',
   dessert:  'https://images.unsplash.com/photo-1571204829887-3b8d69e4094d?w=400&q=80',
@@ -324,63 +423,62 @@ var OTHER_IMGS = {
   worklife: 'https://images.unsplash.com/photo-1560624052-449f5ddf0c31?w=400&q=80'
 };
 
-/* ── venues.json + texts.json 동시 로드 후 렌더 ── */
-Promise.all([
-  fetch('../../venues.json').then(function(r){return r.json()}),
-  fetch('../../texts.json').then(function(r){return r.json()})
-]).then(function(results){
-  var venues = results[0];
-  var texts  = results[1];
+/* ── 렌더 함수 ── */
+function renderContent(venues, texts){
   var v = venues[VENUE_SLUG];
   if(!v){console.error('Venue not found:', VENUE_SLUG); return;}
-
-  /* meta / title */
-  document.title = v.meta.title;
-  document.getElementById('page-title').textContent = v.meta.title;
-  document.getElementById('page-desc').setAttribute('content', v.meta.desc);
-
-  /* nav CTA */
   var phoneLink = v.phoneLink;
-  document.getElementById('nav-cta').href  = phoneLink;
+  var social = v.social || {};
+
+  document.title = isEn ? (v.nameEn||v.name)+' - Gangnam Hyper Public | CHOICE LOUNGE' : v.meta.title;
+  document.getElementById('page-title').textContent = document.title;
+  document.getElementById('page-desc').setAttribute('content', isEn ? v.descEn||v.meta.desc : v.meta.desc);
+
+  document.getElementById('nav-cta').href = phoneLink;
   document.getElementById('mobile-cta').href = phoneLink;
 
-  /* hero */
-  document.getElementById('bc-name').textContent  = v.name;
+  document.getElementById('bc-name').textContent = isEn ? (v.nameEn||v.name) : v.name;
   document.getElementById('hero-name').textContent = v.name;
-  document.getElementById('hero-desc').textContent = v.desc;
+  document.getElementById('hero-desc').textContent = isEn ? (v.descEn||v.desc) : v.desc;
   document.getElementById('hero-badge').textContent = v.status + ' · Hyper Public';
   document.getElementById('hero-meta').innerHTML =
-    '<span class="dhero__meta-tag">1부 '+esc(v.part1.time)+'</span>' +
-    '<span class="dhero__meta-tag">2부 '+esc(v.part2.time)+'</span>' +
-    '<span class="dhero__meta-tag">룸 '+esc(v.rooms)+'개</span>';
+    '<span class="dhero__meta-tag">'+t('1부','Part 1')+' '+esc(v.part1.time)+'</span>' +
+    '<span class="dhero__meta-tag">'+t('2부','Part 2')+' '+esc(v.part2.time)+'</span>' +
+    '<span class="dhero__meta-tag">'+t('룸','Rooms')+' '+esc(v.rooms)+t('개','')+'</span>';
 
-  /* contact bar */
+  var heroImg = document.getElementById('hero-img');
+  if(heroImg && OTHER_IMGS[VENUE_SLUG]) heroImg.src = OTHER_IMGS[VENUE_SLUG].replace('w=400','w=1600');
+
   document.getElementById('contact-info').innerHTML =
-    '<div><div class="contact-bar__label">예약문의</div><div class="contact-bar__value gold">'+esc(v.phone)+'</div></div>' +
-    '<div><div class="contact-bar__label">1부 운영</div><div class="contact-bar__value">'+esc(v.part1.time)+'</div></div>' +
-    '<div><div class="contact-bar__label">2부 운영</div><div class="contact-bar__value">'+esc(v.part2.time)+'</div></div>';
+    '<div><div class="contact-bar__label">'+t('예약문의','Inquiry')+'</div><div class="contact-bar__value gold">'+esc(v.phone)+'</div></div>' +
+    '<div><div class="contact-bar__label">'+t('1부 운영','Part 1')+'</div><div class="contact-bar__value">'+esc(v.part1.time)+'</div></div>' +
+    '<div><div class="contact-bar__label">'+t('2부 운영','Part 2')+'</div><div class="contact-bar__value">'+esc(v.part2.time)+'</div></div>';
   document.getElementById('contact-btns').innerHTML =
-    '<a href="'+phoneLink+'" class="btn-call">'+esc(texts.common.phoneInquiry)+'</a>' +
+    '<a href="'+phoneLink+'" class="btn-call">'+t('전화문의','Call Now')+'</a>' +
     '<a href="'+phoneLink+'" class="btn-call-out">'+esc(v.phone)+'</a>';
 
-  /* pricing */
-  document.getElementById('price-title').textContent = v.name + ' 가격 안내';
-  document.getElementById('price-desc').textContent  = '아래 금액은 평균 기준이며 실제 가격은 상황에 따라 달라질 수 있습니다. 정확한 금액은 예약 문의를 통해 확인해 주세요.';
-  document.getElementById('price-notice').innerHTML  = '<strong>※ 안내</strong> · ' + esc(v.notice);
+  /* Social */
+  var socHtml='';
+  socHtml+='<a href="'+esc(phoneLink)+'" class="soc-btn soc-btn--phone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span class="soc-label">'+t('전화문의','Call')+'</span></a>';
+  if(social.telegram) socHtml+='<a href="'+esc(social.telegram)+'" target="_blank" rel="noopener" class="soc-btn soc-btn--telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg><span class="soc-label">Telegram</span></a>';
+  if(social.kakao)    socHtml+='<a href="'+esc(social.kakao)+'" target="_blank" rel="noopener" class="soc-btn soc-btn--kakao"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.8 2 11.5c0 2.9 1.7 5.5 4.3 7l-.9 3.3c-.1.3.3.5.5.3l4-2.6c.7.1 1.4.1 2.1.1 5.523 0 10-3.7 10-8.1S17.523 3 12 3z"/></svg><span class="soc-label">KakaoTalk</span></a>';
+  if(social.instagram) socHtml+='<a href="'+esc(social.instagram)+'" target="_blank" rel="noopener" class="soc-btn soc-btn--insta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg><span class="soc-label">Instagram</span></a>';
+  if(social.twitter)  socHtml+='<a href="'+esc(social.twitter)+'" target="_blank" rel="noopener" class="soc-btn soc-btn--twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="soc-label">Twitter/X</span></a>';
+  document.getElementById('social-links').innerHTML = socHtml;
 
-  var tabsHtml = '', contentsHtml = '';
-  var parts = [v.part1, v.part2];
-  parts.forEach(function(part, idx){
-    var id  = 'ptab-' + idx;
-    var active = idx===0 ? 'active' : '';
-    var showCls = idx===0 ? 'show' : '';
-    tabsHtml     += '<div class="ptab '+active+'" data-id="'+id+'">'+esc(part.label)+' · '+esc(part.time)+'</div>';
-    contentsHtml += '<div class="ptab-content '+showCls+'" id="'+id+'">'+renderPriceTable(part)+'</div>';
+  /* pricing */
+  document.getElementById('price-title').textContent = v.name+t(' 가격 안내',' Pricing Guide');
+  document.getElementById('price-desc').textContent = t('아래 금액은 평균 기준이며 실제 가격은 상황에 따라 달라질 수 있습니다. 정확한 금액은 예약 문의를 통해 확인해 주세요.','Prices shown are averages and may vary. Please contact us for exact pricing.');
+  document.getElementById('price-notice').innerHTML = '<strong>※ '+t('안내','Notice')+'</strong> · '+esc(v.notice);
+
+  var tabsHtml='',contentsHtml='';
+  [v.part1,v.part2].forEach(function(part,idx){
+    var id='ptab-'+idx, active=idx===0?'active':'', show=idx===0?'show':'';
+    tabsHtml+='<div class="ptab '+active+'" data-id="'+id+'">'+esc(part.label)+' · '+esc(part.time)+'</div>';
+    contentsHtml+='<div class="ptab-content '+show+'" id="'+id+'">'+renderPriceTable(part)+'</div>';
   });
   document.getElementById('ptabs').innerHTML = tabsHtml;
   document.getElementById('ptab-contents').innerHTML = contentsHtml;
-
-  /* tab click */
   document.querySelectorAll('.ptab').forEach(function(tab){
     tab.addEventListener('click',function(){
       document.querySelectorAll('.ptab').forEach(function(t){t.classList.remove('active')});
@@ -391,44 +489,50 @@ Promise.all([
   });
 
   /* features */
-  document.getElementById('feat-title').textContent = v.name + ' 특징';
-  document.getElementById('feat-desc').textContent  = v.desc;
+  document.getElementById('feat-title').textContent = v.name+t(' 특징',' Features');
+  document.getElementById('feat-desc').textContent = isEn ? (v.descEn||v.desc) : v.desc;
   document.getElementById('features-grid').innerHTML = v.features.map(function(f){
     return '<div class="feat-item reveal"><div class="feat-item__icon">'+esc(f.icon)+'</div><div class="feat-item__text">'+esc(f.text)+'</div></div>';
   }).join('');
 
   /* CTA */
-  document.getElementById('cta-title').textContent = texts.venues.highperpublic.ctaTitle;
-  document.getElementById('cta-desc').textContent  = v.desc;
+  document.getElementById('cta-title').textContent = t('지금 바로 예약하세요','Make a Reservation');
+  document.getElementById('cta-desc').textContent = isEn ? (v.descEn||v.desc) : v.desc;
   document.getElementById('cta-phone').textContent = v.phone;
   document.getElementById('cta-btns').innerHTML =
-    '<a href="'+phoneLink+'" class="btn-call">'+esc(texts.common.phoneInquiry)+'</a>' +
-    '<a href="../../highperpublic/index.html" class="btn-call-out">목록으로</a>';
+    '<a href="'+phoneLink+'" class="btn-call">'+t('전화문의','Call Now')+'</a>'+
+    '<a href="../../highperpublic/index.html" class="btn-call-out">'+t('목록으로','Back to List')+'</a>';
 
   /* others */
-  var othersHtml = '';
+  var othersHtml='';
   Object.keys(venues).forEach(function(sl){
-    if(sl === VENUE_SLUG) return;
-    var ov = venues[sl];
-    var oImg = OTHER_IMGS[sl] || OTHER_IMGS.unmi;
-    othersHtml += '<a href="../'+sl+'/" class="ocard">' +
-      '<div class="ocard__img"><img src="'+oImg+'" alt="'+esc(ov.name)+'" loading="lazy"></div>' +
-      '<div class="ocard__body"><div class="ocard__name">'+esc(ov.name)+'</div><div class="ocard__desc">'+esc(ov.desc)+'</div></div>' +
+    if(sl===VENUE_SLUG)return;
+    var ov=venues[sl], oImg=OTHER_IMGS[sl]||OTHER_IMGS.unmi;
+    othersHtml+='<a href="../'+sl+'/" class="ocard">'+
+      '<div class="ocard__img"><img src="'+oImg+'" alt="'+esc(ov.name)+'" loading="lazy" onerror="this.style.background=\'#1a1a2e\';this.style.display=\'block\'"></div>'+
+      '<div class="ocard__body"><div class="ocard__name">'+esc(ov.name)+'</div><div class="ocard__desc">'+esc(isEn?(ov.descEn||ov.desc):ov.desc)+'</div></div>'+
       '</a>';
   });
   document.getElementById('others-grid').innerHTML = othersHtml;
 
   /* footer */
-  document.getElementById('footer-notice').textContent = texts.footer.notice;
-  document.getElementById('footer-copy').textContent   = texts.footer.copyright;
+  document.getElementById('footer-notice').textContent = isEn
+    ? 'CHOICE LOUNGE strives to provide accurate information. We are not legally responsible for any inaccuracies.'
+    : texts.footer.notice;
+  document.getElementById('footer-copy').textContent = texts.footer.copyright;
 
-  /* observe 동적 요소 */
   observe(document.getElementById('features-grid'));
   observe(document.getElementById('others-grid'));
+}
 
-}).catch(function(err){
-  console.error('JSON 로드 실패:', err);
-});
+/* ── venues.json + texts.json 로드 ── */
+Promise.all([
+  fetch('../../venues.json').then(function(r){return r.json()}),
+  fetch('../../texts.json').then(function(r){return r.json()})
+]).then(function(results){
+  window._venueData = results;
+  renderContent(results[0], results[1]);
+}).catch(function(err){console.error('JSON load error:',err)});
 </script>
 </body>
 </html>
