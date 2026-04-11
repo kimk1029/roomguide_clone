@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수목원 - 강남 하이퍼블릭 | CHOICE LOUNGE</title>
+<meta name="description" content="안정적인 운영 흐름과 꾸준한 영업 상태가 유지되는 매장입니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a96e;--gold-light:#e8d5b0;--gold-dark:#a07d4a;
+  --black:#0b0b0b;--black2:#111;--black3:#181818;--black4:#222;
+  --text:#f5f0e8;--text-dim:#8a8272;--text-muted:#5a5549;
+  --glass-border:rgba(255,255,255,0.08);--t:all .4s cubic-bezier(.25,.46,.45,.94);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--black);color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit;transition:var(--t)}
+img{max-width:100%;display:block}
+.container{max-width:1280px;margin:0 auto;padding:0 32px}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s}.reveal.v{opacity:1;transform:none}
+.stagger:nth-child(1){transition-delay:.05s}.stagger:nth-child(2){transition-delay:.15s}.stagger:nth-child(3){transition-delay:.25s}.stagger:nth-child(4){transition-delay:.35s}.stagger:nth-child(5){transition-delay:.45s}.stagger:nth-child(6){transition-delay:.55s}.stagger:nth-child(7){transition-delay:.65s}.stagger:nth-child(8){transition-delay:.75s}
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--t)}
+.header.scrolled{padding:12px 0;background:rgba(11,11,11,.92);backdrop-filter:blur(30px);border-bottom:1px solid var(--glass-border)}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--gold);letter-spacing:3px}
+.nav{display:flex;align-items:center;gap:36px}
+.nav a{font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}
+.nav a:hover,.nav a.active{color:var(--gold)}
+.nav__cta{position:relative;padding:14px 32px;border:1.5px solid var(--gold);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold)!important;overflow:hidden}
+.nav__cta::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(100%);transition:transform .4s;z-index:-1}
+.nav__cta:hover::before{transform:translateY(0)}.nav__cta:hover{color:var(--black)!important}
+.mobile-toggle{display:none;background:none;border:none;color:var(--gold);font-size:24px;cursor:pointer;letter-spacing:4px}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(11,11,11,.97);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:18px;letter-spacing:4px;text-transform:uppercase;color:var(--text-dim)}.mobile-nav a:hover{color:var(--gold)}
+.mobile-nav__close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--gold);font-size:28px;cursor:pointer}
+/* Section common */
+.eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1;margin-bottom:16px}
+.sec-desc{font-size:15px;color:var(--text-dim);line-height:1.9;font-weight:300}
+/* Footer */
+.footer{border-top:1px solid var(--glass-border);padding:60px 0}
+.footer__inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px}
+.footer__logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--gold);letter-spacing:3px;margin-bottom:16px}
+.footer__notice{font-size:12px;color:var(--text-muted);max-width:400px;line-height:1.8}
+.footer__links{display:flex;gap:24px;flex-wrap:wrap}
+.footer__links a{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}.footer__links a:hover{color:var(--gold)}
+.footer__bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--glass-border);text-align:center;font-size:11px;color:var(--text-muted);letter-spacing:2px}
+/* BTT */
+.btt{position:fixed;bottom:32px;right:32px;width:48px;height:48px;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;opacity:0;visibility:hidden;transition:var(--t);display:flex;align-items:center;justify-content:center;z-index:999;font-size:18px}
+.btt.visible{opacity:1;visibility:visible}.btt:hover{background:var(--gold);color:var(--black)}
+/* Responsive */
+@media(max-width:768px){
+  .nav{display:none}.mobile-toggle{display:block}
+  .header{padding:14px 0}.logo{font-size:22px}
+  .container{padding:0 16px}
+}
+
+/* Detail Hero */
+.dhero{position:relative;min-height:80vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:80px}
+.dhero__bg{position:absolute;inset:0}.dhero__bg img{width:100%;height:100%;object-fit:cover;animation:sz 25s ease infinite alternate}
+.dhero__ov{position:absolute;inset:0;background:linear-gradient(0deg,var(--black) 0%,rgba(11,11,11,.3) 100%)}
+@keyframes sz{0%{transform:scale(1)}100%{transform:scale(1.1)}}
+.dhero__content{position:relative;z-index:2;max-width:800px}
+.dhero__badge{display:inline-block;padding:8px 24px;border:1px solid var(--gold-dark);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.dhero__breadcrumb{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px}
+.dhero__breadcrumb a{color:var(--gold)}
+.dhero__title{font-family:'Playfair Display',serif;font-size:clamp(52px,10vw,96px);font-weight:900;line-height:.9;margin-bottom:24px}
+.dhero__title em{font-style:italic;color:var(--gold)}
+.dhero__desc{font-size:16px;color:var(--text-dim);line-height:1.9;max-width:560px;font-weight:300}
+/* Info */
+.info{padding:100px 0;border-bottom:1px solid var(--glass-border)}
+.info__call{display:inline-flex;align-items:center;gap:12px;padding:18px 40px;background:var(--gold);color:var(--black);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:32px;transition:var(--t)}
+.info__call:hover{background:var(--gold-light);transform:translateY(-2px)}
+/* Price */
+.pricesec{padding:80px 0;background:var(--black2);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
+.price-groups{display:flex;gap:20px;flex-wrap:wrap;margin-top:40px}
+.price-group{flex:1;min-width:200px;border:1px solid var(--glass-border);padding:24px;background:var(--black)}
+.price-group__title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:700}
+.price-group__item{font-size:14px;color:var(--text-dim);padding:10px 0;border-bottom:1px solid var(--glass-border)}
+.price-group__item:last-child{border-bottom:none}
+/* How it works */
+.howsec{padding:80px 0;border-bottom:1px solid var(--glass-border)}
+.steps{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.step{display:flex;align-items:flex-start;gap:20px;padding:18px 20px;border:1px solid var(--glass-border)}
+.step__num{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--gold);min-width:28px}
+.step__text{font-size:14px;color:var(--text-dim);line-height:1.6}
+/* Others */
+.others{padding:80px 0}
+.others__grid{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}.others__grid::-webkit-scrollbar{display:none}
+.ocard{flex:0 0 180px;border:1px solid var(--glass-border);transition:var(--t);display:block}.ocard:hover{border-color:var(--gold);transform:translateY(-4px)}
+.ocard__img{aspect-ratio:3/4;overflow:hidden}.ocard__img img{width:100%;height:100%;object-fit:cover;filter:grayscale(30%);transition:all .5s}.ocard:hover .ocard__img img{filter:grayscale(0%)}
+.ocard__body{padding:14px}.ocard__name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700}
+/* CTA */
+.cta{padding:80px 0;text-align:center;border-top:1px solid var(--glass-border);position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,169,110,.06) 0%,transparent 70%)}
+.cta__inner{position:relative}
+.cta__title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:900;margin-bottom:16px}
+.cta__desc{font-size:15px;color:var(--text-dim);margin-bottom:32px}
+.btn-gold{display:inline-block;padding:16px 48px;background:var(--gold);color:var(--black);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:var(--t)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-3px)}
+@media(max-width:768px){
+  .dhero{min-height:65vh;padding-bottom:60px}
+  .dhero__title{font-size:clamp(40px,12vw,64px)}
+  .info{padding:60px 0}
+  .pricesec,.howsec,.others{padding:60px 0}
+  .price-groups{flex-direction:column}
+  .cta{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="../../index.html" class="logo">CHOICE LOUNGE</a>
+    <nav class="nav">
+      <a href="../../highperpublic/index.html" class='active'>하이퍼블릭</a>
+      <a href="../../nightlife/index.html" >유흥</a>
+      <a href="tel:01081191677" class="nav__cta">Reserve</a>
+    </nav>
+    <button class="mobile-toggle" id="mobileOpen">MENU</button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav__close" id="mobileClose">✕</button>
+  <a href="../../highperpublic/index.html">하이퍼블릭</a>
+  <a href="../../nightlife/index.html">유흥</a>
+  <a href="tel:01081191677" style="color:var(--gold);border:1px solid var(--gold);padding:14px 40px;margin-top:12px">Reserve</a>
+</nav>
+
+<section class="dhero">
+  <div class="dhero__bg"><img src="https://images.unsplash.com/photo-1519214605650-76a613ee3245?w=1600&q=80" alt="수목원"><div class="dhero__ov"></div></div>
+  <div class="container">
+    <div class="dhero__content">
+      <div class="dhero__breadcrumb"><a href="../../index.html">HOME</a> / <a href="../../highperpublic/index.html">하이퍼블릭</a> / 수목원</div>
+      <div class="dhero__badge">Hyper Public</div>
+      <h1 class="dhero__title"><em>수목원</em></h1>
+      <p class="dhero__desc">안정적인 운영 흐름과 꾸준한 영업 상태가 유지되는 매장입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="info">
+  <div class="container">
+    <span class="eyebrow reveal">About</span>
+    <h2 class="sec-title reveal">수목원 소개</h2>
+    <p class="sec-desc reveal">안정적인 운영 흐름과 꾸준한 영업 상태가 유지되는 매장입니다.</p>
+    <a href="tel:01081191677" class="info__call reveal">전화문의 010-8119-1677</a>
+  </div>
+</section>
+
+<section class="pricesec">
+  <div class="container">
+    <span class="eyebrow reveal">Pricing</span>
+    <h2 class="sec-title reveal">강남 하이퍼블릭 평균 가격</h2>
+    <p class="sec-desc reveal">아래 금액은 강남 하이퍼블릭 전반을 파악하기 위한 평균 기준입니다. 실제 금액은 매장별로 달라질 수 있습니다.</p>
+    <div class="price-groups reveal"><div class="price-group"><div class="price-group__title">주대</div><div class="price-group__item">0부: 10만원</div><div class="price-group__item">1부: 17만원</div><div class="price-group__item">2부: 14만원</div><div class="price-group__item">가게별 차이 존재</div></div><div class="price-group"><div class="price-group__title">티시 / 룸티</div><div class="price-group__item">티시 시간: 60분</div><div class="price-group__item">평일 티시: 11만원</div><div class="price-group__item">웨이터 팁(룸티): 5만원</div></div></div>
+  </div>
+</section>
+
+<section class="howsec">
+  <div class="container">
+    <span class="eyebrow reveal">How It Works</span>
+    <h2 class="sec-title reveal">이용 흐름은 어떻게 진행될까</h2>
+    <p class="sec-desc reveal">입장 후 기본 안내부터 초이스 진행, 착석 및 진행, 추가 선택 가능 여부까지 전체 흐름을 순서대로 이해하면 방문 전 판단이 쉬워집니다.</p>
+    <div class="steps reveal"><div class="step"><span class="step__num">1</span><span class="step__text">입장 후 기본 안내</span></div><div class="step"><span class="step__num">2</span><span class="step__text">초이스 진행</span></div><div class="step"><span class="step__num">3</span><span class="step__text">착석 및 진행</span></div><div class="step"><span class="step__num">4</span><span class="step__text">상황에 따라 추가 선택 가능</span></div></div>
+  </div>
+</section>
+
+<section class="others">
+  <div class="container">
+    <span class="eyebrow reveal">Other Venues</span>
+    <h2 class="sec-title reveal" style="margin-bottom:32px">다른 하이퍼블릭</h2>
+    <div class="others__grid"><a href="../unmi/" class="ocard"><div class="ocard__img"><img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=300&q=80" alt="유앤미"></div><div class="ocard__body"><div class="ocard__name">유앤미</div></div></a><a href="../dessert/" class="ocard"><div class="ocard__img"><img src="https://images.unsplash.com/photo-1571204829887-3b8d69e4094d?w=300&q=80" alt="디저트"></div><div class="ocard__body"><div class="ocard__name">디저트</div></div></a><a href="../dalto/" class="ocard"><div class="ocard__img"><img src="https://images.unsplash.com/photo-1545128485-c400e7702712?w=500&q=80" alt="달토"></div><div class="ocard__body"><div class="ocard__name">달토</div></div></a><a href="../elite/" class="ocard"><div class="ocard__img"><img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?w=300&q=80" alt="엘리트"></div><div class="ocard__body"><div class="ocard__name">엘리트</div></div></a><a href="../dopamine/" class="ocard"><div class="ocard__img"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=300&q=80" alt="도파민"></div><div class="ocard__body"><div class="ocard__name">도파민</div></div></a><a href="../zeus/" class="ocard"><div class="ocard__img"><img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=300&q=80" alt="제우스"></div><div class="ocard__body"><div class="ocard__name">제우스</div></div></a><a href="../worklife/" class="ocard"><div class="ocard__img"><img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?w=300&q=80" alt="워라벨"></div><div class="ocard__body"><div class="ocard__name">워라벨</div></div></a></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__inner reveal">
+    <h2 class="cta__title">강남 하이퍼블릭 상세 정보 더 보기</h2>
+    <p class="cta__desc">원하는 스타일에 맞는 매장을 카드형 리스트에서 선택하거나, 등록·폐업 기록과 시장 변화 데이터 페이지까지 함께 확인해보세요.</p>
+    <a href="tel:01081191677" class="btn-gold">전화문의 010-8119-1677</a>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo">CHOICE LOUNGE</div>
+        <p class="footer__notice">초이스라운지는 방문자분들께 정확한 정보를 제공하기 위해 노력하고 있습니다. 제공된 정보의 정확도에 대해 법적책임이 없음을 고지드립니다.</p>
+      </div>
+      <div class="footer__links">
+        <a href="../../highperpublic/index.html">하이퍼블릭</a>
+        <a href="../../nightlife/index.html">유흥</a>
+      </div>
+    </div>
+    <div class="footer__bottom">© 2026 CHOICE LOUNGE. All Rights Reserved.</div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+var hdr=document.getElementById('header'),btt=document.getElementById('btt');
+window.addEventListener('scroll',function(){
+  hdr.classList.toggle('scrolled',scrollY>80);
+  if(btt)btt.classList.toggle('visible',scrollY>400);
+});
+document.getElementById('mobileOpen').onclick=function(){document.getElementById('mobileNav').classList.add('open')};
+document.getElementById('mobileClose').onclick=function(){document.getElementById('mobileNav').classList.remove('open')};
+document.querySelectorAll('#mobileNav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('mobileNav').classList.remove('open')})});
+</script>
+</body>
+</html>
