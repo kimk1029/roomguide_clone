@@ -1,0 +1,367 @@
+{
+  "site": {
+    "name": "CHOICE LOUNGE",
+    "nameKo": "초이스라운지",
+    "tagline": "Gangnam Premium Nightlife"
+  },
+  "nav": {
+    "highperpublic": "하이퍼블릭",
+    "nightlife": "유흥",
+    "reserve": "Reserve",
+    "menu": "MENU",
+    "close": "✕"
+  },
+  "hero": {
+    "eyebrow": "Gangnam Premium Nightlife",
+    "title": "강남 하이퍼블릭 완벽 가이드",
+    "typingPrefix": "강남 ",
+    "typingSuffix": " 에 대한 모든 것",
+    "typingWords": [
+      "하이퍼블릭",
+      "가라오케",
+      "퍼블릭"
+    ],
+    "btnExplore": "Explore",
+    "btnGuide": "Guide",
+    "scroll": "Scroll",
+    "desc": "강남 하이퍼블릭 가격, 시스템, 분위기, 매장별 특징까지 실제 기준으로 정리한 정보 페이지입니다. 처음 찾는 분들도 전체 흐름을 이해할 수 있도록 핵심만 정리했습니다.",
+    "highlights": [
+      {
+        "title": "운영 구조 요약",
+        "desc": "강남 하이퍼블릭은 초이스 중심으로 운영되며, 가게마다 분위기와 스타일 차이가 분명합니다."
+      },
+      {
+        "title": "가격 체크",
+        "desc": "평균 주대, 티시, 룸티 기준을 기준선으로 확인한 뒤 각 매장 차이를 비교하는 방식이 효율적입니다."
+      },
+      {
+        "title": "빠른 이동",
+        "desc": "아래 카드형 리스트에서 강남 유앤미, 강남 디저트, 강남 달토 등 각 가게 정보를 바로 확인할 수 있습니다."
+      }
+    ],
+    "metaTitle": "강남 하이퍼블릭 완벽 가이드 | 초이스라운지",
+    "metaDescription": "강남 하이퍼블릭 가격, 시스템, 분위기, 가게별 특징까지 실제 기준으로 정리한 정보 페이지입니다."
+  },
+  "stats": {
+    "eyebrow": "— Guide —",
+    "title": "강남 하이퍼블릭 완벽 가이드",
+    "desc": "강남 하이퍼블릭 가격, 시스템, 분위기, 가게별 특징까지 실제 기준으로 정리한 정보 페이지입니다.",
+    "items": [
+      {
+        "num": "01",
+        "label": "운영 구조 요약",
+        "desc": "강남 하이퍼블릭은 초이스 중심으로 운영되며, 가게마다 분위기와 스타일 차이가 분명합니다."
+      },
+      {
+        "num": "02",
+        "label": "가격 체크",
+        "desc": "평균 주대, 티시, 룸티 기준을 기준선으로 확인한 뒤 각 매장 차이를 비교하는 방식이 효율적입니다."
+      },
+      {
+        "num": "03",
+        "label": "빠른 이동",
+        "desc": "아래 카드형 리스트에서 강남 유앤미, 강남 디저트, 강남 달토 등 각 가게 정보를 바로 확인할 수 있습니다."
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "highperpublic",
+      "name": "하이퍼블릭",
+      "nameEn": "highper Public",
+      "count": "7개 업소",
+      "icon": "💎",
+      "href": "highperpublic/index.html"
+    }
+  ],
+  "marquee": [
+    {
+      "nameKo": "하이퍼블릭",
+      "nameEn": "Highper Public"
+    },
+    {
+      "nameKo": "가라오케",
+      "nameEn": "Karaoke"
+    },
+    {
+      "nameKo": "퍼블릭",
+      "nameEn": "Public"
+    },
+    {
+      "nameKo": "가격",
+      "nameEn": "Pricing"
+    },
+    {
+      "nameKo": "시스템",
+      "nameEn": "System"
+    }
+  ],
+  "features": [
+    {
+      "id": "highperpublic",
+      "num": "01",
+      "eyebrow": "Highper Public",
+      "title": "강남 하이퍼블릭",
+      "desc": "하이퍼블릭은 초이스 중심으로 운영되는 퍼블릭 계열 업종으로, 과거의 구조와 현재의 운영 흐름이 조금 다르게 인식되는 편입니다. 현재는 셔츠룸을 대체하는 형태로 보는 시각도 적지 않습니다.",
+      "tags": [
+        "초이스 중심",
+        "퍼블릭 계열",
+        "셔츠룸 대체 시각"
+      ]
+    },
+    {
+      "id": "highperpublic-flow",
+      "num": "02",
+      "eyebrow": "How It Works",
+      "title": "이용 흐름은 어떻게 진행될까",
+      "desc": "입장 후 기본 안내부터 초이스 진행, 착석 및 진행, 추가 선택 가능 여부까지 전체 흐름을 순서대로 이해하면 방문 전 판단이 쉬워집니다.",
+      "tags": [
+        "입장 후 기본 안내",
+        "초이스 진행",
+        "착석 및 진행",
+        "상황에 따라 추가 선택 가능"
+      ],
+      "steps": [
+        "입장 후 기본 안내",
+        "초이스 진행",
+        "착석 및 진행",
+        "상황에 따라 추가 선택 가능"
+      ]
+    },
+    {
+      "id": "highperpublic-price",
+      "num": "03",
+      "eyebrow": "Pricing",
+      "title": "강남 하이퍼블릭 평균 가격",
+      "desc": "아래 금액은 강남 하이퍼블릭 전반을 파악하기 위한 평균 기준입니다. 실제 금액은 매장별로 달라질 수 있습니다.",
+      "tags": [
+        "0부 10만원",
+        "1부 17만원",
+        "2부 14만원",
+        "티시 60분",
+        "룸티 5만원"
+      ],
+      "groups": [
+        {
+          "title": "주대",
+          "items": [
+            "0부: 10만원",
+            "1부: 17만원",
+            "2부: 14만원",
+            "가게별 차이 존재"
+          ]
+        },
+        {
+          "title": "티시 / 룸티",
+          "items": [
+            "티시 시간: 60분",
+            "평일 티시: 11만원",
+            "웨이터 팁(룸티): 5만원"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "highperpublic-compare",
+      "num": "04",
+      "eyebrow": "Comparison",
+      "title": "강남 하이퍼블릭과 강남 퍼블릭 차이",
+      "desc": "단순히 이름만 다른 것이 아니라 진행 흐름과 이용 감각이 꽤 다르게 받아들여지는 편입니다.",
+      "tags": [
+        "초이스 중심",
+        "분위기 중심",
+        "체류형 성격"
+      ],
+      "table": {
+        "headers": [
+          "구분",
+          "강남 하이퍼블릭",
+          "강남 퍼블릭"
+        ],
+        "rows": [
+          [
+            "운영 성향",
+            "초이스 중심",
+            "분위기 중심"
+          ],
+          [
+            "진행 속도",
+            "상대적으로 빠른 편",
+            "체류형 성격"
+          ],
+          [
+            "이용자 관점",
+            "선택 폭과 흐름 중시",
+            "전체 무드와 안정감 중시"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "highperpublic-market",
+      "num": "05",
+      "eyebrow": "Market Timeline",
+      "title": "강남 하이퍼블릭 시장 변화 흐름",
+      "desc": "메인페이지에서는 전체 흐름만 요약하고, 상세 데이터는 별도 기록 페이지로 연결하는 구조가 가장 효율적입니다.",
+      "tags": [
+        "2022년 6월 9일",
+        "2023년 4월",
+        "2023년 10월 ~ 2024년 1월",
+        "2025년 이후"
+      ],
+      "timeline": [
+        {
+          "date": "2022년 6월 9일",
+          "desc": "하이퍼블릭 카테고리가 생성될 정도로 업종 수가 많아졌고, 코로나 시기 이후 강남 유흥 생태계 변화 속에서 재편된 업종으로 보는 해석이 등장했습니다."
+        },
+        {
+          "date": "2023년 4월",
+          "desc": "티시와 주대 기준이 조정되면서 평균 가격대 인식에도 변화가 생겼습니다."
+        },
+        {
+          "date": "2023년 10월 ~ 2024년 1월",
+          "desc": "퍼펙트 업종 변경, 워라벨 및 방탄 등록 등 실제 시장 내 이동과 신규 등록 흐름이 이어졌습니다."
+        },
+        {
+          "date": "2025년 이후",
+          "desc": "엘리트, 도파민, 디저트 등 신규 등록 흐름이 계속 확인되며, 폐업과 신규 오픈이 반복되는 시장 구조가 유지되고 있습니다."
+        }
+      ],
+      "link": {
+        "text": "전체 등록·폐업 기록 보기",
+        "href": "/gangnam-highperpublic/history"
+      }
+    }
+  ],
+  "venues": {
+    "highperpublic": {
+      "eyebrow": "highper Public",
+      "title": "추천 하이퍼블릭",
+      "viewAll": "View All →",
+      "href": "highperpublic/index.html",
+      "desc": "아래 카드에서 원하는 스타일의 매장을 선택해 상세 페이지로 이동할 수 있습니다.\n        메인페이지는 전체 흐름을 설명하고, 하부페이지는 각 가게별 디테일을 다루는 구조로 설계했습니다.",
+      "items": [
+        {
+          "title": "유앤미",
+          "desc": "높은 층고와 독보적인 인테리어를 경험할 수 있는 매장입니다.",
+          "href": "/gangnam-highperpublic/unmi",
+          "buttonText": "자세히 보기"
+        },
+        {
+          "title": "디저트",
+          "desc": "강남 대형 매장 중 트랜스젠더 공연과 전용 박스를 보유한 곳입니다.",
+          "href": "/gangnam-highperpublic/dessert",
+          "buttonText": "자세히 보기"
+        },
+        {
+          "title": "달토",
+          "desc": "전반적으로 평균 외모 수준이 높게 형성된 매장입니다.",
+          "href": "/gangnam-highperpublic/dalto",
+          "buttonText": "자세히 보기"
+        },
+        {
+          "title": "엘리트",
+          "desc": "2026년 4월 인테리어를 새롭게 완료했으며, 전문 DJ들이 상주하는 매장입니다.",
+          "href": "/gangnam-highperpublic/elite",
+          "buttonText": "자세히 보기"
+        },
+        {
+          "title": "도파민",
+          "desc": "강남 대형 매장 중 24시간 운영을 선도하는 곳으로 알려져 있습니다.",
+          "href": "/gangnam-highperpublic/dopamine",
+          "buttonText": "자세히 보기"
+        },
+        {
+          "title": "제우스",
+          "desc": "2026년 2월 2일 그랜드 오픈, 층별로 다른 콘셉트의 룸이 구성된 매장입니다.",
+          "href": "/gangnam-highperpublic/zeus",
+          "buttonText": "자세히 보기"
+        },
+        {
+          "title": "수목원",
+          "desc": "안정적인 운영 흐름과 꾸준한 영업 상태가 유지되는 매장입니다.",
+          "href": "/gangnam-highperpublic/sumokwon",
+          "buttonText": "자세히 보기"
+        },
+        {
+          "title": "워라벨",
+          "desc": "프라이빗과 프리미엄의 구조를 선호하는 경우 비교하기 좋은 매장입니다.",
+          "href": "/gangnam-highperpublic/worklife",
+          "buttonText": "자세히 보기"
+        }
+      ],
+      "historyLink": {
+        "text": "전체 등록·폐업 기록 보기",
+        "href": "/gangnam-highperpublic/history"
+      },
+      "ctaTitle": "강남 하이퍼블릭 상세 정보 더 보기",
+      "ctaDesc": "원하는 스타일에 맞는 매장을 카드형 리스트에서 선택하거나, 등록·폐업 기록과 시장 변화 데이터 페이지까지 함께 확인해보세요."
+    }
+  },
+  "map": {
+    "eyebrow": "— Map —",
+    "title": "강남 유흥주점 지도",
+    "desc": "영업중인 하이퍼블릭 등 합법 유흥주점을 지도에서 확인하세요.",
+    "comingSoon": "MAP SERVICE COMING SOON"
+  },
+  "footer": {
+    "logo": "CHOICE LOUNGE",
+    "notice": "초이스라운지는 방문자분들께 정확한 정보를 제공하기 위해 노력하고 있습니다. 제공된 정보의 정확도에 대해 법적책임이 없음을 고지드립니다.",
+    "links": [
+      {
+        "text": "하이퍼블릭",
+        "href": "highperpublic/index.html"
+      },
+      {
+        "text": "유흥",
+        "href": "nightlife/index.html"
+      }
+    ],
+    "copyright": "© 2026 CHOICE LOUNGE. All Rights Reserved."
+  },
+  "contact": {
+    "phone": "01081191677",
+    "phoneDisplay": "010-8119-1677",
+    "phoneLink": "tel:01081191677"
+  },
+  "page": {
+    "home": {
+      "title": "강남 하이퍼블릭 완벽 가이드 | 초이스라운지",
+      "description": "강남 하이퍼블릭 가격, 시스템, 분위기, 가게별 특징까지 실제 기준으로 정리한 정보 페이지입니다.",
+      "faq": [
+        {
+          "question": "강남 하이퍼블릭 가격은 어느 정도인가요?",
+          "answer": "평균적으로 0부 10만원, 1부 17만원, 2부 14만원, 티시 12만원, 룸티 5만원 기준으로 보는 경우가 많습니다. 다만 가게별 차이는 존재합니다."
+        },
+        {
+          "question": "강남 퍼블릭과 무엇이 다른가요?",
+          "answer": "하이퍼블릭은 초이스 중심 구조로 인식되는 편이고, 퍼블릭은 분위기와 체류 흐름에 더 무게가 실리는 경우가 많습니다."
+        },
+        {
+          "question": "가게별 차이는 어디서 확인하나요?",
+          "answer": "메인페이지는 전체 흐름을 정리하는 역할을 하고, 각 하부페이지에서 강남 유앤미, 강남 디저트, 강남 달토 등 개별 가게의 특징을 자세히 다루는 구조로 가는 것이 효율적입니다."
+        }
+      ],
+      "cta": {
+        "title": "강남 하이퍼블릭 상세 정보 더 보기",
+        "desc": "원하는 스타일에 맞는 매장을 카드형 리스트에서 선택하거나, 등록·폐업 기록과 시장 변화 데이터 페이지까지 함께 확인해보세요.",
+        "buttons": [
+          {
+            "text": "데이터 페이지 보기",
+            "href": "/gangnam-highperpublic/history",
+            "style": "primary"
+          },
+          {
+            "text": "하부페이지 예시 보기",
+            "href": "/gangnam-highperpublic/unmi",
+            "style": "secondary"
+          }
+        ]
+      }
+    }
+  },
+  "common": {
+    "phoneInquiry": "전화문의",
+    "backToTop": "↑"
+  }
+}
