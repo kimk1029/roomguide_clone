@@ -23,12 +23,10 @@ img{max-width:100%;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 32px}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px}
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s}.reveal.v{opacity:1;transform:none}
-/* Lang */
 body:not(.lang-en) .en-t{display:none!important}
 body.lang-en .ko-t{display:none!important}
 .lang-btn{background:none;border:1px solid var(--gold-dark);color:var(--text-muted);font-size:10px;letter-spacing:2px;padding:5px 10px;cursor:pointer;transition:var(--t);font-family:'Noto Sans KR',sans-serif}
 .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
-/* Header */
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--t)}
 .header.scrolled{padding:12px 0;background:rgba(11,11,11,.96);backdrop-filter:blur(30px);border-bottom:1px solid var(--glass-border)}
 .header .container{display:flex;align-items:center;justify-content:space-between}
@@ -44,7 +42,6 @@ body.lang-en .ko-t{display:none!important}
 .mobile-nav.open{display:flex}
 .mobile-nav a{font-size:17px;letter-spacing:4px;text-transform:uppercase;color:var(--text-dim)}.mobile-nav a:hover{color:var(--gold)}
 .mobile-nav__close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--gold);font-size:26px;cursor:pointer}
-/* Eyebrow */
 .eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block}
 /* Hero */
 .dhero{position:relative;min-height:90vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:80px}
@@ -82,14 +79,33 @@ body.lang-en .ko-t{display:none!important}
 .soc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.4)}
 .soc-btn--phone{border-color:var(--gold-dark);color:var(--gold)}
 .soc-btn--phone:hover{background:var(--gold);color:var(--black)}
-.soc-btn--telegram{border-color:#229ED9;color:#229ED9}
-.soc-btn--telegram:hover{background:#229ED9;color:#fff}
-.soc-btn--kakao{border-color:#F9E000;color:#F9E000}
-.soc-btn--kakao:hover{background:#F9E000;color:#3A1D1D}
-.soc-btn--insta{border-color:#E1306C;color:#E1306C}
-.soc-btn--insta:hover{background:#E1306C;color:#fff}
-.soc-btn--twitter{border-color:#aaa;color:#aaa}
-.soc-btn--twitter:hover{background:#222;color:#fff;border-color:#fff}
+/* Summary bullets */
+.summary-sec{padding:60px 0;border-bottom:1px solid var(--glass-border)}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:24px}
+.summary-item{padding:20px 24px;border:1px solid var(--glass-border);font-size:14px;color:var(--text-dim);line-height:1.7;display:flex;align-items:flex-start;gap:10px}
+.summary-item::before{content:'✦';color:var(--gold);font-size:10px;margin-top:4px;flex-shrink:0}
+/* Content sections */
+.content-sec{padding:80px 0;border-bottom:1px solid var(--glass-border)}
+.content-sec:last-of-type{border-bottom:none}
+.content-sec__title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,36px);font-weight:900;margin-bottom:24px}
+.content-sec__body{max-width:760px}
+.content-sec__body p{font-size:15px;color:var(--text-dim);line-height:1.9;font-weight:300;margin-bottom:16px}
+.content-sec__body p:last-child{margin-bottom:0}
+/* Gallery */
+.gallery-sec{padding:80px 0;border-top:1px solid var(--glass-border)}
+.gallery-sec__title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,36px);font-weight:900;margin-bottom:8px}
+.gallery-sec__desc{font-size:14px;color:var(--text-muted);margin-bottom:32px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery-item{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:brightness(.85)}
+.gallery-item:hover img{transform:scale(1.05);filter:brightness(1)}
+.gallery-item__label{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent);font-size:12px;color:var(--text);letter-spacing:1px;opacity:0;transition:opacity .3s}
+.gallery-item:hover .gallery-item__label{opacity:1}
+/* Lightbox */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;align-items:center;justify-content:center;cursor:pointer}
+.lb.open{display:flex}
+.lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lb__close{position:absolute;top:24px;right:32px;color:var(--gold);font-size:32px;cursor:pointer;background:none;border:none;line-height:1}
 /* Pricing */
 .pricing-sec{padding:100px 0}
 .pricing-sec__title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;margin-bottom:12px}
@@ -118,12 +134,21 @@ body.lang-en .ko-t{display:none!important}
 .feat-item:hover{border-color:var(--gold);background:rgba(201,169,110,.02)}
 .feat-item__icon{font-size:24px;flex-shrink:0;margin-top:2px}
 .feat-item__text{font-size:14px;color:var(--text-dim);line-height:1.7}
+/* FAQ */
+.faq-sec{padding:80px 0;border-top:1px solid var(--glass-border)}
+.faq-sec__title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:900;margin-bottom:32px}
+.faq-item{border-bottom:1px solid var(--glass-border)}
+.faq-item__q{width:100%;background:none;border:none;text-align:left;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-item__q-text{font-size:15px;font-weight:700;color:var(--text);line-height:1.5}
+.faq-item__icon{color:var(--gold);font-size:20px;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-item__icon{transform:rotate(45deg)}
+.faq-item__a{display:none;padding:0 0 20px;font-size:14px;color:var(--text-dim);line-height:1.8}
+.faq-item.open .faq-item__a{display:block}
 /* CTA Contact */
 .cta-sec{padding:80px 0;background:var(--black2);border-top:1px solid var(--glass-border)}
 .cta-sec__inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .cta-sec__title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);font-weight:900;margin-bottom:14px}
 .cta-sec__desc{font-size:15px;color:var(--text-dim);line-height:1.9;font-weight:300;margin-bottom:28px}
-.cta-sec__phone{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,32px);font-weight:900;color:var(--gold);margin-bottom:20px;letter-spacing:2px}
 .cta-sec__btns{display:flex;gap:12px;flex-wrap:wrap}
 /* Others */
 .others-sec{padding:80px 0;border-top:1px solid var(--glass-border)}
@@ -131,7 +156,7 @@ body.lang-en .ko-t{display:none!important}
 .others-grid{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.others-grid::-webkit-scrollbar{display:none}
 .ocard{flex:0 0 160px;border:1px solid var(--glass-border);transition:var(--t);display:block}
 .ocard:hover{border-color:var(--gold);transform:translateY(-4px)}
-.ocard__img{aspect-ratio:3/4;overflow:hidden}
+.ocard__img{aspect-ratio:3/4;overflow:hidden;background:var(--black3)}
 .ocard__img img{width:100%;height:100%;object-fit:cover;filter:grayscale(40%);transition:all .5s}
 .ocard:hover .ocard__img img{filter:grayscale(0%);transform:scale(1.05)}
 .ocard__body{padding:12px}
@@ -152,6 +177,7 @@ body.lang-en .ko-t{display:none!important}
 @media(max-width:1024px){
   .cta-sec__inner{grid-template-columns:1fr;gap:40px}
   .features-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
   .nav{display:none}.mobile-toggle{display:block}
@@ -164,7 +190,7 @@ body.lang-en .ko-t{display:none!important}
   .contact-bar__btns{width:100%}.btn-call,.btn-call-out{flex:1;text-align:center;padding:12px 16px}
   .social-bar__inner{gap:8px}
   .soc-btn{padding:8px 12px;font-size:11px}
-  .pricing-sec{padding:60px 0}.features-sec,.cta-sec,.others-sec{padding:60px 0}
+  .pricing-sec{padding:60px 0}.features-sec,.cta-sec,.others-sec,.faq-sec{padding:60px 0}
   .ptab{padding:10px 16px;font-size:11px;letter-spacing:2px}
   .features-grid{grid-template-columns:1fr}
   .feat-item{padding:20px}
@@ -174,6 +200,8 @@ body.lang-en .ko-t{display:none!important}
   .footer{padding:40px 0}
   .footer__inner{flex-direction:column;gap:24px}
   .btt{width:40px;height:40px;bottom:20px;right:16px;font-size:16px}
+  .gallery-grid{grid-template-columns:1fr}
+  .summary-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .dhero__title{font-size:clamp(34px,11vw,52px)}
@@ -194,9 +222,6 @@ body.lang-en .ko-t{display:none!important}
       <a href="../../highperpublic/index.html" class="active">
         <span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span>
       </a>
-      <a href="../../nightlife/index.html">
-        <span class="ko-t">유흥</span><span class="en-t">Nightlife</span>
-      </a>
       <a href="#" class="nav__cta" id="nav-cta">Reserve</a>
       <button class="lang-btn" id="langBtn">EN</button>
     </nav>
@@ -208,17 +233,14 @@ body.lang-en .ko-t{display:none!important}
   <a href="../../highperpublic/index.html">
     <span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span>
   </a>
-  <a href="../../nightlife/index.html">
-    <span class="ko-t">유흥</span><span class="en-t">Nightlife</span>
-  </a>
   <button class="lang-btn" id="mobileLangBtn" style="margin-top:8px">EN</button>
   <a href="#" id="mobile-cta" style="color:var(--gold);border:1px solid var(--gold);padding:14px 40px;margin-top:8px">Reserve</a>
 </nav>
 
-<!-- Hero with parallax -->
+<!-- Hero -->
 <section class="dhero" id="dhero">
   <div class="dhero__bg" id="dheroBg">
-    <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=1600&q=80" alt="" id="hero-img"
+    <img src="" alt="" id="hero-img"
          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
     <div class="dhero__ov"></div>
   </div>
@@ -255,6 +277,34 @@ body.lang-en .ko-t{display:none!important}
   </div>
 </div>
 
+<!-- 핵심 정보 요약 -->
+<section class="summary-sec" id="summary-sec" style="display:none">
+  <div class="container">
+    <span class="eyebrow reveal">Quick Info</span>
+    <h2 class="reveal" style="font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:900;margin-bottom:4px" id="summary-title"></h2>
+    <div class="summary-grid" id="summary-grid"></div>
+  </div>
+</section>
+
+<!-- 콘텐츠 섹션들 -->
+<div id="content-sections"></div>
+
+<!-- 갤러리 -->
+<section class="gallery-sec" id="gallery-sec" style="display:none">
+  <div class="container">
+    <span class="eyebrow reveal">Gallery</span>
+    <h2 class="gallery-sec__title reveal" id="gallery-title"></h2>
+    <p class="gallery-sec__desc reveal" id="gallery-desc"></p>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<!-- 라이트박스 -->
+<div class="lb" id="lightbox">
+  <button class="lb__close" id="lb-close">✕</button>
+  <img src="" alt="" id="lb-img">
+</div>
+
 <!-- 가격 안내 -->
 <section class="pricing-sec">
   <div class="container">
@@ -279,6 +329,15 @@ body.lang-en .ko-t{display:none!important}
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-sec" id="faq-sec" style="display:none">
+  <div class="container">
+    <span class="eyebrow reveal">FAQ</span>
+    <h2 class="faq-sec__title reveal" id="faq-title"></h2>
+    <div id="faq-list"></div>
+  </div>
+</section>
+
 <!-- 예약 CTA -->
 <section class="cta-sec">
   <div class="container">
@@ -291,7 +350,6 @@ body.lang-en .ko-t{display:none!important}
         <p class="cta-sec__desc" id="cta-desc"></p>
       </div>
       <div class="reveal">
-        <div class="cta-sec__phone" id="cta-phone"></div>
         <div class="cta-sec__btns" id="cta-btns"></div>
       </div>
     </div>
@@ -321,9 +379,6 @@ body.lang-en .ko-t{display:none!important}
         <a href="../../highperpublic/index.html">
           <span class="ko-t">하이퍼블릭</span><span class="en-t">Highper Public</span>
         </a>
-        <a href="../../nightlife/index.html">
-          <span class="ko-t">유흥</span><span class="en-t">Nightlife</span>
-        </a>
         <a href="../../sitemap.xml">Sitemap</a>
       </div>
     </div>
@@ -334,8 +389,18 @@ body.lang-en .ko-t{display:none!important}
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>var VENUE_SLUG = 'zeus';</script>
-
 <script>
+/* ── Slug -> directory map ── */
+var SLUG_DIR_MAP = {
+  unmi:     '../unmi/',
+  dessert:  '../dessert/',
+  dalto:    '../dalto/',
+  elite:    '../elite/',
+  dopamine: '../dopamine/',
+  zeus:     '../zeus/',
+  sumokwon: '../drama/',
+  worklife: '../worklife/'
+};
 /* ── 유틸 ── */
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function fmt(n){return Number(n).toLocaleString('ko-KR')}
@@ -393,6 +458,13 @@ document.getElementById('mobileLangBtn').addEventListener('click', function(){
   toggleLang();
 });
 
+/* ── 라이트박스 ── */
+var lb = document.getElementById('lightbox');
+var lbImg = document.getElementById('lb-img');
+document.getElementById('lb-close').onclick = function(){lb.classList.remove('open')};
+lb.addEventListener('click', function(e){if(e.target===lb)lb.classList.remove('open')});
+document.addEventListener('keydown', function(e){if(e.key==='Escape')lb.classList.remove('open')});
+
 /* ── 가격표 렌더 ── */
 function renderPriceTable(part){
   var persons=[1,2,3,4];
@@ -410,61 +482,122 @@ function renderPriceTable(part){
   return '<div class="ptable-wrap"><table class="ptable"><thead>'+th+'</thead><tbody>'+tbody+'</tbody></table></div>';
 }
 
-/* ── 이미지 맵 ── */
-var OTHER_IMGS = {
-  unmi:     'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=400&q=80',
-  dessert:  'https://images.unsplash.com/photo-1571204829887-3b8d69e4094d?w=400&q=80',
-  dalto:    'https://images.unsplash.com/photo-1545128485-c400e7702712?w=400&q=80',
-  elite:    'https://images.unsplash.com/photo-1578474846511-04ba529f0b88?w=400&q=80',
-  dopamine: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&q=80',
-  zeus:     'https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=400&q=80',
-  sumokwon: 'https://images.unsplash.com/photo-1519214605650-76a613ee3245?w=400&q=80',
-  worklife: 'https://images.unsplash.com/photo-1560624052-449f5ddf0c31?w=400&q=80'
-};
-
 /* ── 렌더 함수 ── */
 function renderContent(venues, texts){
   var v = venues[VENUE_SLUG];
   if(!v){console.error('Venue not found:', VENUE_SLUG); return;}
-  var phoneLink = v.phoneLink;
-  var social = v.social || {};
+  var phoneLink = v.phoneLink || '#';
+  var base = '../../';  /* path to choicelounge/ root */
 
-  document.title = isEn ? (v.nameEn||v.name)+' - Gangnam Hyper Public | CHOICE LOUNGE' : v.meta.title;
+  /* Meta */
+  var metaTitle = v.meta && v.meta.title ? v.meta.title : (v.fullName||v.name)+' | CHOICE LOUNGE';
+  var metaDesc  = v.meta && v.meta.desc  ? v.meta.desc  : (v.descEn||v.desc);
+  document.title = isEn ? (v.nameEn||v.name)+' - Gangnam Hyper Public | CHOICE LOUNGE' : metaTitle;
   document.getElementById('page-title').textContent = document.title;
-  document.getElementById('page-desc').setAttribute('content', isEn ? v.descEn||v.meta.desc : v.meta.desc);
-
+  document.getElementById('page-desc').setAttribute('content', isEn ? (v.descEn||v.desc) : metaDesc);
   document.getElementById('nav-cta').href = phoneLink;
   document.getElementById('mobile-cta').href = phoneLink;
 
-  document.getElementById('bc-name').textContent = isEn ? (v.nameEn||v.name) : v.name;
-  document.getElementById('hero-name').textContent = v.name;
+  /* Hero */
+  document.getElementById('bc-name').textContent = isEn ? (v.nameEn||v.name) : (v.fullName||v.name);
+  document.getElementById('hero-name').textContent = v.fullName||v.name;
   document.getElementById('hero-desc').textContent = isEn ? (v.descEn||v.desc) : v.desc;
-  document.getElementById('hero-badge').textContent = v.status + ' · Hyper Public';
-  document.getElementById('hero-meta').innerHTML =
-    '<span class="dhero__meta-tag">'+t('1부','Part 1')+' '+esc(v.part1.time)+'</span>' +
-    '<span class="dhero__meta-tag">'+t('2부','Part 2')+' '+esc(v.part2.time)+'</span>' +
-    '<span class="dhero__meta-tag">'+t('룸','Rooms')+' '+esc(v.rooms)+t('개','')+'</span>';
+  document.getElementById('hero-badge').textContent = (v.status||'영업중') + ' · Hyper Public';
 
-  var heroImg = document.getElementById('hero-img');
-  if(heroImg && OTHER_IMGS[VENUE_SLUG]) heroImg.src = OTHER_IMGS[VENUE_SLUG].replace('w=400','w=1600');
+  /* Hero image: first gallery item with section=hero, else first gallery item */
+  var heroGallery = (v.gallery||[]).filter(function(g){return g.section==='hero' && g.src});
+  if(!heroGallery.length) heroGallery = (v.gallery||[]).filter(function(g){return g.src});
+  if(heroGallery.length){
+    var heroImg = document.getElementById('hero-img');
+    heroImg.src = base + heroGallery[0].src;
+    heroImg.alt = heroGallery[0].alt || (v.fullName||v.name);
+  }
 
-  document.getElementById('contact-info').innerHTML =
-    '<div><div class="contact-bar__label">'+t('1부 운영','Part 1')+'</div><div class="contact-bar__value">'+esc(v.part1.time)+'</div></div>' +
-    '<div><div class="contact-bar__label">'+t('2부 운영','Part 2')+'</div><div class="contact-bar__value">'+esc(v.part2.time)+'</div></div>';
+  /* Hero meta tags: summaryBullets (first 3) + rooms + operation */
+  var metaTags = [];
+  if(v.summaryBullets && v.summaryBullets.length){
+    v.summaryBullets.slice(0,3).forEach(function(b){
+      metaTags.push('<span class="dhero__meta-tag">'+esc(b)+'</span>');
+    });
+  } else {
+    metaTags.push('<span class="dhero__meta-tag">'+t('룸','Rooms')+' '+esc(v.rooms||'')+t('개','')+'</span>');
+    if(v.operation){
+      metaTags.push('<span class="dhero__meta-tag">'+esc(v.operation.hours||'')+'</span>');
+      if(v.operation.pickupFree) metaTags.push('<span class="dhero__meta-tag">'+esc(v.operation.pickupText||t('무료 픽업','Free Pickup'))+'</span>');
+    }
+  }
+  document.getElementById('hero-meta').innerHTML = metaTags.join('');
+
+  /* Contact bar */
+  var infoHtml = '';
+  if(v.address) infoHtml += '<div><div class="contact-bar__label">'+t('주소','Address')+'</div><div class="contact-bar__value">'+esc(v.address)+'</div></div>';
+  if(v.operation) {
+    infoHtml += '<div><div class="contact-bar__label">'+t('운영','Hours')+'</div><div class="contact-bar__value">'+esc(v.operation.hours||'')+'</div></div>';
+    if(v.operation.pickupFree) infoHtml += '<div><div class="contact-bar__label">'+t('픽업','Pickup')+'</div><div class="contact-bar__value gold">'+esc(v.operation.pickupText||t('무료 픽업','Free Pickup'))+'</div></div>';
+  }
+  document.getElementById('contact-info').innerHTML = infoHtml;
   document.getElementById('contact-btns').innerHTML =
     '<a href="'+phoneLink+'" class="btn-call">'+t('전화문의','Call Now')+'</a>';
 
-  /* Social */
-  var socHtml='';
-  socHtml+='<a href="'+esc(phoneLink)+'" class="soc-btn soc-btn--phone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span class="soc-label">'+t('전화문의','Call')+'</span></a>';
-    document.getElementById('social-links').innerHTML = socHtml;
+  /* Social bar */
+  document.getElementById('social-links').innerHTML =
+    '<a href="'+esc(phoneLink)+'" class="soc-btn soc-btn--phone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span class="soc-label">'+t('전화문의','Call')+'</span></a>';
 
-  /* pricing */
-  document.getElementById('price-title').textContent = v.name+t(' 가격 안내',' Pricing Guide');
-  document.getElementById('price-desc').textContent = t('아래 금액은 평균 기준이며 실제 가격은 상황에 따라 달라질 수 있습니다. 정확한 금액은 예약 문의를 통해 확인해 주세요.','Prices shown are averages and may vary. Please contact us for exact pricing.');
-  document.getElementById('price-notice').innerHTML = '<strong>※ '+t('안내','Notice')+'</strong> · '+esc(v.notice);
+  /* Summary bullets */
+  if(v.summaryBullets && v.summaryBullets.length){
+    document.getElementById('summary-sec').style.display = '';
+    document.getElementById('summary-title').textContent = t((v.fullName||v.name)+' 핵심 정보', (v.nameEn||v.name)+' Key Info');
+    document.getElementById('summary-grid').innerHTML = v.summaryBullets.map(function(b){
+      return '<div class="summary-item reveal">'+esc(b)+'</div>';
+    }).join('');
+    observe(document.getElementById('summary-grid'));
+  }
 
-  var tabsHtml='',contentsHtml='';
+  /* Content sections */
+  var sectionsHtml = '';
+  if(v.sections && v.sections.length){
+    v.sections.forEach(function(sec){
+      if(!sec.title && (!sec.body || !sec.body.length)) return;
+      sectionsHtml += '<section class="content-sec"><div class="container">';
+      if(sec.title) sectionsHtml += '<h2 class="content-sec__title reveal">'+esc(sec.title)+'</h2>';
+      if(sec.body && sec.body.length){
+        sectionsHtml += '<div class="content-sec__body">';
+        sec.body.forEach(function(p){
+          if(p) sectionsHtml += '<p class="reveal">'+esc(p)+'</p>';
+        });
+        sectionsHtml += '</div>';
+      }
+      sectionsHtml += '</div></section>';
+    });
+  }
+  document.getElementById('content-sections').innerHTML = sectionsHtml;
+  observe(document.getElementById('content-sections'));
+
+  /* Gallery */
+  var galleryItems = (v.gallery||[]).filter(function(g){return g.src});
+  if(galleryItems.length){
+    document.getElementById('gallery-sec').style.display = '';
+    document.getElementById('gallery-title').textContent = t((v.fullName||v.name)+' 갤러리', (v.nameEn||v.name)+' Gallery');
+    document.getElementById('gallery-desc').textContent = t('매장 내부 및 외부 사진을 확인하세요.','Explore venue photos.');
+    var galleryHtml = galleryItems.map(function(g){
+      var src = base + g.src;
+      return '<div class="gallery-item reveal" onclick="document.getElementById('lb-img').src=''+src+'';document.getElementById('lb-img').alt=''+esc(g.alt||g.label||'')+'';document.getElementById('lightbox').classList.add('open')">'
+        +'<img src="'+src+'" alt="'+esc(g.alt||g.label||'')+'" loading="lazy">'
+        +'<div class="gallery-item__label">'+esc(g.label||'')+'</div>'
+        +'</div>';
+    }).join('');
+    document.getElementById('gallery-grid').innerHTML = galleryHtml;
+    observe(document.getElementById('gallery-grid'));
+  }
+
+  /* Pricing */
+  document.getElementById('price-title').textContent = (v.fullName||v.name)+t(' 가격 안내',' Pricing Guide');
+  document.getElementById('price-desc').textContent = v.priceNote || t('아래 금액은 평균 기준이며 실제 가격은 상황에 따라 달라질 수 있습니다.','Prices are averages and may vary.');
+  var noticeText = v.notice ? '※ '+v.notice : '';
+  document.getElementById('price-notice').style.display = noticeText ? '' : 'none';
+  if(noticeText) document.getElementById('price-notice').innerHTML = '<strong>※ '+t('안내','Notice')+'</strong> · '+esc(v.notice);
+
+  var tabsHtml='', contentsHtml='';
   var parts=[v.part0,v.part1,v.part2].filter(Boolean);
   parts.forEach(function(part,idx){
     var id='ptab-'+idx, active=idx===0?'active':'', show=idx===0?'show':'';
@@ -482,41 +615,75 @@ function renderContent(venues, texts){
     });
   });
 
-  /* features */
-  document.getElementById('feat-title').textContent = v.name+t(' 특징',' Features');
+  /* Features */
+  document.getElementById('feat-title').textContent = (v.fullName||v.name)+t(' 특징',' Features');
   document.getElementById('feat-desc').textContent = isEn ? (v.descEn||v.desc) : v.desc;
-  document.getElementById('features-grid').innerHTML = v.features.map(function(f){
-    return '<div class="feat-item reveal"><div class="feat-item__icon">'+esc(f.icon)+'</div><div class="feat-item__text">'+esc(f.text)+'</div></div>';
-  }).join('');
+  if(v.features && v.features.length){
+    document.getElementById('features-grid').innerHTML = v.features.map(function(f){
+      return '<div class="feat-item reveal"><div class="feat-item__icon">'+esc(f.icon||'')+'</div><div class="feat-item__text">'+esc(f.text)+'</div></div>';
+    }).join('');
+    observe(document.getElementById('features-grid'));
+  }
+
+  /* FAQ */
+  if(v.faq && v.faq.length){
+    document.getElementById('faq-sec').style.display = '';
+    document.getElementById('faq-title').textContent = t('자주 묻는 질문','FAQ');
+    var faqHtml = v.faq.map(function(item,idx){
+      return '<div class="faq-item reveal" id="faq-'+idx+'">'
+        +'<button class="faq-item__q" onclick="toggleFaq('+idx+')">'
+        +'<span class="faq-item__q-text">'+esc(item.q)+'</span>'
+        +'<span class="faq-item__icon">+</span>'
+        +'</button>'
+        +'<div class="faq-item__a">'+esc(item.a)+'</div>'
+        +'</div>';
+    }).join('');
+    document.getElementById('faq-list').innerHTML = faqHtml;
+    observe(document.getElementById('faq-list'));
+  }
 
   /* CTA */
   document.getElementById('cta-title').textContent = t('지금 바로 예약하세요','Make a Reservation');
   document.getElementById('cta-desc').textContent = isEn ? (v.descEn||v.desc) : v.desc;
-  document.getElementById('cta-phone').textContent = '';
   document.getElementById('cta-btns').innerHTML =
     '<a href="'+phoneLink+'" class="btn-call">'+t('전화문의','Call Now')+'</a>'+
     '<a href="../../highperpublic/index.html" class="btn-call-out">'+t('목록으로','Back to List')+'</a>';
 
-  /* others */
+  /* Others */
   var othersHtml='';
   Object.keys(venues).forEach(function(sl){
-    if(sl===VENUE_SLUG)return;
-    var ov=venues[sl], oImg=OTHER_IMGS[sl]||OTHER_IMGS.unmi;
-    othersHtml+='<a href="../'+sl+'/" class="ocard">'+
-      '<div class="ocard__img"><img src="'+oImg+'" alt="'+esc(ov.name)+'" loading="lazy" onerror="this.style.background=\'#1a1a2e\';this.style.display=\'block\'"></div>'+
-      '<div class="ocard__body"><div class="ocard__name">'+esc(ov.name)+'</div><div class="ocard__desc">'+esc(isEn?(ov.descEn||ov.desc):ov.desc)+'</div></div>'+
-      '</a>';
+    if(sl===VENUE_SLUG) return;
+    var ov=venues[sl];
+    var slug = ov.slug || sl;
+    var dir = SLUG_DIR_MAP[sl] || ('../'+slug+'/');
+    /* First gallery image for other card */
+    var oImgSrc = '';
+    if(ov.gallery && ov.gallery.length){
+      var firstImg = ov.gallery.find(function(g){return g.src});
+      if(firstImg) oImgSrc = base + firstImg.src;
+    }
+    var imgTag = oImgSrc
+      ? '<img src="'+oImgSrc+'" alt="'+esc(ov.name)+'" loading="lazy" onerror="this.style.display='none'">'
+      : '';
+    othersHtml+='<a href="'+dir+'" class="ocard">'
+      +'<div class="ocard__img">'+imgTag+'</div>'
+      +'<div class="ocard__body"><div class="ocard__name">'+esc(ov.name)+'</div><div class="ocard__desc">'+esc(isEn?(ov.descEn||ov.desc):ov.desc)+'</div></div>'
+      +'</a>';
   });
   document.getElementById('others-grid').innerHTML = othersHtml;
+  observe(document.getElementById('others-grid'));
 
-  /* footer */
+  /* Footer */
   document.getElementById('footer-notice').textContent = isEn
     ? 'CHOICE LOUNGE strives to provide accurate information. We are not legally responsible for any inaccuracies.'
-    : texts.footer.notice;
-  document.getElementById('footer-copy').textContent = texts.footer.copyright;
+    : (texts && texts.footer ? texts.footer.notice : '');
+  document.getElementById('footer-copy').textContent = texts && texts.footer ? texts.footer.copyright : '';
+}
 
-  observe(document.getElementById('features-grid'));
-  observe(document.getElementById('others-grid'));
+/* ── FAQ 토글 ── */
+function toggleFaq(idx){
+  var item = document.getElementById('faq-'+idx);
+  if(item) item.classList.toggle('open');
 }
 
 /* ── venues.json + texts.json 로드 ── */
