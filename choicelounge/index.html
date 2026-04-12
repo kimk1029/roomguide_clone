@@ -927,6 +927,31 @@ window.addEventListener('load', function () {
         if (markers.length > 1) map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
       })
       .catch(function (e) { console.error('venues.json load error:', e); });
+
+    /* Naver Maps 인증 오류 오버레이 제거 */
+    var mapContainer = document.getElementById('naver-map');
+    if (mapContainer) {
+      new MutationObserver(function (mutations) {
+        mutations.forEach(function (m) {
+          m.addedNodes.forEach(function (node) {
+            if (node.nodeType !== 1) return;
+            var text = node.innerText || node.textContent || '';
+            if (text.indexOf('인증이 실패') !== -1 || text.indexOf('Authentication Failed') !== -1) {
+              node.remove();
+            }
+            /* 자식 노드도 검사 */
+            node.querySelectorAll && node.querySelectorAll('*').forEach(function (child) {
+              var ct = child.innerText || child.textContent || '';
+              if (ct.indexOf('인증이 실패') !== -1 || ct.indexOf('Authentication Failed') !== -1) {
+                var root = child;
+                while (root.parentElement && root.parentElement !== mapContainer) root = root.parentElement;
+                root.remove();
+              }
+            });
+          });
+        });
+      }).observe(mapContainer, { childList: true, subtree: true });
+    }
   })();
 });
 </script>
