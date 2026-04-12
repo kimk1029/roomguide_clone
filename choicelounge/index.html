@@ -351,7 +351,8 @@ body.lang-en .ko-t{display:none!important}
   .cta-buttons{flex-direction:column;align-items:center}
 }
 </style>
-<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=rcb3o1tsl2" defer></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 </head>
 <body>
 
@@ -838,125 +839,85 @@ body.lang-en .ko-t{display:none!important}
   </div>
 </section>
 
+<style>
+/* Leaflet 커스텀 마커 스타일 */
+.cl-marker{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:#0b0b0b;border:1.5px solid #c9a96e;color:#c9a96e;font-size:11px;font-weight:700;letter-spacing:1px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.6);cursor:pointer}
+.cl-marker svg{flex-shrink:0}
+.cl-popup .leaflet-popup-content-wrapper{background:#111;border:1px solid rgba(201,169,110,.35);border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,.6)}
+.cl-popup .leaflet-popup-content{margin:14px 18px;min-width:180px;font-family:'Noto Sans KR',sans-serif}
+.cl-popup .leaflet-popup-tip{background:#111;border:1px solid rgba(201,169,110,.35)}
+.cl-popup .leaflet-popup-close-button{color:#8a8272}
+.cl-popup__name{font-size:14px;font-weight:700;color:#c9a96e;margin-bottom:6px}
+.cl-popup__addr{font-size:12px;color:#8a8272;line-height:1.7}
+.cl-popup__info{font-size:11px;color:#5a5549;margin-top:6px}
+/* 다크 테마 지도 타일 */
+#naver-map .leaflet-tile{filter:brightness(.85) contrast(1.1) saturate(.7)}
+#naver-map{background:#111}
+</style>
 <script>
 /* ────────────────────────────────────────────
-   네이버 지도 초기화 (defer 로드 후 load 이벤트에서 실행)
+   Leaflet + OpenStreetMap 지도 초기화
 ──────────────────────────────────────────── */
-/* Naver Maps 인증 오류 오버레이 제거 */
-(function () {
-  var KW = ['인증이 실패', 'Authentication Failed'];
+window.addEventListener('load', function () {
+  var mapEl = document.getElementById('naver-map');
+  if (!mapEl || typeof L === 'undefined') return;
 
-  function sweep() {
-    document.querySelectorAll('body *').forEach(function (el) {
-      if (el._naverHidden) return;
-      var t = el.innerText || el.textContent || '';
-      if (KW.some(function (k) { return t.indexOf(k) !== -1; })) {
-        /* 가장 바깥쪽 컨테이너(body 직계 자식)를 숨김 */
-        var root = el;
-        while (root.parentElement && root.parentElement !== document.body) root = root.parentElement;
-        root.style.cssText += ';display:none!important';
-        root._naverHidden = true;
-      }
+  var map = L.map('naver-map', {
+    center: [37.5050, 127.0300],
+    zoom: 15,
+    zoomControl: true
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  }).addTo(map);
+
+  /* 마커 아이콘 생성 */
+  function makeIcon(name) {
+    return L.divIcon({
+      className: '',
+      html: '<div class="cl-marker">' +
+            '<svg width="10" height="10" viewBox="0 0 24 24" fill="#c9a96e"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>' +
+            name + '</div>',
+      iconAnchor: [0, 40]
     });
   }
 
-  /* DOM 변화 즉시 감지 */
-  new MutationObserver(sweep).observe(document.documentElement, { childList: true, subtree: true });
+  /* 팝업 HTML 생성 */
+  function makePopup(v) {
+    var html = '<div class="cl-popup__name">' + (v.fullName || v.name) + '</div>' +
+               '<div class="cl-popup__addr">' + v.address + '</div>';
+    if (v.operation) {
+      html += '<div class="cl-popup__info">' + (v.operation.hours || '') +
+              (v.operation.pickupFree ? ' · 무료픽업' : '') + '</div>';
+    }
+    return html;
+  }
 
-  /* 혹시 이미 렌더된 경우 대비 — 3초간 100ms 마다 반복 */
-  var t = 0;
-  var iv = setInterval(function () {
-    sweep();
-    if (++t > 30) clearInterval(iv);
-  }, 100);
-})();
+  fetch('venues.json')
+    .then(function (r) { return r.json(); })
+    .then(function (venues) {
+      var group = [];
 
-window.addEventListener('load', function () {
-  var mapEl = document.getElementById('naver-map');
-  if (!mapEl) return;
-  if (typeof naver === 'undefined' || !naver.maps) return;
+      Object.keys(venues).forEach(function (key) {
+        var v = venues[key];
+        if (!v.lat || !v.lng) return;
 
-  (function () {
-    var map = new naver.maps.Map('naver-map', {
-      center: new naver.maps.LatLng(37.5172, 127.0286),
-      zoom: 15,
-      mapTypeId: naver.maps.MapTypeId.NORMAL,
-      zoomControl: true,
-      zoomControlOptions: { position: naver.maps.Position.TOP_RIGHT }
-    });
+        var marker = L.marker([v.lat, v.lng], {
+          icon: makeIcon(v.name || key),
+          title: v.fullName || v.name
+        }).addTo(map);
 
-    fetch('venues.json')
-      .then(function (r) { return r.json(); })
-      .then(function (venues) {
-        var bounds = new naver.maps.LatLngBounds();
-        var markers = [];
+        marker.bindPopup(makePopup(v), { className: 'cl-popup', maxWidth: 260 });
+        group.push(marker);
+      });
 
-        Object.keys(venues).forEach(function (key) {
-          var v = venues[key];
-          if (!v.lat || !v.lng) return;
-
-          var pos = new naver.maps.LatLng(v.lat, v.lng);
-          bounds.extend(pos);
-
-          /* 커스텀 마커 */
-          var marker = new naver.maps.Marker({
-            position: pos,
-            map: map,
-            title: v.fullName || v.name,
-            icon: {
-              content: [
-                '<div style="',
-                  'display:inline-flex;align-items:center;gap:6px;',
-                  'padding:7px 12px;',
-                  'background:#0b0b0b;',
-                  'border:1.5px solid #c9a96e;',
-                  'color:#c9a96e;',
-                  'font-size:11px;font-weight:700;letter-spacing:1px;',
-                  'white-space:nowrap;',
-                  'box-shadow:0 4px 16px rgba(0,0,0,.6);',
-                  'cursor:pointer;',
-                  'transform:translateY(-100%);margin-bottom:4px',
-                '">',
-                '<svg width="10" height="10" viewBox="0 0 24 24" fill="#c9a96e"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
-                (v.name || key),
-                '</div>'
-              ].join(''),
-              anchor: new naver.maps.Point(0, 0)
-            }
-          });
-
-          /* 정보창 */
-          var iw = new naver.maps.InfoWindow({
-            content: [
-              '<div style="',
-                'padding:14px 18px;min-width:180px;',
-                'background:#111;border:1px solid rgba(201,169,110,.35);',
-                'font-family:\'Noto Sans KR\',sans-serif',
-              '">',
-              '<div style="font-size:14px;font-weight:700;color:#c9a96e;margin-bottom:6px">', (v.fullName || v.name), '</div>',
-              '<div style="font-size:12px;color:#8a8272;line-height:1.7">', v.address, '</div>',
-              v.operation ? '<div style="font-size:11px;color:#5a5549;margin-top:6px">' + (v.operation.hours || '') + (v.operation.pickupFree ? ' · 무료픽업' : '') + '</div>' : '',
-              '</div>'
-            ].join(''),
-            borderWidth: 0,
-            backgroundColor: 'transparent',
-            anchorSize: new naver.maps.Size(0, 0)
-          });
-
-          naver.maps.Event.addListener(marker, 'click', function () {
-            markers.forEach(function (m) { if (m.iw && m.iw.getMap()) m.iw.close(); });
-            if (iw.getMap()) { iw.close(); } else { iw.open(map, marker); }
-          });
-
-          marker.iw = iw;
-          markers.push(marker);
-        });
-
-        /* 모든 핀이 보이도록 지도 범위 조정 */
-        if (markers.length > 1) map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
-      })
-      .catch(function (e) { console.error('venues.json load error:', e); });
-  })();
+      if (group.length > 1) {
+        map.fitBounds(L.featureGroup(group).getBounds().pad(0.15));
+      }
+    })
+    .catch(function (e) { console.error('venues.json load error:', e); });
 });
 </script>
 
