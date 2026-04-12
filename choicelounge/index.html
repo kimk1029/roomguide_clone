@@ -351,6 +351,7 @@ body.lang-en .ko-t{display:none!important}
   .cta-buttons{flex-direction:column;align-items:center}
 }
 </style>
+<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=rcb3o1tsl2" defer></script>
 </head>
 <body>
 
@@ -843,26 +844,15 @@ body.lang-en .ko-t{display:none!important}
    NCP 콘솔 → Application → Client ID를 아래에 입력하세요
    https://console.ncloud.com/
 ──────────────────────────────────────────── */
-var NAVER_CLIENT_ID = 'rcb3o1tsl2';
-
-(function () {
+window.addEventListener('load', function () {
   var mapEl = document.getElementById('naver-map');
   if (!mapEl) return;
-
-  if (!NAVER_CLIENT_ID || NAVER_CLIENT_ID === 'YOUR_CLIENT_ID_HERE') {
-    mapEl.innerHTML = '<div class="map-notice"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>NAVER_CLIENT_ID를 설정해 주세요</span></div>';
+  if (typeof naver === 'undefined' || !naver.maps) {
+    mapEl.innerHTML = '<div class="map-notice"><span>지도 로드 실패 — Client ID를 확인해 주세요</span></div>';
     return;
   }
 
-  var script = document.createElement('script');
-  script.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=' + NAVER_CLIENT_ID;
-  script.onload = initNaverMap;
-  script.onerror = function () {
-    mapEl.innerHTML = '<div class="map-notice"><span>지도 로드 실패 — Client ID를 확인해 주세요</span></div>';
-  };
-  document.head.appendChild(script);
-
-  function initNaverMap() {
+  (function initNaverMap() {
     var map = new naver.maps.Map('naver-map', {
       center: new naver.maps.LatLng(37.5172, 127.0286),
       zoom: 15,
@@ -942,8 +932,8 @@ var NAVER_CLIENT_ID = 'rcb3o1tsl2';
         if (markers.length > 1) map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
       })
       .catch(function (e) { console.error('venues.json load error:', e); });
-  }
-})();
+  })();
+});
 </script>
 
 <!-- Footer -->
