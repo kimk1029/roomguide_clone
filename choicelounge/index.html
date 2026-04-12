@@ -842,33 +842,33 @@ body.lang-en .ko-t{display:none!important}
 /* ────────────────────────────────────────────
    네이버 지도 초기화 (defer 로드 후 load 이벤트에서 실행)
 ──────────────────────────────────────────── */
-/* Naver Maps 인증 오류 오버레이 제거 — map 초기화 전에 미리 설정 */
+/* Naver Maps 인증 오류 오버레이 제거 */
 (function () {
-  var KEYWORDS = ['인증이 실패', 'Authentication Failed', 'ncp_nmapapi'];
-  function removeAuthNotice(node) {
-    if (node.nodeType !== 1) return;
-    var text = node.innerText || node.textContent || '';
-    var cls  = (node.className || '') + (node.id || '');
-    if (KEYWORDS.some(function (k) { return text.indexOf(k) !== -1 || cls.indexOf(k) !== -1; })) {
-      node.style.display = 'none';
-      return;
-    }
-    node.querySelectorAll && node.querySelectorAll('[class*="ncp"],[id*="ncp"],[class*="notice"],[class*="warning"]').forEach(function (el) {
+  var KW = ['인증이 실패', 'Authentication Failed'];
+
+  function sweep() {
+    document.querySelectorAll('body *').forEach(function (el) {
+      if (el._naverHidden) return;
       var t = el.innerText || el.textContent || '';
-      if (KEYWORDS.some(function (k) { return t.indexOf(k) !== -1; })) {
+      if (KW.some(function (k) { return t.indexOf(k) !== -1; })) {
+        /* 가장 바깥쪽 컨테이너(body 직계 자식)를 숨김 */
         var root = el;
         while (root.parentElement && root.parentElement !== document.body) root = root.parentElement;
-        root.style.display = 'none';
+        root.style.cssText += ';display:none!important';
+        root._naverHidden = true;
       }
     });
   }
-  new MutationObserver(function (mutations) {
-    mutations.forEach(function (m) {
-      m.addedNodes.forEach(removeAuthNotice);
-    });
-    /* 이미 DOM에 있는 노드도 검사 */
-    document.querySelectorAll('body > div').forEach(removeAuthNotice);
-  }).observe(document.body, { childList: true, subtree: true });
+
+  /* DOM 변화 즉시 감지 */
+  new MutationObserver(sweep).observe(document.documentElement, { childList: true, subtree: true });
+
+  /* 혹시 이미 렌더된 경우 대비 — 3초간 100ms 마다 반복 */
+  var t = 0;
+  var iv = setInterval(function () {
+    sweep();
+    if (++t > 30) clearInterval(iv);
+  }, 100);
 })();
 
 window.addEventListener('load', function () {
