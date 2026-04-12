@@ -7,7 +7,7 @@
     "desc": "높은 층고와 독보적인 인테리어를 경험할 수 있는 매장입니다.",
     "descEn": "A large Gangnam hyperpublic venue known for its lofty ceilings, spacious rooms, ongoing interior upgrades, and Bluetooth-synced LED room lighting.",
     "status": "영업중",
-    "address": "잠원동 18-9번지 유앤미",
+    "address": "서울특별시 서초구 잠원동 18-9번지",
     "rooms": 67,
     "operation": {
       "hours": "24시 운영",
@@ -243,8 +243,8 @@
         "a": "높은 층고, 웅장한 인포와 분수 포인트, 블루투스 연동 LED 룸 연출, 넓은 룸 구성, 24시 운영이 대표 포인트입니다."
       }
     ],
-    "lat": 37.5126,
-    "lng": 127.0008
+    "lat": 37.5150,
+    "lng": 127.0170
   },
   "dessert": {
     "slug": "dessert",
@@ -254,7 +254,7 @@
     "desc": "강남권 최상급 인테리어와 공연 요소, VIP 공간 구성이 돋보이는 대형 매장입니다.",
     "descEn": "A large Gangnam venue known for top-tier interiors, show performances, VIP rooms, and visually striking spaces.",
     "status": "영업중",
-    "address": "논현로 645 지하 1,2층",
+    "address": "서울특별시 강남구 논현로 645 지하 1,2층",
     "rooms": 70,
     "operation": {
       "hours": "0부, 1부 가격 문의 / 2부 공통 기준",
@@ -547,8 +547,8 @@
         "a": "가능합니다. 전체 가게 공통으로 무료 픽업이 가능합니다."
       }
     ],
-    "lat": 37.5098,
-    "lng": 127.0295
+    "lat": 37.5113,
+    "lng": 127.0318
   },
   "dalto": {
     "slug": "dalto",
@@ -558,7 +558,7 @@
     "desc": "전반적으로 평균 외모 수준이 높게 형성된 매장입니다.",
     "descEn": "Known for consistently high standards among staff, offering a premium choice experience.",
     "status": "영업중",
-    "address": "역삼동 604-11번지 지하 1,2층",
+    "address": "서울특별시 강남구 역삼동 604-11번지 지하 1,2층",
     "rooms": 56,
     "operation": {
       "hours": "18:00 ~ 15:00",
@@ -809,8 +809,8 @@
         "a": "출근 상권 기반의 인원 흐름, 평균 외모 수준, 룸 56개 운영, 웨이팅석 운영, 넓은 운영시간대가 핵심 포인트입니다."
       }
     ],
-    "lat": 37.4999,
-    "lng": 127.0294
+    "lat": 37.5086,
+    "lng": 127.0289
   },
   "elite": {
     "slug": "elite",
@@ -821,7 +821,7 @@
     "desc": "2026년 4월 인테리어를 새롭게 완료했으며, 전문 DJ가 상주하는 매장입니다.",
     "descEn": "Renovated in April 2026, this venue features a single-floor layout, resident professional DJs, and fast room circulation.",
     "status": "영업중",
-    "address": "대치동 890-38 지하 1층",
+    "address": "서울특별시 강남구 대치동 890-38 지하 1층",
     "rooms": 51,
     "operation": {
       "hours": "24시 운영",
@@ -1101,8 +1101,8 @@
         "a": "가능합니다. 전체 가게 공통으로 무료 픽업이 가능합니다."
       }
     ],
-    "lat": 37.492,
-    "lng": 127.0632
+    "lat": 37.5044,
+    "lng": 127.0534
   },
   "dopamine": {
     "slug": "dopamine",
@@ -1113,7 +1113,7 @@
     "desc": "강남 대형 매장 중 24시간 운영을 선도하는 곳으로 알려져 있습니다.",
     "descEn": "A large-scale Gangnam venue known for pioneering 24-hour operations, with strong accessibility, room convenience, and active staff flow.",
     "status": "영업중",
-    "address": "삼성동 142-29번지 1층부터 10층건물",
+    "address": "서울특별시 강남구 삼성동 142-29번지 1층부터 10층건물",
     "rooms": 65,
     "operation": {
       "hours": "24시 운영",
@@ -1385,8 +1385,8 @@
         "a": "대형 건물형 24시 매장이면서도 사람 흐름과 룸 편의성이 같이 살아 있는 매장으로 이해하는 것이 좋습니다."
       }
     ],
-    "lat": 37.5115,
-    "lng": 127.0515
+    "lat": 37.5061,
+    "lng": 127.0518
   },
   "zeus": {
     "slug": "zeus",
@@ -1397,7 +1397,7 @@
     "desc": "2026년 2월 2일 인테리어 완료, 층별로 다른 콘셉트의 룸이 구성된 매장입니다.",
     "descEn": "A premium Gangnam venue with concept-driven floors, clean interiors completed in February 2026, and rooms designed for comfort and hosting.",
     "status": "영업중",
-    "address": "역삼동 736-35",
+    "address": "서울특별시 강남구 역삼동 736-35",
     "rooms": 52,
     "operation": {
       "hours": "18:00 ~ 16:00",
@@ -1696,8 +1696,8 @@
         "a": "가능합니다. 전체 가게 공통으로 무료 픽업이 가능합니다."
       }
     ],
-    "lat": 37.5008,
-    "lng": 127.0327
+    "lat": 37.4980,
+    "lng": 127.0357
   },
   "sumokwon": {
     "slug": "drama",
@@ -1708,7 +1708,7 @@
     "desc": "이전 이름 수목원에서 변경된 매장으로, 기본 운영 정보 중심으로 확인하기 좋은 곳입니다.",
     "descEn": "Previously known as Sumokwon, this venue is best understood through its core operating information and updated identity.",
     "status": "영업중",
-    "address": "역삼동 823-30",
+    "address": "서울특별시 강남구 역삼동 823-30",
     "rooms": 32,
     "operation": {
       "hours": "18:00 ~ 06:00",
@@ -1922,8 +1922,8 @@
         "a": "가능합니다. 전체 가게 공통으로 무료 픽업이 가능합니다."
       }
     ],
-    "lat": 37.4985,
-    "lng": 127.0345
+    "lat": 37.4982,
+    "lng": 127.0331
   },
   "worklife": {
     "slug": "worklife",
@@ -1934,7 +1934,7 @@
     "desc": "프라이빗하고 고급스러운 분위기로 접대형 이용에 잘 맞는 매장입니다.",
     "descEn": "A private and premium Gangnam venue with strong hosting manners, refined interiors, and a calm atmosphere ideal for business entertainment.",
     "status": "영업중",
-    "address": "역삼동 824-8 워라벨",
+    "address": "서울특별시 강남구 역삼동 824-8",
     "rooms": 50,
     "operation": {
       "hours": "19:00 ~ 10:00",
@@ -2208,7 +2208,7 @@
         "a": "가능합니다. 전체 가게 공통으로 무료 픽업이 가능합니다."
       }
     ],
-    "lat": 37.4984,
-    "lng": 127.0347
+    "lat": 37.4978,
+    "lng": 127.0304
   }
 }
