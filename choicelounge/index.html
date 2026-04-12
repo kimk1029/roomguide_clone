@@ -351,7 +351,7 @@ body.lang-en .ko-t{display:none!important}
   .cta-buttons{flex-direction:column;align-items:center}
 }
 </style>
-<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=rcb3o1tsl2" defer></script>
+<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=rcb3o1tsl2" defer></script>
 </head>
 <body>
 
@@ -901,27 +901,6 @@ window.addEventListener('load', function () {
       if (markers.length > 1) map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
     })
     .catch(function (e) { console.error('venues.json load error:', e); });
-
-  /* 인증 오류 오버레이 제거 — map 컨테이너 내부 + body 직계 자식 모두 감시 */
-  function hideAuthOverlay() {
-    var targets = [mapEl, document.body];
-    targets.forEach(function (parent) {
-      if (!parent) return;
-      Array.prototype.forEach.call(parent.children, function (el) {
-        if (el._clHidden) return;
-        var t = (el.innerText || el.textContent || '').replace(/\s+/g, '');
-        if (t.indexOf('인증이실패') !== -1 || t.indexOf('AuthenticationFailed') !== -1) {
-          el.style.cssText = 'display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;width:0!important;height:0!important;overflow:hidden!important;position:absolute!important';
-          el._clHidden = true;
-        }
-      });
-    });
-  }
-  new MutationObserver(hideAuthOverlay).observe(mapEl, { childList: true, subtree: true });
-  new MutationObserver(hideAuthOverlay).observe(document.body, { childList: true, subtree: true });
-  /* 100ms 간격으로 10초간 반복 */
-  var cnt = 0;
-  var tid = setInterval(function () { hideAuthOverlay(); if (++cnt > 100) clearInterval(tid); }, 100);
 });
 </script>
 
