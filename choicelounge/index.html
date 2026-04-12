@@ -842,6 +842,35 @@ body.lang-en .ko-t{display:none!important}
 /* ────────────────────────────────────────────
    네이버 지도 초기화 (defer 로드 후 load 이벤트에서 실행)
 ──────────────────────────────────────────── */
+/* Naver Maps 인증 오류 오버레이 제거 — map 초기화 전에 미리 설정 */
+(function () {
+  var KEYWORDS = ['인증이 실패', 'Authentication Failed', 'ncp_nmapapi'];
+  function removeAuthNotice(node) {
+    if (node.nodeType !== 1) return;
+    var text = node.innerText || node.textContent || '';
+    var cls  = (node.className || '') + (node.id || '');
+    if (KEYWORDS.some(function (k) { return text.indexOf(k) !== -1 || cls.indexOf(k) !== -1; })) {
+      node.style.display = 'none';
+      return;
+    }
+    node.querySelectorAll && node.querySelectorAll('[class*="ncp"],[id*="ncp"],[class*="notice"],[class*="warning"]').forEach(function (el) {
+      var t = el.innerText || el.textContent || '';
+      if (KEYWORDS.some(function (k) { return t.indexOf(k) !== -1; })) {
+        var root = el;
+        while (root.parentElement && root.parentElement !== document.body) root = root.parentElement;
+        root.style.display = 'none';
+      }
+    });
+  }
+  new MutationObserver(function (mutations) {
+    mutations.forEach(function (m) {
+      m.addedNodes.forEach(removeAuthNotice);
+    });
+    /* 이미 DOM에 있는 노드도 검사 */
+    document.querySelectorAll('body > div').forEach(removeAuthNotice);
+  }).observe(document.body, { childList: true, subtree: true });
+})();
+
 window.addEventListener('load', function () {
   var mapEl = document.getElementById('naver-map');
   if (!mapEl) return;
@@ -927,31 +956,6 @@ window.addEventListener('load', function () {
         if (markers.length > 1) map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
       })
       .catch(function (e) { console.error('venues.json load error:', e); });
-
-    /* Naver Maps 인증 오류 오버레이 제거 */
-    var mapContainer = document.getElementById('naver-map');
-    if (mapContainer) {
-      new MutationObserver(function (mutations) {
-        mutations.forEach(function (m) {
-          m.addedNodes.forEach(function (node) {
-            if (node.nodeType !== 1) return;
-            var text = node.innerText || node.textContent || '';
-            if (text.indexOf('인증이 실패') !== -1 || text.indexOf('Authentication Failed') !== -1) {
-              node.remove();
-            }
-            /* 자식 노드도 검사 */
-            node.querySelectorAll && node.querySelectorAll('*').forEach(function (child) {
-              var ct = child.innerText || child.textContent || '';
-              if (ct.indexOf('인증이 실패') !== -1 || ct.indexOf('Authentication Failed') !== -1) {
-                var root = child;
-                while (root.parentElement && root.parentElement !== mapContainer) root = root.parentElement;
-                root.remove();
-              }
-            });
-          });
-        });
-      }).observe(mapContainer, { childList: true, subtree: true });
-    }
   })();
 });
 </script>
