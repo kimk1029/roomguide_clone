@@ -351,7 +351,7 @@ body.lang-en .ko-t{display:none!important}
   .cta-buttons{flex-direction:column;align-items:center}
 }
 </style>
-<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=rcb3o1tsl2" defer></script>
+<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=rcb3o1tsl2&callback=initNaverMap" async></script>
 </head>
 <body>
 
@@ -840,19 +840,14 @@ body.lang-en .ko-t{display:none!important}
 
 <script>
 /* ────────────────────────────────────────────
-   네이버 지도 설정
-   NCP 콘솔 → Application → Client ID를 아래에 입력하세요
-   https://console.ncloud.com/
+   네이버 지도 초기화
+   maps.js?callback=initNaverMap 으로 자동 호출됨
 ──────────────────────────────────────────── */
-window.addEventListener('load', function () {
+window.initNaverMap = function () {
   var mapEl = document.getElementById('naver-map');
   if (!mapEl) return;
-  if (typeof naver === 'undefined' || !naver.maps) {
-    mapEl.innerHTML = '<div class="map-notice"><span>지도 로드 실패 — Client ID를 확인해 주세요</span></div>';
-    return;
-  }
 
-  (function initNaverMap() {
+  (function () {
     var map = new naver.maps.Map('naver-map', {
       center: new naver.maps.LatLng(37.5172, 127.0286),
       zoom: 15,
@@ -933,7 +928,7 @@ window.addEventListener('load', function () {
       })
       .catch(function (e) { console.error('venues.json load error:', e); });
   })();
-});
+};
 </script>
 
 <!-- Footer -->
