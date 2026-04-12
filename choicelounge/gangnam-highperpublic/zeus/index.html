@@ -47,19 +47,19 @@ body.lang-en .ko-t{display:none!important}
 /* Hero */
 .dhero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden}
 .dhero__bg{position:absolute;inset:0;overflow:hidden}
-.dhero__bg img{width:100%;height:130%;object-fit:cover;will-change:transform;transform:translateY(0);filter:brightness(.75)}
-.dhero__ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,11,11,.72) 0%,rgba(11,11,11,.42) 50%,rgba(11,11,11,.68) 100%)}
+.dhero__bg img{width:100%;height:130%;object-fit:cover;will-change:transform;transform:translateY(0);filter:brightness(.55)}
+.dhero__ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.55) 0%,rgba(11,11,11,.65) 40%,rgba(11,11,11,.88) 100%)}
 .dhero__content{position:relative;z-index:2;max-width:800px}
-.dhero__breadcrumb{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px}
+.dhero__breadcrumb{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;text-shadow:0 1px 6px rgba(0,0,0,.9)}
 .dhero__breadcrumb a{color:var(--gold-dark)}.dhero__breadcrumb a:hover{color:var(--gold)}
-.dhero__badge{display:inline-flex;align-items:center;gap:8px;padding:7px 20px;border:1px solid var(--gold-dark);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.dhero__badge{display:inline-flex;align-items:center;gap:8px;padding:7px 20px;border:1px solid var(--gold-dark);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;background:rgba(11,11,11,.55);backdrop-filter:blur(4px);box-shadow:0 2px 16px rgba(0,0,0,.6)}
 .dhero__badge-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 1.5s ease infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.dhero__title{font-family:'Playfair Display',serif;font-size:clamp(48px,9vw,96px);font-weight:900;line-height:.9;margin-bottom:20px}
+.dhero__title{font-family:'Playfair Display',serif;font-size:clamp(48px,9vw,96px);font-weight:900;line-height:.9;margin-bottom:20px;text-shadow:0 2px 24px rgba(0,0,0,.9),0 1px 4px rgba(0,0,0,.8)}
 .dhero__title em{font-style:italic;color:var(--gold)}
-.dhero__desc{font-size:15px;color:var(--text-dim);line-height:1.8;max-width:520px;font-weight:300;margin-bottom:28px}
+.dhero__desc{font-size:15px;color:var(--text-dim);line-height:1.8;max-width:520px;font-weight:300;margin-bottom:28px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
 .dhero__meta{display:flex;gap:12px;flex-wrap:wrap}
-.dhero__meta-tag{padding:7px 18px;border:1px solid var(--glass-border);font-size:12px;color:var(--text-muted);letter-spacing:1px}
+.dhero__meta-tag{padding:7px 18px;border:1px solid rgba(255,255,255,.15);font-size:12px;color:var(--text);letter-spacing:1px;background:rgba(11,11,11,.55);backdrop-filter:blur(4px);text-shadow:0 1px 4px rgba(0,0,0,.8)}
 /* Contact bar */
 .contact-bar{background:var(--black2);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);padding:22px 0}
 .contact-bar__inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
