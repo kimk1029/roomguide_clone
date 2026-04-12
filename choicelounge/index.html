@@ -351,7 +351,7 @@ body.lang-en .ko-t{display:none!important}
   .cta-buttons{flex-direction:column;align-items:center}
 }
 </style>
-<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=rcb3o1tsl2&callback=initNaverMap" async></script>
+<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=rcb3o1tsl2" defer></script>
 </head>
 <body>
 
@@ -840,12 +840,12 @@ body.lang-en .ko-t{display:none!important}
 
 <script>
 /* ────────────────────────────────────────────
-   네이버 지도 초기화
-   maps.js?callback=initNaverMap 으로 자동 호출됨
+   네이버 지도 초기화 (defer 로드 후 load 이벤트에서 실행)
 ──────────────────────────────────────────── */
-window.initNaverMap = function () {
+window.addEventListener('load', function () {
   var mapEl = document.getElementById('naver-map');
   if (!mapEl) return;
+  if (typeof naver === 'undefined' || !naver.maps) return;
 
   (function () {
     var map = new naver.maps.Map('naver-map', {
@@ -928,7 +928,7 @@ window.initNaverMap = function () {
       })
       .catch(function (e) { console.error('venues.json load error:', e); });
   })();
-};
+});
 </script>
 
 <!-- Footer -->
