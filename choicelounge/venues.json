@@ -18,7 +18,8 @@
       ],
       "drink": 170000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "part2": {
       "label": "2부",
@@ -31,7 +32,8 @@
       ],
       "drink": 150000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "features": [
       {
@@ -93,7 +95,8 @@
       ],
       "drink": 170000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "part2": {
       "label": "2부",
@@ -106,7 +109,8 @@
       ],
       "drink": 150000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "features": [
       {
@@ -168,7 +172,8 @@
       ],
       "drink": 170000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "part2": {
       "label": "2부",
@@ -181,7 +186,8 @@
       ],
       "drink": 150000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "features": [
       {
@@ -243,7 +249,8 @@
       ],
       "drink": 170000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "part2": {
       "label": "2부",
@@ -256,7 +263,8 @@
       ],
       "drink": 150000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "features": [
       {
@@ -318,7 +326,8 @@
       ],
       "drink": 170000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "part2": {
       "label": "2부",
@@ -331,7 +340,8 @@
       ],
       "drink": 150000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "features": [
       {
@@ -393,7 +403,8 @@
       ],
       "drink": 170000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "part2": {
       "label": "2부",
@@ -406,7 +417,8 @@
       ],
       "drink": 150000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "features": [
       {
@@ -468,7 +480,8 @@
       ],
       "drink": 170000,
       "tc": 110000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "part2": {
       "label": "2부",
@@ -481,7 +494,8 @@
       ],
       "drink": 150000,
       "tc": 110000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "features": [
       {
@@ -543,7 +557,8 @@
       ],
       "drink": 170000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "part2": {
       "label": "2부",
@@ -556,7 +571,8 @@
       ],
       "drink": 150000,
       "tc": 120000,
-      "rt": 50000
+      "rt": 50000,
+      "tcPerPerson": true
     },
     "features": [
       {
