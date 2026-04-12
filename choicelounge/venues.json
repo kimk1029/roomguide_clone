@@ -7,15 +7,17 @@
     "descEn": "Experience exceptional interior design with impressive ceiling heights at this premium venue.",
     "status": "영업중",
     "rooms": 40,
+    "part0": {
+      "label": "0부",
+      "time": "18:00 ~ 21:00",
+      "drink": 100000,
+      "tc": 120000,
+      "rt": 50000,
+      "tcPerPerson": true
+    },
     "part1": {
       "label": "1부",
       "time": "21:00 ~ 01:00",
-      "base": [
-        340000,
-        470000,
-        600000,
-        730000
-      ],
       "drink": 170000,
       "tc": 120000,
       "rt": 50000,
@@ -24,12 +26,6 @@
     "part2": {
       "label": "2부",
       "time": "01:00 ~ 18:00",
-      "base": [
-        310000,
-        440000,
-        570000,
-        700000
-      ],
       "drink": 150000,
       "tc": 120000,
       "rt": 50000,
@@ -59,14 +55,6 @@
     "meta": {
       "title": "유앤미 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 유앤미 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
-    },
-    "part0": {
-      "label": "0부",
-      "time": "18:00 ~ 21:00",
-      "drink": 100000,
-      "tc": 120000,
-      "rt": 50000,
-      "tcPerPerson": true
     }
   },
   "dessert": {
@@ -77,15 +65,17 @@
     "descEn": "One of Gangnam's largest venues featuring exclusive transgender performances and VIP boxes.",
     "status": "영업중",
     "rooms": 48,
+    "part0": {
+      "label": "0부",
+      "time": "18:00 ~ 21:00",
+      "drink": 100000,
+      "tc": 120000,
+      "rt": 50000,
+      "tcPerPerson": true
+    },
     "part1": {
       "label": "1부",
       "time": "21:00 ~ 01:00",
-      "base": [
-        320000,
-        450000,
-        580000,
-        710000
-      ],
       "drink": 170000,
       "tc": 120000,
       "rt": 50000,
@@ -94,12 +84,6 @@
     "part2": {
       "label": "2부",
       "time": "01:00 ~ 18:00",
-      "base": [
-        290000,
-        420000,
-        550000,
-        680000
-      ],
       "drink": 150000,
       "tc": 120000,
       "rt": 50000,
@@ -129,14 +113,6 @@
     "meta": {
       "title": "디저트 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 디저트 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
-    },
-    "part0": {
-      "label": "0부",
-      "time": "18:00 ~ 21:00",
-      "drink": 100000,
-      "tc": 120000,
-      "rt": 50000,
-      "tcPerPerson": true
     }
   },
   "dalto": {
@@ -147,15 +123,17 @@
     "descEn": "Known for consistently high standards among staff, offering a premium choice experience.",
     "status": "영업중",
     "rooms": 35,
+    "part0": {
+      "label": "0부",
+      "time": "18:00 ~ 21:00",
+      "drink": 100000,
+      "tc": 120000,
+      "rt": 50000,
+      "tcPerPerson": true
+    },
     "part1": {
       "label": "1부",
       "time": "21:00 ~ 01:00",
-      "base": [
-        350000,
-        480000,
-        610000,
-        740000
-      ],
       "drink": 170000,
       "tc": 120000,
       "rt": 50000,
@@ -164,12 +142,6 @@
     "part2": {
       "label": "2부",
       "time": "01:00 ~ 18:00",
-      "base": [
-        320000,
-        450000,
-        580000,
-        710000
-      ],
       "drink": 150000,
       "tc": 120000,
       "rt": 50000,
@@ -199,14 +171,6 @@
     "meta": {
       "title": "달토 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 달토 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
-    },
-    "part0": {
-      "label": "0부",
-      "time": "18:00 ~ 21:00",
-      "drink": 100000,
-      "tc": 120000,
-      "rt": 50000,
-      "tcPerPerson": true
     }
   },
   "elite": {
@@ -217,15 +181,17 @@
     "descEn": "Newly renovated in April 2026 with resident professional DJs and Gangnam's largest capacity.",
     "status": "영업중",
     "rooms": 54,
+    "part0": {
+      "label": "0부",
+      "time": "18:00 ~ 21:00",
+      "drink": 100000,
+      "tc": 120000,
+      "rt": 50000,
+      "tcPerPerson": true
+    },
     "part1": {
       "label": "1부",
       "time": "21:00 ~ 01:00",
-      "base": [
-        360000,
-        490000,
-        620000,
-        750000
-      ],
       "drink": 170000,
       "tc": 120000,
       "rt": 50000,
@@ -234,12 +200,6 @@
     "part2": {
       "label": "2부",
       "time": "01:00 ~ 18:00",
-      "base": [
-        330000,
-        460000,
-        590000,
-        720000
-      ],
       "drink": 150000,
       "tc": 120000,
       "rt": 50000,
@@ -269,14 +229,6 @@
     "meta": {
       "title": "엘리트 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 엘리트 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
-    },
-    "part0": {
-      "label": "0부",
-      "time": "18:00 ~ 21:00",
-      "drink": 100000,
-      "tc": 120000,
-      "rt": 50000,
-      "tcPerPerson": true
     }
   },
   "dopamine": {
@@ -287,15 +239,17 @@
     "descEn": "Gangnam's leading 24-hour operation — open anytime, any day.",
     "status": "영업중",
     "rooms": 50,
+    "part0": {
+      "label": "0부",
+      "time": "18:00 ~ 21:00",
+      "drink": 100000,
+      "tc": 120000,
+      "rt": 50000,
+      "tcPerPerson": true
+    },
     "part1": {
       "label": "1부",
       "time": "21:00 ~ 01:00",
-      "base": [
-        310000,
-        440000,
-        570000,
-        700000
-      ],
       "drink": 170000,
       "tc": 120000,
       "rt": 50000,
@@ -304,12 +258,6 @@
     "part2": {
       "label": "2부",
       "time": "01:00 ~ 18:00",
-      "base": [
-        280000,
-        410000,
-        540000,
-        670000
-      ],
       "drink": 150000,
       "tc": 120000,
       "rt": 50000,
@@ -339,14 +287,6 @@
     "meta": {
       "title": "도파민 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 도파민 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
-    },
-    "part0": {
-      "label": "0부",
-      "time": "18:00 ~ 21:00",
-      "drink": 100000,
-      "tc": 120000,
-      "rt": 50000,
-      "tcPerPerson": true
     }
   },
   "zeus": {
@@ -357,15 +297,17 @@
     "descEn": "Grand opening February 2026 — multi-floor concept rooms for a premium new experience.",
     "status": "영업중",
     "rooms": 45,
+    "part0": {
+      "label": "0부",
+      "time": "18:00 ~ 21:00",
+      "drink": 100000,
+      "tc": 120000,
+      "rt": 50000,
+      "tcPerPerson": true
+    },
     "part1": {
       "label": "1부",
       "time": "21:00 ~ 01:00",
-      "base": [
-        330000,
-        460000,
-        590000,
-        720000
-      ],
       "drink": 170000,
       "tc": 120000,
       "rt": 50000,
@@ -374,12 +316,6 @@
     "part2": {
       "label": "2부",
       "time": "01:00 ~ 18:00",
-      "base": [
-        300000,
-        430000,
-        560000,
-        690000
-      ],
       "drink": 150000,
       "tc": 120000,
       "rt": 50000,
@@ -409,14 +345,6 @@
     "meta": {
       "title": "제우스 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 제우스 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
-    },
-    "part0": {
-      "label": "0부",
-      "time": "18:00 ~ 21:00",
-      "drink": 100000,
-      "tc": 120000,
-      "rt": 50000,
-      "tcPerPerson": true
     }
   },
   "sumokwon": {
@@ -427,15 +355,17 @@
     "descEn": "Consistent operations and steady service make this a reliable favorite.",
     "status": "영업중",
     "rooms": 38,
+    "part0": {
+      "label": "0부",
+      "time": "18:00 ~ 21:00",
+      "drink": 100000,
+      "tc": 120000,
+      "rt": 50000,
+      "tcPerPerson": true
+    },
     "part1": {
       "label": "1부",
       "time": "21:00 ~ 01:00",
-      "base": [
-        300000,
-        430000,
-        560000,
-        690000
-      ],
       "drink": 170000,
       "tc": 110000,
       "rt": 50000,
@@ -444,12 +374,6 @@
     "part2": {
       "label": "2부",
       "time": "01:00 ~ 18:00",
-      "base": [
-        270000,
-        400000,
-        530000,
-        660000
-      ],
       "drink": 150000,
       "tc": 110000,
       "rt": 50000,
@@ -479,14 +403,6 @@
     "meta": {
       "title": "수목원 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 수목원 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
-    },
-    "part0": {
-      "label": "0부",
-      "time": "18:00 ~ 21:00",
-      "drink": 100000,
-      "tc": 120000,
-      "rt": 50000,
-      "tcPerPerson": true
     }
   },
   "worklife": {
@@ -497,15 +413,17 @@
     "descEn": "Ideal for private and premium experiences — perfectly suited for business entertainment.",
     "status": "영업중",
     "rooms": 36,
+    "part0": {
+      "label": "0부",
+      "time": "18:00 ~ 21:00",
+      "drink": 100000,
+      "tc": 120000,
+      "rt": 50000,
+      "tcPerPerson": true
+    },
     "part1": {
       "label": "1부",
       "time": "21:00 ~ 01:00",
-      "base": [
-        340000,
-        470000,
-        600000,
-        730000
-      ],
       "drink": 170000,
       "tc": 120000,
       "rt": 50000,
@@ -514,12 +432,6 @@
     "part2": {
       "label": "2부",
       "time": "01:00 ~ 18:00",
-      "base": [
-        310000,
-        440000,
-        570000,
-        700000
-      ],
       "drink": 150000,
       "tc": 120000,
       "rt": 50000,
@@ -549,14 +461,6 @@
     "meta": {
       "title": "워라벨 - 강남 하이퍼블릭 가격 | CHOICE LOUNGE",
       "desc": "강남 워라벨 하이퍼블릭 1부 2부 가격, 주대, TC, 예약문의 안내."
-    },
-    "part0": {
-      "label": "0부",
-      "time": "18:00 ~ 21:00",
-      "drink": 100000,
-      "tc": 120000,
-      "rt": 50000,
-      "tcPerPerson": true
     }
   }
 }
