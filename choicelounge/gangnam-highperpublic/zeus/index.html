@@ -45,10 +45,10 @@ body.lang-en .ko-t{display:none!important}
 .mobile-nav__close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--gold);font-size:26px;cursor:pointer}
 .eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block}
 /* Hero */
-.dhero{position:relative;min-height:90vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:80px}
+.dhero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden}
 .dhero__bg{position:absolute;inset:0;overflow:hidden}
-.dhero__bg img{width:100%;height:130%;object-fit:cover;will-change:transform;transform:translateY(0)}
-.dhero__ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,11,11,1) 0%,rgba(11,11,11,.5) 55%,rgba(11,11,11,.1) 100%)}
+.dhero__bg img{width:100%;height:130%;object-fit:cover;will-change:transform;transform:translateY(0);filter:brightness(.75)}
+.dhero__ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,11,11,.72) 0%,rgba(11,11,11,.42) 50%,rgba(11,11,11,.68) 100%)}
 .dhero__content{position:relative;z-index:2;max-width:800px}
 .dhero__breadcrumb{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px}
 .dhero__breadcrumb a{color:var(--gold-dark)}.dhero__breadcrumb a:hover{color:var(--gold)}
@@ -183,7 +183,7 @@ body.lang-en .ko-t{display:none!important}
 @media(max-width:768px){
   .nav{display:none}.mobile-toggle{display:block}
   .header{padding:14px 0}.logo{font-size:20px}.container{padding:0 16px}
-  .dhero{min-height:75vh;padding-bottom:50px}
+  .dhero{min-height:75vh}
   .dhero__title{font-size:clamp(38px,11vw,64px)}
   .dhero__meta{gap:8px}
   .dhero__meta-tag{font-size:11px;padding:6px 12px}
