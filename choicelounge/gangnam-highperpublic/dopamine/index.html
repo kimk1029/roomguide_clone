@@ -396,12 +396,12 @@ document.getElementById('mobileLangBtn').addEventListener('click', function(){
 /* ── 가격표 렌더 ── */
 function renderPriceTable(part){
   var persons=[1,2,3,4];
-  var totals=persons.map(function(){return part.drink+part.tc+part.rt});
+  var da=persons.map(function(){return part.drink});
+  var ta=persons.map(function(p){return part.tcPerPerson ? part.tc*p : part.tc});
+  var ra=persons.map(function(){return part.rt});
+  var totals=persons.map(function(p,i){return da[i]+ta[i]+ra[i]});
   var th='<tr><th class="lh">'+t('구분','Category')+'</th>'+persons.map(function(p){return '<th>'+p+t('인',' person')+'</th>'}).join('')+'</tr>';
   function row(label,vals){return '<tr><td class="rh">'+label+'</td>'+vals.map(function(v){return '<td>'+fmt(v)+t('원','₩')+'</td>'}).join('')+'</tr>'}
-  var da=persons.map(function(){return part.drink});
-  var ta=persons.map(function(){return part.tc});
-  var ra=persons.map(function(){return part.rt});
   var tbody=row(t('주대','Drinks'),da)
     +row(t('TC (타임차지)','TC (Time Charge)'),ta)
     +row(t('RT (웨이터팁)','RT (Waiter Tip)'),ra)
@@ -465,7 +465,8 @@ function renderContent(venues, texts){
   document.getElementById('price-notice').innerHTML = '<strong>※ '+t('안내','Notice')+'</strong> · '+esc(v.notice);
 
   var tabsHtml='',contentsHtml='';
-  [v.part1,v.part2].forEach(function(part,idx){
+  var parts=[v.part0,v.part1,v.part2].filter(Boolean);
+  parts.forEach(function(part,idx){
     var id='ptab-'+idx, active=idx===0?'active':'', show=idx===0?'show':'';
     tabsHtml+='<div class="ptab '+active+'" data-id="'+id+'">'+esc(part.label)+' · '+esc(part.time)+'</div>';
     contentsHtml+='<div class="ptab-content '+show+'" id="'+id+'">'+renderPriceTable(part)+'</div>';
