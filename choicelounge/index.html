@@ -855,7 +855,7 @@ var NAVER_CLIENT_ID = 'rcb3o1tsl2';
   }
 
   var script = document.createElement('script');
-  script.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=' + NAVER_CLIENT_ID + '&submodules=geocoder';
+  script.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=' + NAVER_CLIENT_ID;
   script.onload = initNaverMap;
   script.onerror = function () {
     mapEl.innerHTML = '<div class="map-notice"><span>지도 로드 실패 — Client ID를 확인해 주세요</span></div>';
@@ -879,73 +879,67 @@ var NAVER_CLIENT_ID = 'rcb3o1tsl2';
 
         Object.keys(venues).forEach(function (key) {
           var v = venues[key];
-          if (!v.address) return;
+          if (!v.lat || !v.lng) return;
 
-          naver.maps.Service.geocode({ query: v.address }, function (status, response) {
-            if (status !== naver.maps.Service.Status.OK) return;
-            var item = response.v2 && response.v2.addresses && response.v2.addresses[0];
-            if (!item) return;
+          var pos = new naver.maps.LatLng(v.lat, v.lng);
+          bounds.extend(pos);
 
-            var pos = new naver.maps.LatLng(parseFloat(item.y), parseFloat(item.x));
-            bounds.extend(pos);
-
-            /* 커스텀 마커 */
-            var marker = new naver.maps.Marker({
-              position: pos,
-              map: map,
-              title: v.fullName || v.name,
-              icon: {
-                content: [
-                  '<div style="',
-                    'display:inline-flex;align-items:center;gap:6px;',
-                    'padding:7px 12px;',
-                    'background:#0b0b0b;',
-                    'border:1.5px solid #c9a96e;',
-                    'color:#c9a96e;',
-                    'font-size:11px;font-weight:700;letter-spacing:1px;',
-                    'white-space:nowrap;',
-                    'box-shadow:0 4px 16px rgba(0,0,0,.6);',
-                    'cursor:pointer;',
-                    'transform:translateY(-100%);margin-bottom:4px',
-                  '">',
-                  '<svg width="10" height="10" viewBox="0 0 24 24" fill="#c9a96e"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
-                  (v.name || key),
-                  '</div>'
-                ].join(''),
-                anchor: new naver.maps.Point(0, 0)
-              }
-            });
-
-            /* 정보창 */
-            var iw = new naver.maps.InfoWindow({
+          /* 커스텀 마커 */
+          var marker = new naver.maps.Marker({
+            position: pos,
+            map: map,
+            title: v.fullName || v.name,
+            icon: {
               content: [
                 '<div style="',
-                  'padding:14px 18px;min-width:180px;',
-                  'background:#111;border:1px solid rgba(201,169,110,.35);',
-                  'font-family:\'Noto Sans KR\',sans-serif',
+                  'display:inline-flex;align-items:center;gap:6px;',
+                  'padding:7px 12px;',
+                  'background:#0b0b0b;',
+                  'border:1.5px solid #c9a96e;',
+                  'color:#c9a96e;',
+                  'font-size:11px;font-weight:700;letter-spacing:1px;',
+                  'white-space:nowrap;',
+                  'box-shadow:0 4px 16px rgba(0,0,0,.6);',
+                  'cursor:pointer;',
+                  'transform:translateY(-100%);margin-bottom:4px',
                 '">',
-                '<div style="font-size:14px;font-weight:700;color:#c9a96e;margin-bottom:6px">', (v.fullName || v.name), '</div>',
-                '<div style="font-size:12px;color:#8a8272;line-height:1.7">', v.address, '</div>',
-                v.operation ? '<div style="font-size:11px;color:#5a5549;margin-top:6px">' + (v.operation.hours || '') + (v.operation.pickupFree ? ' · 무료픽업' : '') + '</div>' : '',
+                '<svg width="10" height="10" viewBox="0 0 24 24" fill="#c9a96e"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
+                (v.name || key),
                 '</div>'
               ].join(''),
-              borderWidth: 0,
-              backgroundColor: 'transparent',
-              anchorSize: new naver.maps.Size(0, 0)
-            });
-
-            naver.maps.Event.addListener(marker, 'click', function () {
-              markers.forEach(function (m) { if (m.iw && m.iw.getMap()) m.iw.close(); });
-              if (iw.getMap()) { iw.close(); } else { iw.open(map, marker); }
-            });
-
-            marker.iw = iw;
-            markers.push(marker);
-
-            /* 모든 핀이 보이도록 지도 범위 조정 */
-            if (markers.length > 1) map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
+              anchor: new naver.maps.Point(0, 0)
+            }
           });
+
+          /* 정보창 */
+          var iw = new naver.maps.InfoWindow({
+            content: [
+              '<div style="',
+                'padding:14px 18px;min-width:180px;',
+                'background:#111;border:1px solid rgba(201,169,110,.35);',
+                'font-family:\'Noto Sans KR\',sans-serif',
+              '">',
+              '<div style="font-size:14px;font-weight:700;color:#c9a96e;margin-bottom:6px">', (v.fullName || v.name), '</div>',
+              '<div style="font-size:12px;color:#8a8272;line-height:1.7">', v.address, '</div>',
+              v.operation ? '<div style="font-size:11px;color:#5a5549;margin-top:6px">' + (v.operation.hours || '') + (v.operation.pickupFree ? ' · 무료픽업' : '') + '</div>' : '',
+              '</div>'
+            ].join(''),
+            borderWidth: 0,
+            backgroundColor: 'transparent',
+            anchorSize: new naver.maps.Size(0, 0)
+          });
+
+          naver.maps.Event.addListener(marker, 'click', function () {
+            markers.forEach(function (m) { if (m.iw && m.iw.getMap()) m.iw.close(); });
+            if (iw.getMap()) { iw.close(); } else { iw.open(map, marker); }
+          });
+
+          marker.iw = iw;
+          markers.push(marker);
         });
+
+        /* 모든 핀이 보이도록 지도 범위 조정 */
+        if (markers.length > 1) map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
       })
       .catch(function (e) { console.error('venues.json load error:', e); });
   }
