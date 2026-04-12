@@ -1,8 +1,0 @@
-https://roomguide.kr/ -O ./roomguide_clone -r6 -%e0 -s0 -c2 -A20 -%c2 -F "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
-File generated automatically on Thu, 09 Apr 2026 14:45:08, do NOT edit
-
-To update a mirror, just launch httrack without any parameters
-The existing cache will be used (and modified)
-To have other options, retype all parameters and launch HTTrack
-To continue an interrupted mirror, just launch httrack without any parameters
-
