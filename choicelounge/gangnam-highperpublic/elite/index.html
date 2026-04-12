@@ -235,7 +235,7 @@ body.lang-en .ko-t{display:none!important}
 <!-- Hero -->
 <section class="dhero" id="dhero">
   <div class="dhero__bg">
-    <img src="" alt="" id="hero-img" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+    <img id="hero-img" alt="" style="display:none">
     <div class="dhero__ov"></div>
   </div>
   <div class="container">
@@ -500,8 +500,10 @@ function renderContent(venues, texts){
   if(!heroGal.length) heroGal = (v.gallery||[]).filter(function(g){return g.src});
   if(heroGal.length){
     var hi = document.getElementById('hero-img');
-    hi.src = ROOT+heroGal[0].src;
+    hi.style.display = '';
     hi.alt = heroGal[0].alt||'';
+    hi.onerror = function(){this.style.display='none'};
+    hi.src = ROOT+heroGal[0].src;
   }
 
   /* Hero meta tags from summaryBullets */
