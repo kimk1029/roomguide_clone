@@ -291,15 +291,6 @@ body.lang-en .ko-t{display:none!important}
 <!-- 콘텐츠 섹션 -->
 <div id="content-sections"></div>
 
-<!-- 갤러리 -->
-<section class="gallery-sec" id="gallery-sec" style="display:none">
-  <div class="container">
-    <span class="eyebrow reveal">Gallery</span>
-    <h2 class="gallery-sec__title reveal" id="gallery-title"></h2>
-    <p class="gallery-sec__desc reveal" id="gallery-desc"></p>
-    <div class="gallery-grid" id="gallery-grid"></div>
-  </div>
-</section>
 
 <!-- 라이트박스 -->
 <div class="lb" id="lightbox">
@@ -585,25 +576,6 @@ function renderContent(venues, texts){
   secEl.innerHTML=secHtml;
   observe(secEl);
   secEl.addEventListener('click',function(e){var img=e.target.closest('img[data-lbsrc]');if(img)openLightbox(img.dataset.lbsrc,img.dataset.lbalt||'');});
-
-  /* Gallery */
-  var gsec = document.getElementById('gallery-sec');
-  var galItems=(v.gallery||[]).filter(function(g){return g.src});
-  if(galItems.length){
-    gsec.style.display='';
-    document.getElementById('gallery-title').textContent=(v.fullName||v.name)+' 갤러리';
-    document.getElementById('gallery-desc').textContent='매장 내부 및 외부 사진을 확인하세요.';
-    document.getElementById('gallery-grid').innerHTML=galItems.map(function(g){
-      var src=ROOT+g.src;
-      var alt=g.alt||g.label||'';
-      return '<div class="gallery-item reveal" onclick="openLightbox(\''+src.replace(/'/g,"\\'")+'\')">'
-        +'<img src="'+src+'" alt="'+esc(alt)+'" loading="lazy">'
-        +'<div class="gallery-item__label">'+esc(g.label||'')+'</div>'
-        +'</div>';
-    }).join('');
-    observe(gsec);
-  }
-
   /* Pricing */
   document.getElementById('price-title').textContent=(v.fullName||v.name)+' 가격 안내';
   document.getElementById('price-desc').textContent=v.priceNote||'아래 금액은 평균 기준이며 실제 가격은 상황에 따라 달라질 수 있습니다.';
