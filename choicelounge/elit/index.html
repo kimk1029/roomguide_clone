@@ -572,7 +572,7 @@ function renderContent(venues, texts){
         secHtml+='</div>';
         secHtml+='<div class="sec-split__media reveal-scale">';
         secHtml+='<div class="sec-img">';
-        secHtml+='<img src="'+ROOT+esc(galImg.src)+'" alt="'+esc(galImg.alt||galImg.label||'')+'" loading="lazy" onclick="openLightbox(''+( ROOT+galImg.src).replace(/'/g,"\'")+'',''+esc(galImg.alt||galImg.label||'')+'');" style="cursor:zoom-in">';
+        secHtml+='<img src="'+ROOT+esc(galImg.src)+'" alt="'+esc(galImg.alt||galImg.label||'')+'" loading="lazy" data-lbsrc="'+esc(ROOT+galImg.src)+'" data-lbalt="'+esc(galImg.alt||galImg.label||'')+'" style="cursor:zoom-in">';
         if(galImg.label)secHtml+='<div class="sec-img__cap">'+esc(galImg.label)+'</div>';
         secHtml+='</div></div></div>';
       }else{
@@ -584,6 +584,7 @@ function renderContent(venues, texts){
   }
   secEl.innerHTML=secHtml;
   observe(secEl);
+  secEl.addEventListener('click',function(e){var img=e.target.closest('img[data-lbsrc]');if(img)openLightbox(img.dataset.lbsrc,img.dataset.lbalt||'');});
 
   /* Gallery */
   var gsec = document.getElementById('gallery-sec');
