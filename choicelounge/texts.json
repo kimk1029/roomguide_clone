@@ -5,7 +5,7 @@
     "tagline": "Gangnam Premium Nightlife"
   },
   "nav": {
-    "highperpublic": "하이퍼블릭",
+    "highpublic": "하이퍼블릭",
     "nightlife": "유흥",
     "reserve": "Reserve",
     "menu": "MENU",
@@ -66,18 +66,18 @@
   },
   "categories": [
     {
-      "id": "highperpublic",
+      "id": "highpublic",
       "name": "하이퍼블릭",
-      "nameEn": "highper Public",
+      "nameEn": "high Public",
       "count": "7개 업소",
       "icon": "💎",
-      "href": "highperpublic/index.html"
+      "href": "highpublic/index.html"
     }
   ],
   "marquee": [
     {
       "nameKo": "하이퍼블릭",
-      "nameEn": "Highper Public"
+      "nameEn": "High Public"
     },
     {
       "nameKo": "가라오케",
@@ -98,9 +98,9 @@
   ],
   "features": [
     {
-      "id": "highperpublic",
+      "id": "highpublic",
       "num": "01",
-      "eyebrow": "Highper Public",
+      "eyebrow": "High Public",
       "title": "강남 하이퍼블릭",
       "desc": "하이퍼블릭은 초이스 중심으로 운영되는 퍼블릭 계열 업종으로, 과거의 구조와 현재의 운영 흐름이 조금 다르게 인식되는 편입니다. 현재는 셔츠룸을 대체하는 형태로 보는 시각도 적지 않습니다.",
       "tags": [
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "id": "highperpublic-flow",
+      "id": "highpublic-flow",
       "num": "02",
       "eyebrow": "How It Works",
       "title": "이용 흐름은 어떻게 진행될까",
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "id": "highperpublic-price",
+      "id": "highpublic-price",
       "num": "03",
       "eyebrow": "Pricing",
       "title": "강남 하이퍼블릭 평균 가격",
@@ -162,7 +162,7 @@
       ]
     },
     {
-      "id": "highperpublic-compare",
+      "id": "highpublic-compare",
       "num": "04",
       "eyebrow": "Comparison",
       "title": "강남 하이퍼블릭과 강남 퍼블릭 차이",
@@ -198,7 +198,7 @@
       }
     },
     {
-      "id": "highperpublic-market",
+      "id": "highpublic-market",
       "num": "05",
       "eyebrow": "Market Timeline",
       "title": "강남 하이퍼블릭 시장 변화 흐름",
@@ -229,70 +229,70 @@
       ],
       "link": {
         "text": "전체 등록·폐업 기록 보기",
-        "href": "/gangnam-highperpublic/history"
+        "href": "/gangnam-highpublic/history"
       }
     }
   ],
   "venues": {
-    "highperpublic": {
-      "eyebrow": "highper Public",
+    "highpublic": {
+      "eyebrow": "high Public",
       "title": "추천 하이퍼블릭",
       "viewAll": "View All →",
-      "href": "highperpublic/index.html",
+      "href": "highpublic/index.html",
       "desc": "아래 카드에서 원하는 스타일의 매장을 선택해 상세 페이지로 이동할 수 있습니다.\n        메인페이지는 전체 흐름을 설명하고, 하부페이지는 각 가게별 디테일을 다루는 구조로 설계했습니다.",
       "items": [
         {
           "title": "유앤미",
           "desc": "높은 층고와 독보적인 인테리어를 경험할 수 있는 매장입니다.",
-          "href": "/gangnam-highperpublic/unmi",
+          "href": "/gangnam-highpublic/unmi",
           "buttonText": "자세히 보기"
         },
         {
           "title": "디저트",
           "desc": "강남 대형 매장 중 트랜스젠더 공연과 전용 박스를 보유한 곳입니다.",
-          "href": "/gangnam-highperpublic/dessert",
+          "href": "/gangnam-highpublic/dessert",
           "buttonText": "자세히 보기"
         },
         {
           "title": "달토",
           "desc": "전반적으로 평균 외모 수준이 높게 형성된 매장입니다.",
-          "href": "/gangnam-highperpublic/dalto",
+          "href": "/gangnam-highpublic/dalto",
           "buttonText": "자세히 보기"
         },
         {
           "title": "엘리트",
           "desc": "2026년 4월 인테리어를 새롭게 완료했으며, 전문 DJ들이 상주하는 매장입니다.",
-          "href": "/gangnam-highperpublic/elite",
+          "href": "/gangnam-highpublic/elite",
           "buttonText": "자세히 보기"
         },
         {
           "title": "도파민",
           "desc": "강남 대형 매장 중 24시간 운영을 선도하는 곳으로 알려져 있습니다.",
-          "href": "/gangnam-highperpublic/dopamine",
+          "href": "/gangnam-highpublic/dopamine",
           "buttonText": "자세히 보기"
         },
         {
           "title": "제우스",
           "desc": "2026년 2월 2일 그랜드 오픈, 층별로 다른 콘셉트의 룸이 구성된 매장입니다.",
-          "href": "/gangnam-highperpublic/zeus",
+          "href": "/gangnam-highpublic/zeus",
           "buttonText": "자세히 보기"
         },
         {
           "title": "드라마",
           "desc": "안정적인 운영 흐름과 꾸준한 영업 상태가 유지되는 매장입니다.",
-          "href": "/gangnam-highperpublic/drama",
+          "href": "/gangnam-highpublic/drama",
           "buttonText": "자세히 보기"
         },
         {
           "title": "워라벨",
           "desc": "프라이빗과 프리미엄의 구조를 선호하는 경우 비교하기 좋은 매장입니다.",
-          "href": "/gangnam-highperpublic/worklife",
+          "href": "/gangnam-highpublic/worklife",
           "buttonText": "자세히 보기"
         }
       ],
       "historyLink": {
         "text": "전체 등록·폐업 기록 보기",
-        "href": "/gangnam-highperpublic/history"
+        "href": "/gangnam-highpublic/history"
       },
       "ctaTitle": "강남 하이퍼블릭 상세 정보 더 보기",
       "ctaDesc": "원하는 스타일에 맞는 매장을 카드형 리스트에서 선택하거나, 등록·폐업 기록과 시장 변화 데이터 페이지까지 함께 확인해보세요."
@@ -310,7 +310,7 @@
     "links": [
       {
         "text": "하이퍼블릭",
-        "href": "highperpublic/index.html"
+        "href": "highpublic/index.html"
       },
       {
         "text": "유흥",
@@ -348,12 +348,12 @@
         "buttons": [
           {
             "text": "데이터 페이지 보기",
-            "href": "/gangnam-highperpublic/history",
+            "href": "/gangnam-highpublic/history",
             "style": "primary"
           },
           {
             "text": "하부페이지 예시 보기",
-            "href": "/gangnam-highperpublic/unmi",
+            "href": "/gangnam-highpublic/unmi",
             "style": "secondary"
           }
         ]
