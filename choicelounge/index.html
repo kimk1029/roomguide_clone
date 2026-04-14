@@ -265,6 +265,11 @@ body.lang-en .ko-t{display:none!important}
 .map-notice{display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:16px;color:var(--text-muted);font-size:13px;letter-spacing:2px;text-transform:uppercase}
 .map-notice svg{opacity:.3}
 
+/* Video */
+.video-section{padding:0 0 120px 0}
+.video-wrap{border:1px solid var(--glass-border);aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--black2)}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
 /* Phone CTA floating */
 .phone-float{position:fixed;top:80px;right:32px;z-index:998;display:flex;flex-direction:column;gap:8px}
 .phone-float a{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--gold);color:var(--black);font-size:12px;font-weight:700;letter-spacing:1px;transition:var(--t)}
@@ -300,6 +305,7 @@ body.lang-en .ko-t{display:none!important}
   .faq-section{padding:80px 0}
   .map-section{padding:80px 0}
   .map-wrap{height:350px}
+  .video-section{padding-bottom:80px}
   .phone-float{display:none}
 }
 @media(max-width:768px){
@@ -343,6 +349,7 @@ body.lang-en .ko-t{display:none!important}
   .cta-section{padding:60px 0}
   .map-section{padding:60px 0}
   .map-wrap{height:280px;margin-top:24px}
+  .video-section{padding-bottom:60px}
   .footer{padding:40px 0}
   .footer__inner{flex-direction:column;gap:24px}
   .footer__bottom{margin-top:24px;padding-top:16px}
@@ -858,6 +865,19 @@ body.lang-en .ko-t{display:none!important}
           <span>지도 로딩 중...</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video -->
+<section class="video-section" aria-label="소개 영상">
+  <div class="container">
+    <div class="video-wrap reveal-scale">
+      <iframe
+        src="https://www.youtube.com/embed/pNOQGlmUxMM?autoplay=1&mute=1&loop=1&playlist=pNOQGlmUxMM&controls=1&modestbranding=1&rel=0&playsinline=1"
+        title="CHOICE LOUNGE 소개 영상"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen></iframe>
     </div>
   </div>
 </section>
