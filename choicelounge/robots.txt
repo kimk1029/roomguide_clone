@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://choicelounge.kr/sitemap.xml
+Sitemap: https://choicelounge.co.kr/sitemap.xml
